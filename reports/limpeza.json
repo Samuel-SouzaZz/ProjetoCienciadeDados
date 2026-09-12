@@ -1,0 +1,239 @@
+{
+  "ambiente": {
+    "executado_em": "2026-09-12T14:37:33-03:00",
+    "python": "3.12.6",
+    "sistema": "Windows 10",
+    "pandas": "2.2.3",
+    "scikit_learn": "1.6.1",
+    "matplotlib": "3.10.1"
+  },
+  "versao_contrato": "1.0.0",
+  "entrada": {
+    "caminho": "C:\\Users\\Administrator\\Desktop\\Ciencia de dados\\data\\raw\\acidentes2025_todas_causas_tipos.csv",
+    "sha256": "b48968a8017a9abda7b6149c894554c7cc3ca1c09257c7dedf2937ebce02e0d3",
+    "configuracao_leitura": {
+      "sep": ";",
+      "encoding": "latin-1",
+      "decimal": ",",
+      "quotechar": "\""
+    }
+  },
+  "passos": {
+    "1_leitura": {
+      "linhas_lidas": 584010,
+      "colunas_lidas": 37,
+      "linhas_ilegiveis": 0,
+      "observacao": "O pandas nao reportou linha ilegivel. Todas as colunas foram lidas como texto."
+    },
+    "2_cabecalhos": {
+      "mapa_original_para_padronizado": {
+        "id": "id",
+        "pesid": "pesid",
+        "data_inversa": "data_inversa",
+        "dia_semana": "dia_semana",
+        "horario": "horario",
+        "uf": "uf",
+        "br": "br",
+        "km": "km",
+        "municipio": "municipio",
+        "causa_principal": "causa_principal",
+        "causa_acidente": "causa_acidente",
+        "ordem_tipo_acidente": "ordem_tipo_acidente",
+        "tipo_acidente": "tipo_acidente",
+        "classificacao_acidente": "classificacao_acidente",
+        "fase_dia": "fase_dia",
+        "sentido_via": "sentido_via",
+        "condicao_metereologica": "condicao_metereologica",
+        "tipo_pista": "tipo_pista",
+        "tracado_via": "tracado_via",
+        "uso_solo": "uso_solo",
+        "id_veiculo": "id_veiculo",
+        "tipo_veiculo": "tipo_veiculo",
+        "marca": "marca",
+        "ano_fabricacao_veiculo": "ano_fabricacao_veiculo",
+        "tipo_envolvido": "tipo_envolvido",
+        "estado_fisico": "estado_fisico",
+        "idade": "idade",
+        "sexo": "sexo",
+        "ilesos": "ilesos",
+        "feridos_leves": "feridos_leves",
+        "feridos_graves": "feridos_graves",
+        "mortos": "mortos",
+        "latitude": "latitude",
+        "longitude": "longitude",
+        "regional": "regional",
+        "delegacia": "delegacia",
+        "uop": "uop"
+      },
+      "renomeadas": [],
+      "colisoes": []
+    },
+    "3_texto": {
+      "celulas_alteradas": 201
+    },
+    "4_tokens_ausencia": {
+      "condicao_metereologica": {
+        "tokens": [
+          "Ignorado"
+        ],
+        "celulas_convertidas": 7130
+      },
+      "sentido_via": {
+        "tokens": [
+          "Não Informado"
+        ],
+        "celulas_convertidas": 1444
+      },
+      "estado_fisico": {
+        "tokens": [
+          "Não Informado"
+        ],
+        "celulas_convertidas": 35083
+      },
+      "sexo": {
+        "tokens": [
+          "Não Informado",
+          "Ignorado",
+          "Inválido"
+        ],
+        "celulas_convertidas": 36254
+      },
+      "marca": {
+        "tokens": [
+          "NA/NA"
+        ],
+        "celulas_convertidas": 18617
+      },
+      "ano_fabricacao_veiculo": {
+        "tokens": [
+          "0"
+        ],
+        "celulas_convertidas": 29808
+      }
+    },
+    "5_categorias": {
+      "dia_semana": 584010,
+      "uso_solo": 584010,
+      "fase_dia": 324063,
+      "tipo_pista": 0,
+      "condicao_metereologica": 0,
+      "sentido_via": 0,
+      "tracado_via_celulas_reordenadas": 108266,
+      "tracado_via_rotulos_antes": 605,
+      "tracado_via_rotulos_depois": 230
+    },
+    "6_campos_impossiveis": {
+      "idade_fora_do_intervalo": 432,
+      "intervalo_adotado": [
+        0,
+        120
+      ],
+      "arquivo": "C:\\Users\\Administrator\\Desktop\\Ciencia de dados\\data\\quarantine\\campos_para_revisao.csv",
+      "observacao": "Regra deste projeto, nao do dicionario. O registro NAO foi excluido: apenas o valor impossivel virou ausencia, com o original na auditoria."
+    },
+    "7_integridade_chave": {
+      "ids_avaliados": 72529,
+      "ids_com_conflito": 0,
+      "conflitos_por_coluna": {
+        "data_inversa": 0,
+        "dia_semana": 0,
+        "horario": 0,
+        "uf": 0,
+        "br": 0,
+        "km": 0,
+        "municipio": 0,
+        "classificacao_acidente": 0,
+        "fase_dia": 0,
+        "sentido_via": 0,
+        "condicao_metereologica": 0,
+        "tipo_pista": 0,
+        "tracado_via": 0,
+        "uso_solo": 0,
+        "latitude": 0,
+        "longitude": 0,
+        "regional": 0,
+        "delegacia": 0,
+        "uop": 0
+      }
+    },
+    "9_derivados": {
+      "datas_que_falharam_na_conversao": 0,
+      "horarios_que_falharam_na_conversao": 0,
+      "dia_semana_divergente": 0,
+      "limites_faixa_horaria": {
+        "Madrugada": "00:00:00 a 05:59:59",
+        "Manha": "06:00:00 a 11:59:59",
+        "Tarde": "12:00:00 a 17:59:59",
+        "Noite": "18:00:00 a 23:59:59"
+      }
+    },
+    "10_elegibilidade": {
+      "ocorrencias": 72529,
+      "alvo_ausente": 1,
+      "elegiveis_para_treino": 72528,
+      "inelegiveis": 1,
+      "com_alguma_entrada_ausente": 1000,
+      "regra": "Somente alvo ausente torna a ocorrencia inelegivel. Ausencia em entrada e imputada dentro do Pipeline, ajustado apenas no treino."
+    }
+  },
+  "auditoria": {
+    "arquivo": "C:\\Users\\Administrator\\Desktop\\Ciencia de dados\\reports\\auditoria_limpeza.csv",
+    "registros_auditoria": 20633,
+    "gravados": 20633,
+    "truncado": false,
+    "observacao": "Para as regras que atingem centenas de milhares de celulas (mapeamento de dia_semana, uso_solo, tokens de ausencia, reordenacao de tracado_via), a auditoria grava uma AMOSTRA rastreavel por regra, com limite fixo no codigo. As contagens completas de cada regra estao em passos.3_texto, passos.4_tokens_ausencia e passos.5_categorias deste mesmo relatorio."
+  },
+  "reconciliacao": {
+    "linhas_entrada": 584010,
+    "duplicatas_exatas_removidas": 0,
+    "linhas_quarentena": 0,
+    "linhas_mantidas_agregadas": 584010,
+    "soma_dos_destinos": 584010,
+    "reconciliado": true,
+    "ocorrencias_resultantes": 72529,
+    "pessoas_distintas_resultantes": 177479
+  },
+  "composicao_classes": [
+    {
+      "classificacao_acidente": "Com Vítimas Fatais",
+      "base_limpa": 5209,
+      "elegiveis_para_treino": 5209,
+      "pct_base_limpa": 7.182,
+      "pct_elegiveis": 7.182
+    },
+    {
+      "classificacao_acidente": "Com Vítimas Feridas",
+      "base_limpa": 56181,
+      "elegiveis_para_treino": 56181,
+      "pct_base_limpa": 77.46,
+      "pct_elegiveis": 77.461
+    },
+    {
+      "classificacao_acidente": "Sem Vítimas",
+      "base_limpa": 11138,
+      "elegiveis_para_treino": 11138,
+      "pct_base_limpa": 15.357,
+      "pct_elegiveis": 15.357
+    },
+    {
+      "classificacao_acidente": null,
+      "base_limpa": 1,
+      "elegiveis_para_treino": 0,
+      "pct_base_limpa": 0.001,
+      "pct_elegiveis": 0.0
+    }
+  ],
+  "saidas": {
+    "base_limpa_ocorrencia": "C:\\Users\\Administrator\\Desktop\\Ciencia de dados\\data\\processed\\prf_limpo.csv",
+    "sha256_base_limpa": "0a028fe02ec748e115ab5e4d0d4d3cda3b6ae034a5b26deaebc69d267fa3d4ed",
+    "base_pessoas": "C:\\Users\\Administrator\\Desktop\\Ciencia de dados\\data\\processed\\prf_pessoas.csv",
+    "esquema": "C:\\Users\\Administrator\\Desktop\\Ciencia de dados\\data\\processed\\prf_limpo_esquema.json",
+    "auditoria": "C:\\Users\\Administrator\\Desktop\\Ciencia de dados\\reports\\auditoria_limpeza.csv",
+    "quarentena_registros": "C:\\Users\\Administrator\\Desktop\\Ciencia de dados\\data\\quarantine\\registros_quarentena.csv",
+    "quarentena_campos": "C:\\Users\\Administrator\\Desktop\\Ciencia de dados\\data\\quarantine\\campos_para_revisao.csv",
+    "limpeza_antes_depois": "C:\\Users\\Administrator\\Desktop\\Ciencia de dados\\reports\\limpeza_antes_depois.csv",
+    "reconciliacao": "C:\\Users\\Administrator\\Desktop\\Ciencia de dados\\reports\\reconciliacao.csv",
+    "mapa_tracado_via": "C:\\Users\\Administrator\\Desktop\\Ciencia de dados\\reports\\mapa_tracado_via.csv",
+    "composicao_classes": "C:\\Users\\Administrator\\Desktop\\Ciencia de dados\\reports\\composicao_classes.csv"
+  }
+}

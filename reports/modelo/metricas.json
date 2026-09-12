@@ -1,0 +1,173 @@
+{
+  "ambiente": {
+    "executado_em": "2026-09-12T14:39:07-03:00",
+    "python": "3.12.6",
+    "sistema": "Windows 10",
+    "pandas": "2.2.3",
+    "scikit_learn": "1.6.1",
+    "matplotlib": "3.10.1"
+  },
+  "arquivo": "C:\\Users\\Administrator\\Desktop\\Ciencia de dados\\data\\processed\\prf_limpo.csv",
+  "sha256_base": "0a028fe02ec748e115ab5e4d0d4d3cda3b6ae034a5b26deaebc69d267fa3d4ed",
+  "status_da_validacao_antes_do_treino": "APROVADA_COM_RESSALVAS",
+  "versao_contrato": "1.0.0",
+  "configuracao": {
+    "semente": 42,
+    "entradas_usadas": [
+      "dia_semana",
+      "faixa_horaria",
+      "fim_de_semana",
+      "mes",
+      "fase_dia",
+      "condicao_metereologica",
+      "tipo_pista",
+      "tracado_via",
+      "uso_solo"
+    ],
+    "alvo": "classificacao_acidente",
+    "class_weight": null,
+    "min_samples_leaf": 50,
+    "profundidades_testadas": [
+      3,
+      4,
+      5,
+      6,
+      8,
+      10
+    ],
+    "max_depth_escolhido": 5,
+    "macro_f1_validacao_cruzada_no_treino": 0.2915,
+    "divisao": "80/20 estratificada, feita antes de qualquer transformacao aprendida",
+    "onde_o_pipeline_foi_ajustado": "somente no conjunto de treino"
+  },
+  "dados": {
+    "ocorrencias_na_base": 72529,
+    "excluidas_por_alvo_ausente": 1,
+    "elegiveis": 72528,
+    "treino": 58022,
+    "teste": 14506,
+    "suporte_por_classe_total": {
+      "Com Vítimas Feridas": 56181,
+      "Sem Vítimas": 11138,
+      "Com Vítimas Fatais": 5209
+    },
+    "suporte_por_classe_treino": {
+      "Com Vítimas Feridas": 44945,
+      "Sem Vítimas": 8910,
+      "Com Vítimas Fatais": 4167
+    },
+    "suporte_por_classe_teste": {
+      "Com Vítimas Feridas": 11236,
+      "Sem Vítimas": 2228,
+      "Com Vítimas Fatais": 1042
+    },
+    "classes_com_suporte_abaixo_do_minimo": {},
+    "ocorrencias_em_treino_e_teste": 0
+  },
+  "resultados": {
+    "arvore": {
+      "modelo": "Arvore de decisao",
+      "acuracia_global": 0.7746,
+      "acuracia_balanceada": 0.3333,
+      "macro_f1": 0.291,
+      "por_classe": {
+        "Sem Vítimas": {
+          "precisao": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "suporte": 2228
+        },
+        "Com Vítimas Feridas": {
+          "precisao": 0.7746,
+          "recall": 1.0,
+          "f1": 0.873,
+          "suporte": 11236
+        },
+        "Com Vítimas Fatais": {
+          "precisao": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "suporte": 1042
+        }
+      },
+      "matriz_confusao": [
+        [
+          0,
+          2228,
+          0
+        ],
+        [
+          0,
+          11236,
+          0
+        ],
+        [
+          0,
+          1042,
+          0
+        ]
+      ]
+    },
+    "referencia": {
+      "modelo": "DummyClassifier (most_frequent)",
+      "acuracia_global": 0.7746,
+      "acuracia_balanceada": 0.3333,
+      "macro_f1": 0.291,
+      "por_classe": {
+        "Sem Vítimas": {
+          "precisao": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "suporte": 2228
+        },
+        "Com Vítimas Feridas": {
+          "precisao": 0.7746,
+          "recall": 1.0,
+          "f1": 0.873,
+          "suporte": 11236
+        },
+        "Com Vítimas Fatais": {
+          "precisao": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "suporte": 1042
+        }
+      },
+      "matriz_confusao": [
+        [
+          0,
+          2228,
+          0
+        ],
+        [
+          0,
+          11236,
+          0
+        ],
+        [
+          0,
+          1042,
+          0
+        ]
+      ]
+    }
+  },
+  "arvore_melhor_que_referencia": {
+    "macro_f1": false,
+    "acuracia_balanceada": "False",
+    "acuracia_global": false
+  },
+  "advertencias": [
+    "Estudo retrospectivo: avalia acidentes JA REGISTRADOS. Nao e previsao de periodos futuros.",
+    "Regras da arvore sao padroes do modelo, nao relacoes causais.",
+    "As probabilidades da arvore nao sao risco calibrado, ainda mais com class_weight='balanced'.",
+    "Acuracia global e complementar: com 77% de uma classe, um chute fixo ja acerta muito.",
+    "Nenhum parametro foi escolhido olhando o conjunto de teste."
+  ],
+  "limitacoes": [
+    "A validacao confere conformidade com estas regras explicitas; nao confere se o registro policial descreve corretamente o mundo real.",
+    "Ausencia de nulos nao significa base correta.",
+    "Frequencias de acidentes nao medem risco por viagem, pois nao ha dados de exposicao ao transito.",
+    "A base limpa cobre apenas o periodo do arquivo fornecido."
+  ]
+}

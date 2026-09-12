@@ -1,0 +1,94 @@
+|--- categoricas__faixa_horaria_Madrugada <= 0.500
+|   |--- categoricas__uso_solo_Urbano <= 0.500
+|   |   |--- categoricas__fase_dia_Pleno Dia <= 0.500
+|   |   |   |--- categoricas__tipo_pista_Simples <= 0.500
+|   |   |   |   |--- categoricas__fim_de_semana_Não <= 0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |   |--- categoricas__fim_de_semana_Não >  0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |--- categoricas__tipo_pista_Simples >  0.500
+|   |   |   |   |--- categoricas__fim_de_semana_Sim <= 0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |   |--- categoricas__fim_de_semana_Sim >  0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |--- categoricas__fase_dia_Pleno Dia >  0.500
+|   |   |   |--- categoricas__tipo_pista_Simples <= 0.500
+|   |   |   |   |--- categoricas__tracado_via_Curva <= 0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |   |--- categoricas__tracado_via_Curva >  0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |--- categoricas__tipo_pista_Simples >  0.500
+|   |   |   |   |--- categoricas__tracado_via_Reta <= 0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |   |--- categoricas__tracado_via_Reta >  0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |--- categoricas__uso_solo_Urbano >  0.500
+|   |   |--- categoricas__fim_de_semana_Sim <= 0.500
+|   |   |   |--- categoricas__fase_dia_Plena Noite <= 0.500
+|   |   |   |   |--- categoricas__fase_dia_Amanhecer <= 0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |   |--- categoricas__fase_dia_Amanhecer >  0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |--- categoricas__fase_dia_Plena Noite >  0.500
+|   |   |   |   |--- categoricas__tipo_pista_Dupla <= 0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |   |--- categoricas__tipo_pista_Dupla >  0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |--- categoricas__fim_de_semana_Sim >  0.500
+|   |   |   |--- categoricas__fase_dia_Pleno Dia <= 0.500
+|   |   |   |   |--- categoricas__fase_dia_Amanhecer <= 0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |   |--- categoricas__fase_dia_Amanhecer >  0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |--- categoricas__fase_dia_Pleno Dia >  0.500
+|   |   |   |   |--- categoricas__dia_semana_Domingo <= 0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |   |--- categoricas__dia_semana_Domingo >  0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|--- categoricas__faixa_horaria_Madrugada >  0.500
+|   |--- categoricas__tipo_pista_Simples <= 0.500
+|   |   |--- categoricas__fim_de_semana_Não <= 0.500
+|   |   |   |--- categoricas__mes_5 <= 0.500
+|   |   |   |   |--- categoricas__mes_9 <= 0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |   |--- categoricas__mes_9 >  0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |--- categoricas__mes_5 >  0.500
+|   |   |   |   |--- categoricas__uso_solo_Rural <= 0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |   |--- categoricas__uso_solo_Rural >  0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |--- categoricas__fim_de_semana_Não >  0.500
+|   |   |   |--- categoricas__fase_dia_Plena Noite <= 0.500
+|   |   |   |   |--- categoricas__mes_2 <= 0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |   |--- categoricas__mes_2 >  0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |--- categoricas__fase_dia_Plena Noite >  0.500
+|   |   |   |   |--- categoricas__mes_7 <= 0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |   |--- categoricas__mes_7 >  0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |--- categoricas__tipo_pista_Simples >  0.500
+|   |   |--- categoricas__tracado_via_Reta <= 0.500
+|   |   |   |--- categoricas__dia_semana_Domingo <= 0.500
+|   |   |   |   |--- categoricas__mes_4 <= 0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |   |--- categoricas__mes_4 >  0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |--- categoricas__dia_semana_Domingo >  0.500
+|   |   |   |   |--- categoricas__tracado_via_Curva <= 0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |   |--- categoricas__tracado_via_Curva >  0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |--- categoricas__tracado_via_Reta >  0.500
+|   |   |   |--- categoricas__mes_10 <= 0.500
+|   |   |   |   |--- categoricas__mes_4 <= 0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |   |--- categoricas__mes_4 >  0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |--- categoricas__mes_10 >  0.500
+|   |   |   |   |--- categoricas__fim_de_semana_Não <= 0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas
+|   |   |   |   |--- categoricas__fim_de_semana_Não >  0.500
+|   |   |   |   |   |--- class: Com Vítimas Feridas

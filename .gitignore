@@ -1,0 +1,26 @@
+# Ambiente virtual
+.venv/
+venv/
+env/
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Arquivos temporarios gerados pelos testes
+tests/tmp/
+
+# Base bruta da PRF.
+# O CSV tem 223 MB e passa do limite de 100 MB por arquivo do GitHub, e o ZIP e
+# apenas a versao compactada dele. Baixe os dois conforme a secao 2 do README e
+# coloque em data/raw/. O dicionario em PDF fica versionado por ser pequeno.
+data/raw/*.csv
+data/raw/*.zip
+
+# Sistema operacional e editores
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/

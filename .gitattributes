@@ -1,0 +1,18 @@
+# Codigo-fonte e documentacao: normalizados em LF dentro do repositorio.
+*.py    text eol=lf
+*.md    text eol=lf
+*.json  text eol=lf
+*.txt   text eol=lf
+.gitignore     text eol=lf
+.gitattributes text eol=lf
+
+# Dados exportados: o Git NAO deve mexer nas quebras de linha.
+# Os CSVs sao gravados em UTF-8 com BOM e o validador confere o formato exato do
+# arquivo; alterar CRLF/LF quebraria a comparacao byte a byte do teste de
+# idempotencia da limpeza.
+*.csv   -text
+
+# Binarios
+*.png binary
+*.pdf binary
+*.zip binary

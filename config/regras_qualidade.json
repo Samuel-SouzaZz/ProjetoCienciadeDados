@@ -1,0 +1,570 @@
+{
+  "versao_contrato": "1.0.0",
+  "data_contrato": "2026-09-12",
+  "descricao": "Contrato de qualidade da base limpa de acidentes da PRF, na unidade OCORRENCIA. Cada regra tem severidade e origem. 'origem_regra' indica se a regra vem do dicionario oficial da PRF (confirmada) ou apenas do que foi observado no arquivo (nao confirmada, portanto aviso).",
+  "arquivo_alvo": "data/processed/prf_limpo.csv",
+  "unidade_registro": "uma ocorrencia de acidente (um valor de id)",
+  "fonte": {
+    "base": "acidentes2025_todas_causas_tipos.csv (dados agregados por pessoa, com todas as causas e tipos)",
+    "dicionario": "data/raw/dicionario_acidentes_prf.pdf",
+    "periodo_declarado": "2025-01-01 a 2025-12-31",
+    "observacao_agregacao": "O arquivo bruto tem uma linha por combinacao de pessoa x causa x tipo de acidente. A base limpa e o resultado da agregacao por 'id'. Portanto 'id' repetido no arquivo bruto NAO e duplicata."
+  },
+  "leitura_csv": {
+    "sep": ";",
+    "encoding": "utf-8-sig",
+    "decimal": ",",
+    "quotechar": "\"",
+    "index_exportado": false
+  },
+  "chave_primaria": ["id"],
+  "severidades": {
+    "critico": "Impede a aprovacao da validacao. Falha ou nao verificacao resulta em REPROVADA.",
+    "aviso": "Nao impede a aprovacao, mas obriga o registro em ressalvas.",
+    "informativo": "Apenas registrado, sem efeito no status."
+  },
+  "colunas": {
+    "id": {
+      "papel": "identificador",
+      "tipo": "texto",
+      "regex": "^[0-9]+$",
+      "nulo_permitido": false,
+      "unico": true,
+      "severidade": "critico",
+      "origem_regra": "dicionario",
+      "significado": "Identificador do acidente."
+    },
+    "data_inversa": {
+      "papel": "temporal",
+      "tipo": "data",
+      "formato": "%Y-%m-%d",
+      "regex": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "nulo_permitido": false,
+      "intervalo_data": ["2025-01-01", "2025-12-31"],
+      "severidade": "critico",
+      "origem_regra": "dicionario+observado",
+      "significado": "Data da ocorrencia. O dicionario descreve dd/mm/aaaa, mas o arquivo entrega aaaa-mm-dd; o formato canonico exportado e aaaa-mm-dd."
+    },
+    "horario": {
+      "papel": "temporal",
+      "tipo": "hora",
+      "formato": "%H:%M:%S",
+      "regex": "^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$",
+      "nulo_permitido": false,
+      "severidade": "critico",
+      "origem_regra": "dicionario",
+      "significado": "Horario da ocorrencia."
+    },
+    "dia_semana": {
+      "papel": "entrada_temporal",
+      "tipo": "categoria",
+      "dominio": ["Domingo", "Segunda-feira", "Terca-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sabado"],
+      "dominio_acentuado": ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"],
+      "nulo_permitido": false,
+      "severidade": "critico",
+      "origem_regra": "dicionario",
+      "significado": "Dia da semana da ocorrencia, padronizado com inicial maiuscula."
+    },
+    "uf": {
+      "papel": "recorte_contexto",
+      "tipo": "categoria",
+      "regex": "^[A-Z]{2}$",
+      "dominio": ["AC","AL","AM","AP","BA","CE","DF","ES","GO","MA","MG","MS","MT","PA","PB","PE","PI","PR","RJ","RN","RO","RR","RS","SC","SE","SP","TO"],
+      "nulo_permitido": false,
+      "severidade": "critico",
+      "origem_regra": "dicionario",
+      "significado": "Unidade da Federacao do acidente. Usada para recorte e contexto; NAO entra no modelo principal."
+    },
+    "br": {
+      "papel": "contexto",
+      "tipo": "inteiro",
+      "minimo": 1,
+      "maximo": 999,
+      "nulo_permitido": true,
+      "severidade": "aviso",
+      "origem_regra": "observado",
+      "significado": "Identificador numerico da BR. Ausente em 1.444 linhas brutas."
+    },
+    "km": {
+      "papel": "contexto",
+      "tipo": "decimal",
+      "minimo": 0.0,
+      "maximo": 2000.0,
+      "minimo_dicionario": 0.1,
+      "nulo_permitido": true,
+      "severidade": "aviso",
+      "origem_regra": "dicionario",
+      "significado": "Quilometro da ocorrencia. O dicionario declara minimo de 0,1 km; valores 0 sao reportados como aviso, nao corrigidos."
+    },
+    "municipio": {
+      "papel": "contexto",
+      "tipo": "texto",
+      "nulo_permitido": false,
+      "severidade": "aviso",
+      "origem_regra": "dicionario",
+      "significado": "Municipio de ocorrencia."
+    },
+    "classificacao_acidente": {
+      "papel": "alvo",
+      "tipo": "categoria",
+      "dominio": ["Sem Vitimas", "Com Vitimas Feridas", "Com Vitimas Fatais", "Ignorado"],
+      "dominio_acentuado": ["Sem Vítimas", "Com Vítimas Feridas", "Com Vítimas Fatais", "Ignorado"],
+      "nulo_permitido": true,
+      "nulo_torna_inelegivel": true,
+      "severidade": "critico",
+      "origem_regra": "dicionario",
+      "significado": "VARIAVEL-ALVO: gravidade do acidente. Nunca imputada. Linha com alvo ausente permanece na base sinalizada e fica fora do treino."
+    },
+    "fase_dia": {
+      "papel": "entrada_temporal",
+      "tipo": "categoria",
+      "dominio": ["Amanhecer", "Pleno Dia", "Anoitecer", "Plena Noite"],
+      "nulo_permitido": true,
+      "severidade": "aviso",
+      "origem_regra": "observado",
+      "significado": "Fase do dia registrada pela PRF. O dicionario exemplifica ('Amanhecer, Pleno dia, etc.') sem lista fechada, por isso o dominio e aviso e nao critico."
+    },
+    "sentido_via": {
+      "papel": "contexto",
+      "tipo": "categoria",
+      "dominio": ["Crescente", "Decrescente"],
+      "nulo_permitido": true,
+      "severidade": "critico",
+      "origem_regra": "dicionario",
+      "significado": "Sentido da via. O dicionario fecha o dominio em Crescente/Decrescente; o token 'Nao Informado' do arquivo foi convertido em ausencia."
+    },
+    "condicao_metereologica": {
+      "papel": "entrada_ambiental",
+      "tipo": "categoria",
+      "dominio": ["Ceu Claro", "Sol", "Nublado", "Chuva", "Garoa/Chuvisco", "Nevoeiro/Neblina", "Vento", "Neve"],
+      "dominio_acentuado": ["Céu Claro", "Sol", "Nublado", "Chuva", "Garoa/Chuvisco", "Nevoeiro/Neblina", "Vento", "Neve"],
+      "nulo_permitido": true,
+      "severidade": "aviso",
+      "origem_regra": "observado",
+      "significado": "Condicao meteorologica. O dicionario exemplifica sem fechar a lista. 'Ignorado' foi convertido em ausencia. 'Sol' e 'Ceu Claro' NAO foram unificados: o dicionario nao autoriza essa fusao."
+    },
+    "tipo_pista": {
+      "papel": "entrada_estrutural",
+      "tipo": "categoria",
+      "dominio": ["Simples", "Dupla", "Multipla"],
+      "dominio_acentuado": ["Simples", "Dupla", "Múltipla"],
+      "nulo_permitido": false,
+      "severidade": "critico",
+      "origem_regra": "dicionario",
+      "significado": "Tipo da pista pela quantidade de faixas. Dominio fechado pelo dicionario."
+    },
+    "tracado_via": {
+      "papel": "entrada_estrutural",
+      "tipo": "categoria_multivalorada",
+      "separador_interno": ";",
+      "componentes_permitidos": ["Aclive", "Curva", "Declive", "Desvio Temporario", "Em Obras", "Intersecao de Vias", "Ponte", "Reta", "Retorno Regulamentado", "Rotatoria", "Tunel", "Viaduto"],
+      "componentes_permitidos_acentuado": ["Aclive", "Curva", "Declive", "Desvio Temporário", "Em Obras", "Interseção de Vias", "Ponte", "Reta", "Retorno Regulamentado", "Rotatória", "Túnel", "Viaduto"],
+      "canonico_ordenado": true,
+      "nulo_permitido": false,
+      "severidade": "aviso",
+      "origem_regra": "observado",
+      "significado": "Tracado da via. Campo multivalorado separado por ';' e SEM ordem fixa no arquivo bruto ('Reta;Declive' e 'Declive;Reta'). A limpeza ordena os componentes alfabeticamente, o que reduz 605 rotulos brutos para o conjunto canonico."
+    },
+    "uso_solo": {
+      "papel": "entrada_estrutural",
+      "tipo": "categoria",
+      "dominio": ["Urbano", "Rural"],
+      "nulo_permitido": false,
+      "severidade": "critico",
+      "origem_regra": "dicionario",
+      "significado": "Caracteristica do local. O dicionario define Urbano=Sim e Rural=Nao; os rotulos Sim/Nao foram traduzidos para Urbano/Rural por autorizacao explicita do dicionario."
+    },
+    "latitude": {
+      "papel": "contexto",
+      "tipo": "decimal",
+      "minimo": -34.0,
+      "maximo": 6.0,
+      "nulo_permitido": true,
+      "severidade": "aviso",
+      "origem_regra": "observado",
+      "significado": "Latitude geodesica decimal. Limites sao os do territorio brasileiro."
+    },
+    "longitude": {
+      "papel": "contexto",
+      "tipo": "decimal",
+      "minimo": -75.0,
+      "maximo": -32.0,
+      "nulo_permitido": true,
+      "severidade": "aviso",
+      "origem_regra": "observado",
+      "significado": "Longitude geodesica decimal."
+    },
+    "regional": {
+      "papel": "metadado_origem",
+      "tipo": "texto",
+      "nulo_permitido": true,
+      "severidade": "informativo",
+      "origem_regra": "dicionario",
+      "significado": "Superintendencia regional da PRF. Metadado administrativo, fora do modelo."
+    },
+    "delegacia": {
+      "papel": "metadado_origem",
+      "tipo": "texto",
+      "nulo_permitido": true,
+      "severidade": "informativo",
+      "origem_regra": "dicionario",
+      "significado": "Delegacia da PRF. Metadado administrativo, fora do modelo."
+    },
+    "uop": {
+      "papel": "metadado_origem",
+      "tipo": "texto",
+      "nulo_permitido": true,
+      "severidade": "informativo",
+      "origem_regra": "dicionario",
+      "significado": "Unidade operacional da PRF. Metadado administrativo, fora do modelo."
+    },
+    "ano": {
+      "papel": "derivado_temporal",
+      "tipo": "inteiro",
+      "minimo": 2017,
+      "maximo": 2100,
+      "nulo_permitido": false,
+      "severidade": "critico",
+      "origem_regra": "derivado",
+      "significado": "Ano extraido de data_inversa."
+    },
+    "mes": {
+      "papel": "derivado_temporal",
+      "tipo": "inteiro",
+      "minimo": 1,
+      "maximo": 12,
+      "nulo_permitido": false,
+      "severidade": "critico",
+      "origem_regra": "derivado",
+      "significado": "Mes extraido de data_inversa."
+    },
+    "mes_nome": {
+      "papel": "derivado_temporal",
+      "tipo": "categoria",
+      "dominio": ["Janeiro","Fevereiro","Marco","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"],
+      "dominio_acentuado": ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"],
+      "nulo_permitido": false,
+      "severidade": "aviso",
+      "origem_regra": "derivado",
+      "significado": "Nome do mes, para leitura humana em graficos."
+    },
+    "hora": {
+      "papel": "derivado_temporal",
+      "tipo": "inteiro",
+      "minimo": 0,
+      "maximo": 23,
+      "nulo_permitido": false,
+      "severidade": "critico",
+      "origem_regra": "derivado",
+      "significado": "Hora cheia extraida de horario."
+    },
+    "faixa_horaria": {
+      "papel": "entrada_temporal_derivada",
+      "tipo": "categoria",
+      "dominio": ["Madrugada", "Manha", "Tarde", "Noite"],
+      "dominio_acentuado": ["Madrugada", "Manhã", "Tarde", "Noite"],
+      "limites": {
+        "Madrugada": "00:00:00 a 05:59:59",
+        "Manha": "06:00:00 a 11:59:59",
+        "Tarde": "12:00:00 a 17:59:59",
+        "Noite": "18:00:00 a 23:59:59"
+      },
+      "nulo_permitido": false,
+      "severidade": "critico",
+      "origem_regra": "derivado",
+      "significado": "Faixa de relogio derivada do horario. NAO e a mesma coisa que fase_dia, que e a fase de luz registrada pelo policial."
+    },
+    "fim_de_semana": {
+      "papel": "entrada_temporal_derivada",
+      "tipo": "categoria",
+      "dominio": ["Sim", "Nao"],
+      "dominio_acentuado": ["Sim", "Não"],
+      "nulo_permitido": false,
+      "severidade": "critico",
+      "origem_regra": "derivado",
+      "significado": "Sim quando o dia da semana calculado e sabado ou domingo."
+    },
+    "dia_semana_calculado": {
+      "papel": "derivado_controle",
+      "tipo": "categoria",
+      "dominio": ["Domingo", "Segunda-feira", "Terca-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sabado"],
+      "dominio_acentuado": ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"],
+      "nulo_permitido": false,
+      "severidade": "critico",
+      "origem_regra": "derivado",
+      "significado": "Dia da semana recalculado a partir de data_inversa, usado para conferir o campo original."
+    },
+    "dia_semana_divergente": {
+      "papel": "derivado_controle",
+      "tipo": "categoria",
+      "dominio": ["Sim", "Nao"],
+      "dominio_acentuado": ["Sim", "Não"],
+      "nulo_permitido": false,
+      "severidade": "aviso",
+      "origem_regra": "derivado",
+      "significado": "Sim quando dia_semana registrado difere de dia_semana_calculado."
+    },
+    "qtd_pessoas": {
+      "papel": "desfecho_agregado",
+      "tipo": "inteiro",
+      "minimo": 1,
+      "nulo_permitido": false,
+      "severidade": "critico",
+      "origem_regra": "derivado",
+      "significado": "Pessoas distintas (id, pesid) na ocorrencia. FORA de X: e medida de desfecho."
+    },
+    "qtd_ilesos": {
+      "papel": "desfecho_agregado", "tipo": "inteiro", "minimo": 0,
+      "nulo_permitido": false, "severidade": "critico", "origem_regra": "derivado",
+      "significado": "Pessoas ilesas. FORA de X."
+    },
+    "qtd_feridos_leves": {
+      "papel": "desfecho_agregado", "tipo": "inteiro", "minimo": 0,
+      "nulo_permitido": false, "severidade": "critico", "origem_regra": "derivado",
+      "significado": "Pessoas com lesoes leves. FORA de X."
+    },
+    "qtd_feridos_graves": {
+      "papel": "desfecho_agregado", "tipo": "inteiro", "minimo": 0,
+      "nulo_permitido": false, "severidade": "critico", "origem_regra": "derivado",
+      "significado": "Pessoas com lesoes graves. FORA de X."
+    },
+    "qtd_feridos": {
+      "papel": "desfecho_agregado", "tipo": "inteiro", "minimo": 0,
+      "nulo_permitido": false, "severidade": "critico", "origem_regra": "derivado",
+      "significado": "Soma de feridos leves e graves. FORA de X."
+    },
+    "qtd_mortos": {
+      "papel": "desfecho_agregado", "tipo": "inteiro", "minimo": 0,
+      "nulo_permitido": false, "severidade": "critico", "origem_regra": "derivado",
+      "significado": "Pessoas mortas. FORA de X: revelaria o alvo."
+    },
+    "qtd_estado_fisico_nao_informado": {
+      "papel": "desfecho_agregado", "tipo": "inteiro", "minimo": 0,
+      "nulo_permitido": false, "severidade": "critico", "origem_regra": "derivado",
+      "significado": "Pessoas cujo estado fisico nao foi informado (os quatro indicadores binarios somam zero). FORA de X."
+    },
+    "qtd_veiculos": {
+      "papel": "contexto_agregado", "tipo": "inteiro", "minimo": 0,
+      "nulo_permitido": false, "severidade": "aviso", "origem_regra": "derivado",
+      "significado": "Veiculos distintos (id, id_veiculo). Fora do modelo principal por ser informacao apurada da ocorrencia."
+    },
+    "qtd_causas_distintas": {
+      "papel": "contexto_agregado", "tipo": "inteiro", "minimo": 1,
+      "nulo_permitido": false, "severidade": "aviso", "origem_regra": "derivado",
+      "significado": "Quantidade de causas presumidas distintas registradas."
+    },
+    "qtd_tipos_distintos": {
+      "papel": "contexto_agregado", "tipo": "inteiro", "minimo": 1,
+      "nulo_permitido": false, "severidade": "aviso", "origem_regra": "derivado",
+      "significado": "Quantidade de tipos de acidente distintos registrados."
+    },
+    "causa_principal_acidente": {
+      "papel": "contexto_apurado",
+      "tipo": "texto",
+      "nulo_permitido": true,
+      "severidade": "informativo",
+      "origem_regra": "derivado",
+      "significado": "Causa marcada como principal pelo policial. FORA do modelo principal: e apuracao posterior sobre a ocorrencia, nao condicao temporal/ambiental/estrutural."
+    },
+    "tipo_acidente_principal": {
+      "papel": "contexto_apurado",
+      "tipo": "texto",
+      "nulo_permitido": true,
+      "severidade": "informativo",
+      "origem_regra": "derivado",
+      "significado": "Tipo de acidente de ordem 1 (primeiro evento). FORA do modelo principal, mesmo motivo."
+    },
+    "alvo_ausente": {
+      "papel": "sinalizador",
+      "tipo": "categoria",
+      "dominio": ["Sim", "Nao"],
+      "dominio_acentuado": ["Sim", "Não"],
+      "nulo_permitido": false,
+      "severidade": "critico",
+      "origem_regra": "derivado",
+      "significado": "Sim quando classificacao_acidente esta vazia."
+    },
+    "elegivel_modelo": {
+      "papel": "sinalizador",
+      "tipo": "categoria",
+      "dominio": ["Sim", "Nao"],
+      "dominio_acentuado": ["Sim", "Não"],
+      "nulo_permitido": false,
+      "severidade": "critico",
+      "origem_regra": "derivado",
+      "significado": "Sim quando a ocorrencia pode entrar no treino supervisionado."
+    },
+    "motivo_inelegibilidade": {
+      "papel": "sinalizador",
+      "tipo": "texto",
+      "nulo_permitido": true,
+      "severidade": "informativo",
+      "origem_regra": "derivado",
+      "significado": "Motivo textual, preenchido EXATAMENTE quando elegivel_modelo = Nao."
+    },
+    "entradas_ausentes": {
+      "papel": "sinalizador",
+      "tipo": "texto",
+      "nulo_permitido": true,
+      "severidade": "informativo",
+      "origem_regra": "derivado",
+      "significado": "Lista das entradas do modelo que estao ausentes nesta ocorrencia. E apenas informativo: ausencia em entrada NAO torna o registro inelegivel, porque e tratada por imputacao dentro do Pipeline, ajustado somente no treino."
+    }
+  },
+  "regras_entre_campos": [
+    {
+      "id": "R01",
+      "descricao": "qtd_pessoas deve ser igual a soma de ilesos, feridos leves, feridos graves, mortos e estado fisico nao informado.",
+      "severidade": "critico",
+      "origem_regra": "dicionario+verificado",
+      "detalhe": "Os quatro indicadores sao binarios por pessoa e somam 1, ou 0 quando o estado fisico e 'Nao Informado'."
+    },
+    {
+      "id": "R02",
+      "descricao": "qtd_feridos deve ser igual a qtd_feridos_leves + qtd_feridos_graves.",
+      "severidade": "critico",
+      "origem_regra": "derivado"
+    },
+    {
+      "id": "R03",
+      "descricao": "Quando classificacao_acidente = 'Sem Vitimas', qtd_feridos e qtd_mortos devem ser 0.",
+      "severidade": "critico",
+      "origem_regra": "dicionario+verificado"
+    },
+    {
+      "id": "R04",
+      "descricao": "Quando classificacao_acidente = 'Com Vitimas Fatais', qtd_mortos deve ser >= 1.",
+      "severidade": "critico",
+      "origem_regra": "dicionario+verificado"
+    },
+    {
+      "id": "R05",
+      "descricao": "Quando classificacao_acidente = 'Com Vitimas Feridas', qtd_feridos deve ser >= 1 e qtd_mortos deve ser 0.",
+      "severidade": "critico",
+      "origem_regra": "dicionario+verificado"
+    },
+    {
+      "id": "R06",
+      "descricao": "fim_de_semana = 'Sim' exatamente quando dia_semana_calculado e Sabado ou Domingo.",
+      "severidade": "critico",
+      "origem_regra": "derivado"
+    },
+    {
+      "id": "R07",
+      "descricao": "ano e mes devem corresponder a data_inversa.",
+      "severidade": "critico",
+      "origem_regra": "derivado"
+    },
+    {
+      "id": "R08",
+      "descricao": "hora deve ser a hora de horario, e faixa_horaria deve respeitar os limites declarados no contrato.",
+      "severidade": "critico",
+      "origem_regra": "derivado"
+    },
+    {
+      "id": "R09",
+      "descricao": "dia_semana_calculado deve corresponder ao dia da semana de data_inversa.",
+      "severidade": "critico",
+      "origem_regra": "derivado"
+    },
+    {
+      "id": "R10",
+      "descricao": "alvo_ausente = 'Sim' exatamente quando classificacao_acidente esta vazia.",
+      "severidade": "critico",
+      "origem_regra": "derivado"
+    },
+    {
+      "id": "R11",
+      "descricao": "elegivel_modelo deve ser 'Nao' sempre que alvo_ausente = 'Sim'.",
+      "severidade": "critico",
+      "origem_regra": "derivado"
+    },
+    {
+      "id": "R12",
+      "descricao": "km preenchido deve ser >= 0,1 conforme o dicionario.",
+      "severidade": "aviso",
+      "origem_regra": "dicionario"
+    },
+    {
+      "id": "R13",
+      "descricao": "qtd_veiculos deve ser >= 1.",
+      "severidade": "aviso",
+      "origem_regra": "observado",
+      "detalhe": "Ha ocorrencias sem veiculo identificado no arquivo bruto; por isso aviso e nao critico."
+    },
+    {
+      "id": "R14",
+      "descricao": "latitude e longitude devem estar dentro dos limites do territorio brasileiro.",
+      "severidade": "aviso",
+      "origem_regra": "observado"
+    },
+    {
+      "id": "R15",
+      "descricao": "Nenhuma celula textual deve comecar ou terminar com espaco.",
+      "severidade": "aviso",
+      "origem_regra": "derivado"
+    },
+    {
+      "id": "R16",
+      "descricao": "motivo_inelegibilidade esta preenchido exatamente quando elegivel_modelo = 'Nao'.",
+      "severidade": "critico",
+      "origem_regra": "derivado",
+      "detalhe": "Impede que a coluna de motivo seja usada para registrar observacoes de linhas que continuam elegiveis."
+    }
+  ],
+  "alvo": {
+    "coluna": "classificacao_acidente",
+    "categorias_confirmadas": ["Sem Vítimas", "Com Vítimas Feridas", "Com Vítimas Fatais"],
+    "categoria_prevista_no_dicionario_nao_observada": ["Ignorado"],
+    "nunca_imputar": true,
+    "politica_ausencia": "Permanece na base limpa com alvo_ausente = Sim e elegivel_modelo = Nao."
+  },
+  "entradas_modelo_permitidas": [
+    "dia_semana",
+    "faixa_horaria",
+    "fim_de_semana",
+    "mes",
+    "fase_dia",
+    "condicao_metereologica",
+    "tipo_pista",
+    "tracado_via",
+    "uso_solo"
+  ],
+  "proibidas_em_X": {
+    "vazamento_de_desfecho": ["classificacao_acidente", "qtd_mortos", "qtd_feridos", "qtd_feridos_leves", "qtd_feridos_graves", "qtd_ilesos", "qtd_pessoas", "qtd_estado_fisico_nao_informado", "alvo_ausente", "elegivel_modelo", "motivo_inelegibilidade", "entradas_ausentes"],
+    "identificador_ou_metadado": ["id", "regional", "delegacia", "uop", "municipio", "latitude", "longitude", "br", "km", "data_inversa", "horario", "hora", "ano", "mes_nome", "dia_semana_calculado", "dia_semana_divergente"],
+    "apuracao_posterior_da_ocorrencia": ["causa_principal_acidente", "tipo_acidente_principal", "qtd_causas_distintas", "qtd_tipos_distintos", "qtd_veiculos"],
+    "recorte_nao_modelado": ["uf"]
+  },
+  "politicas_de_ausencia": {
+    "tokens_convertidos_em_ausencia": {
+      "condicao_metereologica": ["Ignorado"],
+      "sentido_via": ["Não Informado"],
+      "estado_fisico": ["Não Informado"],
+      "sexo": ["Não Informado", "Ignorado", "Inválido"],
+      "marca": ["NA/NA"],
+      "ano_fabricacao_veiculo": ["0"],
+      "global": ["NA", "(null)", ""]
+    },
+    "proibido": [
+      "fillna(0) global",
+      "imputar classificacao_acidente",
+      "imputar qtd_mortos, qtd_feridos ou qualquer contagem de vitimas",
+      "remover linha apenas por conter alguma ausencia"
+    ]
+  },
+  "regras_nao_confirmadas": [
+    "O dicionario nao fecha a lista de condicao_metereologica; 'Sol' e 'Ceu Claro' coexistem no arquivo e NAO foram unificados.",
+    "O dicionario nao enumera os valores de tracado_via nem documenta que o campo e multivalorado com ';'.",
+    "O dicionario nao enumera fase_dia de forma fechada.",
+    "O dicionario nao explica por que ano_fabricacao_veiculo aparece como 0 nem por que marca aparece como 'NA/NA'.",
+    "O dicionario declara km minimo de 0,1 mas o arquivo traz valores 0; nao ha regra oficial de correcao, por isso os valores foram preservados e apenas sinalizados.",
+    "O dicionario nao define limite superior de idade; o limite de 120 anos usado na revisao de campos e uma decisao deste projeto, registrada em auditoria."
+  ],
+  "limitacoes_da_auditoria": [
+    "A validacao confere conformidade com estas regras explicitas; nao confere se o registro policial descreve corretamente o mundo real.",
+    "Ausencia de nulos nao significa base correta.",
+    "Frequencias de acidentes nao medem risco por viagem, pois nao ha dados de exposicao ao transito.",
+    "A base limpa cobre apenas o periodo do arquivo fornecido."
+  ]
+}

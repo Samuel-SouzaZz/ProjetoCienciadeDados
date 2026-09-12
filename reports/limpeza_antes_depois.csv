@@ -1,0 +1,20 @@
+﻿metrica;antes;depois
+unidade do registro;pessoa x causa x tipo;ocorrencia de acidente
+linhas;584010;72529
+colunas;37;44
+ids distintos;72529;72529
+duplicatas exatas;0;0
+rotulos distintos em tracado_via;605;230
+categorias de dia_semana;domingo, quarta-feira, quinta-feira, segunda-feira, sexta-feira, sábado, terça-feira;Domingo, Quarta-feira, Quinta-feira, Segunda-feira, Sexta-feira, Sábado, Terça-feira
+categorias de uso_solo;Não, Sim;Rural, Urbano
+celulas de texto corrigidas;-;201
+registros na auditoria;-;20633
+nulos em classificacao_acidente;7;1
+nulos em condicao_metereologica;0;1000
+nulos em sentido_via;0;167
+nulos em fase_dia;0;0
+nulos em tipo_pista;0;0
+nulos em tracado_via;0;0
+nulos em uso_solo;0;0
+nulos em km;1444;167
+nulos em br;1444;167

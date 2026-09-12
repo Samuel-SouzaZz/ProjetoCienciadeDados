@@ -1,0 +1,447 @@
+{
+  "ambiente": {
+    "executado_em": "2026-09-12T14:41:20-03:00",
+    "python": "3.12.6",
+    "sistema": "Windows 10",
+    "pandas": "2.2.3",
+    "scikit_learn": "1.6.1",
+    "matplotlib": "3.10.1"
+  },
+  "arquivo": {
+    "caminho": "C:\\Users\\Administrator\\Desktop\\Ciencia de dados\\data\\raw\\acidentes2025_todas_causas_tipos.csv",
+    "tamanho_bytes": 223019483,
+    "sha256": "b48968a8017a9abda7b6149c894554c7cc3ca1c09257c7dedf2937ebce02e0d3",
+    "configuracao_leitura": {
+      "sep": ";",
+      "encoding": "latin-1",
+      "decimal": ",",
+      "quotechar": "\""
+    },
+    "tokens_ausencia_na_leitura": [
+      "NA",
+      "na",
+      "N/A",
+      "(null)",
+      "NULL",
+      "null",
+      ""
+    ]
+  },
+  "forma": {
+    "linhas": 584010,
+    "colunas": 37,
+    "nomes_colunas": [
+      "id",
+      "pesid",
+      "data_inversa",
+      "dia_semana",
+      "horario",
+      "uf",
+      "br",
+      "km",
+      "municipio",
+      "causa_principal",
+      "causa_acidente",
+      "ordem_tipo_acidente",
+      "tipo_acidente",
+      "classificacao_acidente",
+      "fase_dia",
+      "sentido_via",
+      "condicao_metereologica",
+      "tipo_pista",
+      "tracado_via",
+      "uso_solo",
+      "id_veiculo",
+      "tipo_veiculo",
+      "marca",
+      "ano_fabricacao_veiculo",
+      "tipo_envolvido",
+      "estado_fisico",
+      "idade",
+      "sexo",
+      "ilesos",
+      "feridos_leves",
+      "feridos_graves",
+      "mortos",
+      "latitude",
+      "longitude",
+      "regional",
+      "delegacia",
+      "uop"
+    ],
+    "nomes_duplicados": []
+  },
+  "conformidade_com_dicionario": {
+    "colunas_do_dicionario_ausentes_no_arquivo": [],
+    "colunas_no_arquivo_fora_do_dicionario": [],
+    "divergencias_de_grafia_esperadas": {
+      "classifica??o_acidente": "classificacao_acidente",
+      "condi??o_meteorologica": "condicao_metereologica"
+    }
+  },
+  "unidade_da_linha": {
+    "linhas": 584010,
+    "ids_de_acidente_distintos": 72529,
+    "pares_id_pesid_distintos": 188346,
+    "combinacoes_id_pesid_causa_ordemtipo_distintas": 560828,
+    "linhas_por_ocorrencia_media": 8.052
+  },
+  "duplicatas": {
+    "linhas_identicas_excedentes": 0,
+    "grupos_com_linhas_identicas": 0
+  },
+  "conflitos_de_chave_por_id": {
+    "ocorrencias": 72529,
+    "colunas": {
+      "data_inversa": {
+        "ids_com_mais_de_um_valor": 0,
+        "exemplos_id": []
+      },
+      "dia_semana": {
+        "ids_com_mais_de_um_valor": 0,
+        "exemplos_id": []
+      },
+      "horario": {
+        "ids_com_mais_de_um_valor": 0,
+        "exemplos_id": []
+      },
+      "uf": {
+        "ids_com_mais_de_um_valor": 0,
+        "exemplos_id": []
+      },
+      "br": {
+        "ids_com_mais_de_um_valor": 0,
+        "exemplos_id": []
+      },
+      "km": {
+        "ids_com_mais_de_um_valor": 0,
+        "exemplos_id": []
+      },
+      "municipio": {
+        "ids_com_mais_de_um_valor": 0,
+        "exemplos_id": []
+      },
+      "classificacao_acidente": {
+        "ids_com_mais_de_um_valor": 0,
+        "exemplos_id": []
+      },
+      "fase_dia": {
+        "ids_com_mais_de_um_valor": 0,
+        "exemplos_id": []
+      },
+      "sentido_via": {
+        "ids_com_mais_de_um_valor": 0,
+        "exemplos_id": []
+      },
+      "condicao_metereologica": {
+        "ids_com_mais_de_um_valor": 0,
+        "exemplos_id": []
+      },
+      "tipo_pista": {
+        "ids_com_mais_de_um_valor": 0,
+        "exemplos_id": []
+      },
+      "tracado_via": {
+        "ids_com_mais_de_um_valor": 0,
+        "exemplos_id": []
+      },
+      "uso_solo": {
+        "ids_com_mais_de_um_valor": 0,
+        "exemplos_id": []
+      },
+      "latitude": {
+        "ids_com_mais_de_um_valor": 0,
+        "exemplos_id": []
+      },
+      "longitude": {
+        "ids_com_mais_de_um_valor": 0,
+        "exemplos_id": []
+      },
+      "regional": {
+        "ids_com_mais_de_um_valor": 0,
+        "exemplos_id": []
+      },
+      "delegacia": {
+        "ids_com_mais_de_um_valor": 0,
+        "exemplos_id": []
+      },
+      "uop": {
+        "ids_com_mais_de_um_valor": 0,
+        "exemplos_id": []
+      }
+    }
+  },
+  "somas_de_vitimas": {
+    "soma_ingenua_todas_as_linhas": {
+      "mortos": 27912,
+      "feridos_leves": 179140,
+      "feridos_graves": 66983,
+      "ilesos": 218091
+    },
+    "soma_deduplicada_por_id_pesid": {
+      "mortos": 6043,
+      "feridos_leves": 63532,
+      "feridos_graves": 20018,
+      "ilesos": 76406
+    },
+    "linhas_totais": 584010,
+    "linhas_distintas_id_pesid": 188346,
+    "observacao": "A soma ingenua superestima porque cada pessoa aparece repetida uma vez por combinacao de causa e tipo de acidente."
+  },
+  "datas": {
+    "formato_iso_aaaa_mm_dd": 584010,
+    "formato_br_dd_mm_aaaa": 0,
+    "minima_texto": "2025-01-01",
+    "maxima_texto": "2025-12-31",
+    "observacao_dicionario": "O dicionario descreve data_inversa como dd/mm/aaaa; verificar acima qual formato o arquivo realmente usa."
+  },
+  "idade": {
+    "valores_iguais_a_-1_codigo_de_ausencia": 0,
+    "valores_negativos_diferentes_de_-1": 0
+  },
+  "categorias_resumo": {
+    "dia_semana": {
+      "distintos": 7,
+      "top10": {
+        "sábado": 93778,
+        "domingo": 93672,
+        "sexta-feira": 93659,
+        "segunda-feira": 80118,
+        "quinta-feira": 76512,
+        "quarta-feira": 73941,
+        "terça-feira": 72330
+      }
+    },
+    "uf": {
+      "distintos": 27,
+      "top10": {
+        "MG": 82397,
+        "PR": 70759,
+        "SC": 51403,
+        "RS": 35952,
+        "BA": 33498,
+        "SP": 32280,
+        "RJ": 31474,
+        "GO": 30070,
+        "MT": 26891,
+        "PE": 25046
+      }
+    },
+    "causa_principal": {
+      "distintos": 2,
+      "top10": {
+        "Sim": 346083,
+        "Não": 237927
+      }
+    },
+    "classificacao_acidente": {
+      "distintos": 4,
+      "top10": {
+        "Com Vítimas Feridas": 435193,
+        "Com Vítimas Fatais": 94032,
+        "Sem Vítimas": 54778,
+        "<AUSENTE>": 7
+      }
+    },
+    "fase_dia": {
+      "distintos": 4,
+      "top10": {
+        "Pleno dia": 324063,
+        "Plena Noite": 195169,
+        "Anoitecer": 33480,
+        "Amanhecer": 31298
+      }
+    },
+    "sentido_via": {
+      "distintos": 3,
+      "top10": {
+        "Crescente": 316401,
+        "Decrescente": 266165,
+        "Não Informado": 1444
+      }
+    },
+    "condicao_metereologica": {
+      "distintos": 9,
+      "top10": {
+        "Céu Claro": 364421,
+        "Nublado": 91831,
+        "Chuva": 59783,
+        "Sol": 33526,
+        "Garoa/Chuvisco": 20603,
+        "Ignorado": 7130,
+        "Nevoeiro/Neblina": 5364,
+        "Vento": 1350,
+        "Neve": 2
+      }
+    },
+    "tipo_pista": {
+      "distintos": 3,
+      "top10": {
+        "Simples": 319222,
+        "Dupla": 216150,
+        "Múltipla": 48638
+      }
+    },
+    "tracado_via": {
+      "distintos": 605,
+      "top10": {
+        "Reta": 298900,
+        "Curva": 59456,
+        "Reta;Declive": 21535,
+        "Reta;Aclive": 19733,
+        "Curva;Declive": 17031,
+        "Declive;Reta": 15341,
+        "Aclive;Reta": 14960,
+        "Declive;Curva": 14399,
+        "Reta;Interseção de Vias": 10623,
+        "Interseção de Vias": 10378
+      }
+    },
+    "uso_solo": {
+      "distintos": 2,
+      "top10": {
+        "Não": 358931,
+        "Sim": 225079
+      }
+    },
+    "tipo_veiculo": {
+      "distintos": 26,
+      "top10": {
+        "Automóvel": 190205,
+        "Motocicleta": 117267,
+        "Semireboque": 49862,
+        "Caminhonete": 49712,
+        "Caminhão-trator": 42868,
+        "Caminhão": 34135,
+        "Ônibus": 26789,
+        "<AUSENTE>": 18617,
+        "Camioneta": 13737,
+        "Motoneta": 11568
+      }
+    },
+    "tipo_envolvido": {
+      "distintos": 6,
+      "top10": {
+        "Condutor": 354002,
+        "Passageiro": 154590,
+        "<AUSENTE>": 56801,
+        "Testemunha": 11166,
+        "Pedestre": 7351,
+        "Cavaleiro": 100
+      }
+    },
+    "estado_fisico": {
+      "distintos": 6,
+      "top10": {
+        "Ileso": 218091,
+        "Lesões Leves": 179140,
+        "Lesões Graves": 66983,
+        "<AUSENTE>": 56801,
+        "Não Informado": 35083,
+        "Óbito": 27912
+      }
+    },
+    "sexo": {
+      "distintos": 5,
+      "top10": {
+        "Masculino": 366839,
+        "Feminino": 124116,
+        "<AUSENTE>": 56801,
+        "Não Informado": 35083,
+        "Ignorado": 1171
+      }
+    },
+    "ilesos": {
+      "distintos": 3,
+      "top10": {
+        "0": 309118,
+        "1": 218091,
+        "<AUSENTE>": 56801
+      }
+    },
+    "feridos_leves": {
+      "distintos": 3,
+      "top10": {
+        "0": 348069,
+        "1": 179140,
+        "<AUSENTE>": 56801
+      }
+    },
+    "feridos_graves": {
+      "distintos": 3,
+      "top10": {
+        "0": 460226,
+        "1": 66983,
+        "<AUSENTE>": 56801
+      }
+    },
+    "mortos": {
+      "distintos": 3,
+      "top10": {
+        "0": 499297,
+        "<AUSENTE>": 56801,
+        "1": 27912
+      }
+    },
+    "ordem_tipo_acidente": {
+      "distintos": 14,
+      "top10": {
+        "1": 305947,
+        "2": 164011,
+        "3": 83292,
+        "4": 19862,
+        "5": 6261,
+        "6": 2645,
+        "7": 1084,
+        "8": 504,
+        "9": 282,
+        "10": 86
+      }
+    },
+    "tipo_acidente": {
+      "distintos": 17,
+      "top10": {
+        "Colisão traseira": 86904,
+        "Tombamento": 82415,
+        "Queda de ocupante de veículo": 74532,
+        "Saída de leito carroçável": 72590,
+        "Colisão com objeto": 46252,
+        "Colisão transversal": 44627,
+        "Colisão lateral mesmo sentido": 42226,
+        "Colisão frontal": 39227,
+        "Capotamento": 27569,
+        "Colisão lateral sentido oposto": 20924
+      }
+    },
+    "causa_acidente": {
+      "distintos": 70,
+      "top10": {
+        "Reação tardia ou ineficiente do condutor": 83405,
+        "Ausência de reação do condutor": 72798,
+        "Velocidade Incompatível": 53646,
+        "Acessar a via sem observar a presença dos outros veículos": 41956,
+        "Condutor deixou de manter distância do veículo da frente": 40418,
+        "Manobra de mudança de faixa": 31360,
+        "Ingestão de álcool pelo condutor": 27041,
+        "Transitar na contramão": 23072,
+        "Ultrapassagem Indevida": 19304,
+        "Condutor Dormindo": 17673
+      }
+    },
+    "regional": {
+      "distintos": 29,
+      "top10": {
+        "SPRF-MG": 82277,
+        "SPRF-PR": 70320,
+        "SPRF-SC": 51786,
+        "SPRF-RS": 36005,
+        "SPRF-BA": 32552,
+        "SPRF-SP": 32042,
+        "SPRF-RJ": 31474,
+        "SPRF-MT": 27306,
+        "SPRF-PE": 25842,
+        "SPRF-GO": 22368
+      }
+    }
+  }
+}

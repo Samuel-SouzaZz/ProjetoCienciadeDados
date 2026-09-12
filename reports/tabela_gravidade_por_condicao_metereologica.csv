@@ -1,0 +1,10 @@
+﻿condicao_metereologica;Sem Vítimas;Com Vítimas Feridas;Com Vítimas Fatais;total_no_grupo;pct_Sem Vítimas;pct_Com Vítimas Feridas;pct_Com Vítimas Fatais;grupo_pequeno;pct_do_total_de_acidentes
+(ausente);206;695;99;1000;20.6;69.5;9.9;Não;1.38
+Chuva;1053;4983;402;6438;16.36;77.4;6.24;Não;8.88
+Céu Claro;7159;35797;3418;46374;15.44;77.19;7.37;Não;63.94
+Garoa/Chuvisco;411;1867;144;2422;16.97;77.09;5.95;Não;3.34
+Neve;0;1;0;1;0.0;100.0;0.0;Sim;0.0
+Nevoeiro/Neblina;106;387;60;553;19.17;69.98;10.85;Não;0.76
+Nublado;1673;8932;830;11435;14.63;78.11;7.26;Não;15.77
+Sol;513;3441;247;4201;12.21;81.91;5.88;Não;5.79
+Vento;17;78;9;104;16.35;75.0;8.65;Sim;0.14

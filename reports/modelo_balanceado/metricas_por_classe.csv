@@ -1,0 +1,7 @@
+﻿modelo;classe;precisao;recall;f1;suporte
+Arvore de decisao;Sem Vítimas;0.2271;0.171;0.1951;2228
+Arvore de decisao;Com Vítimas Feridas;0.8305;0.5837;0.6856;11236
+Arvore de decisao;Com Vítimas Fatais;0.1221;0.5777;0.2016;1042
+DummyClassifier (most_frequent);Sem Vítimas;0.0;0.0;0.0;2228
+DummyClassifier (most_frequent);Com Vítimas Feridas;0.7746;1.0;0.873;11236
+DummyClassifier (most_frequent);Com Vítimas Fatais;0.0;0.0;0.0;1042

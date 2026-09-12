@@ -1,0 +1,233 @@
+{
+  "arquivo": "prf_limpo.csv",
+  "versao_contrato": "1.0.0",
+  "leitura": {
+    "sep": ";",
+    "encoding": "utf-8-sig",
+    "decimal": ",",
+    "dtype": "str"
+  },
+  "observacao": "Leia sempre com dtype=str para preservar o texto original e converta depois, conforme o tipo declarado abaixo.",
+  "colunas": {
+    "id": {
+      "tipo": "texto",
+      "papel": "identificador",
+      "nulo_permitido": false
+    },
+    "data_inversa": {
+      "tipo": "data",
+      "papel": "temporal",
+      "nulo_permitido": false
+    },
+    "horario": {
+      "tipo": "hora",
+      "papel": "temporal",
+      "nulo_permitido": false
+    },
+    "dia_semana": {
+      "tipo": "categoria",
+      "papel": "entrada_temporal",
+      "nulo_permitido": false
+    },
+    "dia_semana_calculado": {
+      "tipo": "categoria",
+      "papel": "derivado_controle",
+      "nulo_permitido": false
+    },
+    "dia_semana_divergente": {
+      "tipo": "categoria",
+      "papel": "derivado_controle",
+      "nulo_permitido": false
+    },
+    "ano": {
+      "tipo": "inteiro",
+      "papel": "derivado_temporal",
+      "nulo_permitido": false
+    },
+    "mes": {
+      "tipo": "inteiro",
+      "papel": "derivado_temporal",
+      "nulo_permitido": false
+    },
+    "mes_nome": {
+      "tipo": "categoria",
+      "papel": "derivado_temporal",
+      "nulo_permitido": false
+    },
+    "hora": {
+      "tipo": "inteiro",
+      "papel": "derivado_temporal",
+      "nulo_permitido": false
+    },
+    "faixa_horaria": {
+      "tipo": "categoria",
+      "papel": "entrada_temporal_derivada",
+      "nulo_permitido": false
+    },
+    "fim_de_semana": {
+      "tipo": "categoria",
+      "papel": "entrada_temporal_derivada",
+      "nulo_permitido": false
+    },
+    "uf": {
+      "tipo": "categoria",
+      "papel": "recorte_contexto",
+      "nulo_permitido": false
+    },
+    "br": {
+      "tipo": "inteiro",
+      "papel": "contexto",
+      "nulo_permitido": true
+    },
+    "km": {
+      "tipo": "decimal",
+      "papel": "contexto",
+      "nulo_permitido": true
+    },
+    "municipio": {
+      "tipo": "texto",
+      "papel": "contexto",
+      "nulo_permitido": false
+    },
+    "fase_dia": {
+      "tipo": "categoria",
+      "papel": "entrada_temporal",
+      "nulo_permitido": true
+    },
+    "sentido_via": {
+      "tipo": "categoria",
+      "papel": "contexto",
+      "nulo_permitido": true
+    },
+    "condicao_metereologica": {
+      "tipo": "categoria",
+      "papel": "entrada_ambiental",
+      "nulo_permitido": true
+    },
+    "tipo_pista": {
+      "tipo": "categoria",
+      "papel": "entrada_estrutural",
+      "nulo_permitido": false
+    },
+    "tracado_via": {
+      "tipo": "categoria_multivalorada",
+      "papel": "entrada_estrutural",
+      "nulo_permitido": false
+    },
+    "uso_solo": {
+      "tipo": "categoria",
+      "papel": "entrada_estrutural",
+      "nulo_permitido": false
+    },
+    "classificacao_acidente": {
+      "tipo": "categoria",
+      "papel": "alvo",
+      "nulo_permitido": true
+    },
+    "qtd_pessoas": {
+      "tipo": "inteiro",
+      "papel": "desfecho_agregado",
+      "nulo_permitido": false
+    },
+    "qtd_ilesos": {
+      "tipo": "inteiro",
+      "papel": "desfecho_agregado",
+      "nulo_permitido": false
+    },
+    "qtd_feridos_leves": {
+      "tipo": "inteiro",
+      "papel": "desfecho_agregado",
+      "nulo_permitido": false
+    },
+    "qtd_feridos_graves": {
+      "tipo": "inteiro",
+      "papel": "desfecho_agregado",
+      "nulo_permitido": false
+    },
+    "qtd_feridos": {
+      "tipo": "inteiro",
+      "papel": "desfecho_agregado",
+      "nulo_permitido": false
+    },
+    "qtd_mortos": {
+      "tipo": "inteiro",
+      "papel": "desfecho_agregado",
+      "nulo_permitido": false
+    },
+    "qtd_estado_fisico_nao_informado": {
+      "tipo": "inteiro",
+      "papel": "desfecho_agregado",
+      "nulo_permitido": false
+    },
+    "qtd_veiculos": {
+      "tipo": "inteiro",
+      "papel": "contexto_agregado",
+      "nulo_permitido": false
+    },
+    "qtd_causas_distintas": {
+      "tipo": "inteiro",
+      "papel": "contexto_agregado",
+      "nulo_permitido": false
+    },
+    "qtd_tipos_distintos": {
+      "tipo": "inteiro",
+      "papel": "contexto_agregado",
+      "nulo_permitido": false
+    },
+    "causa_principal_acidente": {
+      "tipo": "texto",
+      "papel": "contexto_apurado",
+      "nulo_permitido": true
+    },
+    "tipo_acidente_principal": {
+      "tipo": "texto",
+      "papel": "contexto_apurado",
+      "nulo_permitido": true
+    },
+    "latitude": {
+      "tipo": "decimal",
+      "papel": "contexto",
+      "nulo_permitido": true
+    },
+    "longitude": {
+      "tipo": "decimal",
+      "papel": "contexto",
+      "nulo_permitido": true
+    },
+    "regional": {
+      "tipo": "texto",
+      "papel": "metadado_origem",
+      "nulo_permitido": true
+    },
+    "delegacia": {
+      "tipo": "texto",
+      "papel": "metadado_origem",
+      "nulo_permitido": true
+    },
+    "uop": {
+      "tipo": "texto",
+      "papel": "metadado_origem",
+      "nulo_permitido": true
+    },
+    "alvo_ausente": {
+      "tipo": "categoria",
+      "papel": "sinalizador",
+      "nulo_permitido": false
+    },
+    "elegivel_modelo": {
+      "tipo": "categoria",
+      "papel": "sinalizador",
+      "nulo_permitido": false
+    },
+    "motivo_inelegibilidade": {
+      "tipo": "texto",
+      "papel": "sinalizador",
+      "nulo_permitido": true
+    },
+    "entradas_ausentes": {
+      "tipo": "texto",
+      "papel": "sinalizador",
+      "nulo_permitido": true
+    }
+  }
+}

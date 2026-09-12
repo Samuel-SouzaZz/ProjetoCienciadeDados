@@ -1,0 +1,19 @@
+﻿metrica;antes_base_bruta;depois_base_limpa
+linhas;584010;72529
+colunas;37;44
+unidade;pessoa x causa x tipo de acidente;ocorrencia de acidente
+ids_distintos;72529;72529
+duplicatas_exatas;0;0
+total de mortos somando a coluna diretamente;27912;6043
+total de mortos contando pessoas distintas (valor correto);6043;6043
+celulas vazias por coluna (total);ver reports/diagnostico_colunas.csv;145621
+celulas vazias em br;ver diagnostico;167
+celulas vazias em km;ver diagnostico;167
+celulas vazias em sentido_via;ver diagnostico;167
+celulas vazias em condicao_metereologica;ver diagnostico;1000
+celulas vazias em classificacao_acidente;ver diagnostico;1
+celulas vazias em regional;ver diagnostico;2
+celulas vazias em delegacia;ver diagnostico;22
+celulas vazias em uop;ver diagnostico;38
+celulas vazias em motivo_inelegibilidade;ver diagnostico;72528
+celulas vazias em entradas_ausentes;ver diagnostico;71529

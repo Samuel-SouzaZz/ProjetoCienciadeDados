@@ -1,0 +1,852 @@
+﻿coluna;valor;frequencia;pct
+dia_semana;sábado;93778;16.0576
+dia_semana;domingo;93672;16.0395
+dia_semana;sexta-feira;93659;16.0372
+dia_semana;segunda-feira;80118;13.7186
+dia_semana;quinta-feira;76512;13.1011
+dia_semana;quarta-feira;73941;12.6609
+dia_semana;terça-feira;72330;12.3851
+uf;MG;82397;14.1088
+uf;PR;70759;12.1161
+uf;SC;51403;8.8017
+uf;RS;35952;6.1561
+uf;BA;33498;5.7359
+uf;SP;32280;5.5273
+uf;RJ;31474;5.3893
+uf;GO;30070;5.1489
+uf;MT;26891;4.6045
+uf;PE;25046;4.2886
+uf;MS;18774;3.2147
+uf;RO;18769;3.2138
+uf;PI;17314;2.9647
+uf;PB;16246;2.7818
+uf;ES;16134;2.7626
+uf;PA;15109;2.5871
+uf;MA;12712;2.1767
+uf;CE;10496;1.7972
+uf;RN;9123;1.5621
+uf;DF;7823;1.3395
+uf;TO;7455;1.2765
+uf;AL;3554;0.6086
+uf;SE;3275;0.5608
+uf;AC;3124;0.5349
+uf;AP;1700;0.2911
+uf;AM;1396;0.239
+uf;RR;1236;0.2116
+causa_principal;Sim;346083;59.2598
+causa_principal;Não;237927;40.7402
+classificacao_acidente;Com Vítimas Feridas;435193;74.5181
+classificacao_acidente;Com Vítimas Fatais;94032;16.1011
+classificacao_acidente;Sem Vítimas;54778;9.3796
+classificacao_acidente;<AUSENTE>;7;0.0012
+fase_dia;Pleno dia;324063;55.4893
+fase_dia;Plena Noite;195169;33.4188
+fase_dia;Anoitecer;33480;5.7328
+fase_dia;Amanhecer;31298;5.3592
+sentido_via;Crescente;316401;54.1773
+sentido_via;Decrescente;266165;45.5754
+sentido_via;Não Informado;1444;0.2473
+condicao_metereologica;Céu Claro;364421;62.3998
+condicao_metereologica;Nublado;91831;15.7242
+condicao_metereologica;Chuva;59783;10.2366
+condicao_metereologica;Sol;33526;5.7407
+condicao_metereologica;Garoa/Chuvisco;20603;3.5279
+condicao_metereologica;Ignorado;7130;1.2209
+condicao_metereologica;Nevoeiro/Neblina;5364;0.9185
+condicao_metereologica;Vento;1350;0.2312
+condicao_metereologica;Neve;2;0.0003
+tipo_pista;Simples;319222;54.6604
+tipo_pista;Dupla;216150;37.0114
+tipo_pista;Múltipla;48638;8.3283
+tracado_via;Reta;298900;51.1806
+tracado_via;Curva;59456;10.1806
+tracado_via;"Reta;Declive";21535;3.6874
+tracado_via;"Reta;Aclive";19733;3.3789
+tracado_via;"Curva;Declive";17031;2.9162
+tracado_via;"Declive;Reta";15341;2.6268
+tracado_via;"Aclive;Reta";14960;2.5616
+tracado_via;"Declive;Curva";14399;2.4655
+tracado_via;"Reta;Interseção de Vias";10623;1.819
+tracado_via;Interseção de Vias;10378;1.777
+tracado_via;"Aclive;Curva";7619;1.3046
+tracado_via;Declive;6987;1.1964
+tracado_via;"Interseção de Vias;Reta";6160;1.0548
+tracado_via;Aclive;6049;1.0358
+tracado_via;"Curva;Aclive";5840;1.0
+tracado_via;Rotatória;5826;0.9976
+tracado_via;"Reta;Em Obras";4593;0.7865
+tracado_via;"Retorno Regulamentado;Reta";4032;0.6904
+tracado_via;"Reta;Ponte";3427;0.5868
+tracado_via;"Em Obras;Reta";3242;0.5551
+tracado_via;Retorno Regulamentado;2910;0.4983
+tracado_via;"Reta;Retorno Regulamentado";2868;0.4911
+tracado_via;"Reta;Viaduto";2124;0.3637
+tracado_via;"Reta;Rotatória";1540;0.2637
+tracado_via;Viaduto;1396;0.239
+tracado_via;"Ponte;Reta";1237;0.2118
+tracado_via;"Interseção de Vias;Rotatória";1167;0.1998
+tracado_via;"Curva;Interseção de Vias";970;0.1661
+tracado_via;"Interseção de Vias;Curva";823;0.1409
+tracado_via;"Declive;Reta;Em Obras";677;0.1159
+tracado_via;Ponte;660;0.113
+tracado_via;"Curva;Em Obras";612;0.1048
+tracado_via;"Viaduto;Reta";576;0.0986
+tracado_via;"Reta;Em Obras;Declive";560;0.0959
+tracado_via;"Reta;Aclive;Interseção de Vias";502;0.086
+tracado_via;"Viaduto;Interseção de Vias";458;0.0784
+tracado_via;"Curva;Retorno Regulamentado";457;0.0783
+tracado_via;"Declive;Em Obras;Curva";455;0.0779
+tracado_via;"Reta;Interseção de Vias;Declive";428;0.0733
+tracado_via;"Rotatória;Interseção de Vias";413;0.0707
+tracado_via;"Aclive;Reta;Viaduto";378;0.0647
+tracado_via;"Rotatória;Reta";370;0.0634
+tracado_via;"Reta;Desvio Temporário";370;0.0634
+tracado_via;"Em Obras;Curva";358;0.0613
+tracado_via;"Aclive;Interseção de Vias;Reta";357;0.0611
+tracado_via;"Reta;Declive;Interseção de Vias";350;0.0599
+tracado_via;"Curva;Rotatória";346;0.0592
+tracado_via;Em Obras;339;0.058
+tracado_via;"Retorno Regulamentado;Curva";335;0.0574
+tracado_via;"Interseção de Vias;Reta;Declive";334;0.0572
+tracado_via;"Interseção de Vias;Declive;Reta";318;0.0545
+tracado_via;"Reta;Em Obras;Desvio Temporário";315;0.0539
+tracado_via;"Em Obras;Declive;Curva";308;0.0527
+tracado_via;"Em Obras;Reta;Desvio Temporário";287;0.0491
+tracado_via;"Interseção de Vias;Retorno Regulamentado";286;0.049
+tracado_via;"Curva;Viaduto";281;0.0481
+tracado_via;Desvio Temporário;278;0.0476
+tracado_via;"Viaduto;Curva";277;0.0474
+tracado_via;"Reta;Declive;Em Obras";271;0.0464
+tracado_via;"Declive;Interseção de Vias";269;0.0461
+tracado_via;"Reta;Interseção de Vias;Retorno Regulamentado";261;0.0447
+tracado_via;"Declive;Ponte";258;0.0442
+tracado_via;"Interseção de Vias;Reta;Rotatória";250;0.0428
+tracado_via;"Reta;Aclive;Viaduto";247;0.0423
+tracado_via;"Reta;Em Obras;Ponte";218;0.0373
+tracado_via;"Reta;Interseção de Vias;Rotatória";209;0.0358
+tracado_via;"Desvio Temporário;Em Obras;Reta";206;0.0353
+tracado_via;"Ponte;Reta;Declive";201;0.0344
+tracado_via;"Aclive;Viaduto";200;0.0342
+tracado_via;"Reta;Viaduto;Declive";200;0.0342
+tracado_via;"Interseção de Vias;Viaduto";196;0.0336
+tracado_via;"Curva;Declive;Em Obras";193;0.033
+tracado_via;"Interseção de Vias;Declive;Curva";189;0.0324
+tracado_via;"Ponte;Reta;Em Obras";183;0.0313
+tracado_via;"Curva;Ponte";180;0.0308
+tracado_via;"Interseção de Vias;Declive";176;0.0301
+tracado_via;"Retorno Regulamentado;Interseção de Vias;Rotatória";170;0.0291
+tracado_via;"Retorno Regulamentado;Interseção de Vias;Aclive;Curva";168;0.0288
+tracado_via;"Retorno Regulamentado;Reta;Interseção de Vias";167;0.0286
+tracado_via;"Aclive;Interseção de Vias";165;0.0283
+tracado_via;"Declive;Viaduto";165;0.0283
+tracado_via;"Reta;Ponte;Em Obras";165;0.0283
+tracado_via;"Desvio Temporário;Reta;Em Obras";164;0.0281
+tracado_via;"Interseção de Vias;Retorno Regulamentado;Reta";162;0.0277
+tracado_via;"Ponte;Curva";161;0.0276
+tracado_via;"Declive;Rotatória";161;0.0276
+tracado_via;"Reta;Interseção de Vias;Viaduto";161;0.0276
+tracado_via;"Reta;Declive;Ponte";159;0.0272
+tracado_via;"Declive;Curva;Ponte";158;0.0271
+tracado_via;"Reta;Declive;Viaduto";158;0.0271
+tracado_via;"Retorno Regulamentado;Interseção de Vias";156;0.0267
+tracado_via;"Reta;Viaduto;Aclive";156;0.0267
+tracado_via;"Declive;Interseção de Vias;Reta";155;0.0265
+tracado_via;"Aclive;Em Obras;Reta";155;0.0265
+tracado_via;"Declive;Reta;Interseção de Vias";152;0.026
+tracado_via;"Aclive;Reta;Em Obras";144;0.0247
+tracado_via;"Reta;Desvio Temporário;Em Obras";141;0.0241
+tracado_via;"Aclive;Reta;Interseção de Vias";139;0.0238
+tracado_via;"Aclive;Curva;Viaduto";139;0.0238
+tracado_via;"Em Obras;Desvio Temporário;Reta";136;0.0233
+tracado_via;"Reta;Em Obras;Aclive";136;0.0233
+tracado_via;"Em Obras;Reta;Declive";134;0.0229
+tracado_via;"Ponte;Curva;Declive";134;0.0229
+tracado_via;"Desvio Temporário;Em Obras";133;0.0228
+tracado_via;"Reta;Retorno Regulamentado;Interseção de Vias";132;0.0226
+tracado_via;"Em Obras;Aclive";130;0.0223
+tracado_via;"Em Obras;Desvio Temporário";129;0.0221
+tracado_via;"Desvio Temporário;Reta";127;0.0217
+tracado_via;"Reta;Aclive;Em Obras";126;0.0216
+tracado_via;"Declive;Ponte;Reta";126;0.0216
+tracado_via;"Reta;Interseção de Vias;Em Obras";125;0.0214
+tracado_via;"Interseção de Vias;Reta;Em Obras";124;0.0212
+tracado_via;"Em Obras;Interseção de Vias";123;0.0211
+tracado_via;"Reta;Interseção de Vias;Aclive";123;0.0211
+tracado_via;"Retorno Regulamentado;Interseção de Vias;Reta";123;0.0211
+tracado_via;"Retorno Regulamentado;Reta;Declive";121;0.0207
+tracado_via;"Interseção de Vias;Em Obras";120;0.0205
+tracado_via;"Retorno Regulamentado;Reta;Aclive";119;0.0204
+tracado_via;"Declive;Reta;Retorno Regulamentado";118;0.0202
+tracado_via;"Reta;Em Obras;Aclive;Desvio Temporário";114;0.0195
+tracado_via;"Aclive;Rotatória";113;0.0193
+tracado_via;"Retorno Regulamentado;Declive";113;0.0193
+tracado_via;"Reta;Declive;Retorno Regulamentado";111;0.019
+tracado_via;"Interseção de Vias;Rotatória;Reta";107;0.0183
+tracado_via;"Ponte;Declive;Curva";106;0.0182
+tracado_via;"Interseção de Vias;Reta;Viaduto";106;0.0182
+tracado_via;"Reta;Ponte;Declive";103;0.0176
+tracado_via;"Rotatória;Retorno Regulamentado";101;0.0173
+tracado_via;"Interseção de Vias;Reta;Retorno Regulamentado";100;0.0171
+tracado_via;"Declive;Retorno Regulamentado";98;0.0168
+tracado_via;"Declive;Em Obras";98;0.0168
+tracado_via;"Interseção de Vias;Aclive;Reta";95;0.0163
+tracado_via;"Retorno Regulamentado;Rotatória";92;0.0158
+tracado_via;"Em Obras;Interseção de Vias;Reta";90;0.0154
+tracado_via;"Interseção de Vias;Reta;Aclive";89;0.0152
+tracado_via;"Ponte;Declive;Reta";87;0.0149
+tracado_via;"Aclive;Viaduto;Reta";87;0.0149
+tracado_via;"Declive;Reta;Ponte";86;0.0147
+tracado_via;"Rotatória;Curva";86;0.0147
+tracado_via;"Reta;Retorno Regulamentado;Aclive";85;0.0146
+tracado_via;"Curva;Interseção de Vias;Rotatória";84;0.0144
+tracado_via;"Curva;Aclive;Ponte";84;0.0144
+tracado_via;"Aclive;Reta;Retorno Regulamentado";83;0.0142
+tracado_via;"Curva;Aclive;Viaduto";83;0.0142
+tracado_via;"Declive;Retorno Regulamentado;Reta";81;0.0139
+tracado_via;"Interseção de Vias;Viaduto;Rotatória";80;0.0137
+tracado_via;"Viaduto;Reta;Aclive";79;0.0135
+tracado_via;"Em Obras;Declive;Reta";77;0.0132
+tracado_via;"Retorno Regulamentado;Declive;Reta";76;0.013
+tracado_via;"Viaduto;Aclive";74;0.0127
+tracado_via;"Retorno Regulamentado;Aclive;Reta";73;0.0125
+tracado_via;"Viaduto;Declive;Reta";72;0.0123
+tracado_via;"Aclive;Reta;Ponte";72;0.0123
+tracado_via;"Declive;Reta;Viaduto";72;0.0123
+tracado_via;"Interseção de Vias;Declive;Reta;Em Obras";72;0.0123
+tracado_via;"Reta;Em Obras;Interseção de Vias";70;0.012
+tracado_via;"Curva;Declive;Retorno Regulamentado";69;0.0118
+tracado_via;"Viaduto;Retorno Regulamentado";69;0.0118
+tracado_via;"Declive;Interseção de Vias;Em Obras";69;0.0118
+tracado_via;"Aclive;Retorno Regulamentado";68;0.0116
+tracado_via;"Viaduto;Rotatória";68;0.0116
+tracado_via;"Interseção de Vias;Curva;Declive";68;0.0116
+tracado_via;"Viaduto;Aclive;Reta";67;0.0115
+tracado_via;"Curva;Interseção de Vias;Declive";66;0.0113
+tracado_via;"Reta;Aclive;Retorno Regulamentado";65;0.0111
+tracado_via;"Curva;Retorno Regulamentado;Declive";65;0.0111
+tracado_via;"Interseção de Vias;Viaduto;Reta";64;0.011
+tracado_via;"Declive;Curva;Interseção de Vias";63;0.0108
+tracado_via;"Interseção de Vias;Aclive;Curva";63;0.0108
+tracado_via;"Retorno Regulamentado;Declive;Curva";61;0.0104
+tracado_via;"Em Obras;Reta;Declive;Interseção de Vias";60;0.0103
+tracado_via;"Reta;Declive;Desvio Temporário";60;0.0103
+tracado_via;"Aclive;Interseção de Vias;Reta;Retorno Regulamentado";60;0.0103
+tracado_via;"Desvio Temporário;Em Obras;Aclive";60;0.0103
+tracado_via;"Rotatória;Reta;Interseção de Vias";59;0.0101
+tracado_via;"Aclive;Curva;Interseção de Vias";58;0.0099
+tracado_via;"Curva;Declive;Interseção de Vias";58;0.0099
+tracado_via;"Aclive;Viaduto;Curva";58;0.0099
+tracado_via;"Em Obras;Interseção de Vias;Rotatória";57;0.0098
+tracado_via;"Ponte;Aclive;Reta";57;0.0098
+tracado_via;"Retorno Regulamentado;Interseção de Vias;Curva";56;0.0096
+tracado_via;"Em Obras;Aclive;Reta";54;0.0092
+tracado_via;"Ponte;Em Obras;Reta";54;0.0092
+tracado_via;"Retorno Regulamentado;Reta;Viaduto";54;0.0092
+tracado_via;"Retorno Regulamentado;Reta;Rotatória";53;0.0091
+tracado_via;"Curva;Declive;Viaduto";52;0.0089
+tracado_via;"Curva;Desvio Temporário";52;0.0089
+tracado_via;"Em Obras;Declive";52;0.0089
+tracado_via;"Curva;Viaduto;Declive";52;0.0089
+tracado_via;"Reta;Aclive;Ponte";51;0.0087
+tracado_via;"Interseção de Vias;Declive;Rotatória";50;0.0086
+tracado_via;"Rotatória;Interseção de Vias;Reta";49;0.0084
+tracado_via;"Aclive;Em Obras";48;0.0082
+tracado_via;"Rotatória;Aclive";48;0.0082
+tracado_via;"Em Obras;Curva;Declive";48;0.0082
+tracado_via;"Reta;Retorno Regulamentado;Túnel;Rotatória;Interseção de Vias";48;0.0082
+tracado_via;"Reta;Interseção de Vias;Em Obras;Desvio Temporário";48;0.0082
+tracado_via;"Reta;Desvio Temporário;Declive;Em Obras";48;0.0082
+tracado_via;"Reta;Desvio Temporário;Ponte";48;0.0082
+tracado_via;"Rotatória;Viaduto";46;0.0079
+tracado_via;"Declive;Curva;Em Obras";46;0.0079
+tracado_via;"Retorno Regulamentado;Curva;Viaduto";45;0.0077
+tracado_via;"Ponte;Reta;Declive;Em Obras";45;0.0077
+tracado_via;"Túnel;Interseção de Vias;Viaduto;Reta";45;0.0077
+tracado_via;"Reta;Viaduto;Interseção de Vias";44;0.0075
+tracado_via;"Curva;Aclive;Interseção de Vias";44;0.0075
+tracado_via;"Em Obras;Reta;Aclive";43;0.0074
+tracado_via;"Aclive;Reta;Rotatória";43;0.0074
+tracado_via;"Interseção de Vias;Curva;Retorno Regulamentado";42;0.0072
+tracado_via;Túnel;42;0.0072
+tracado_via;"Rotatória;Declive";42;0.0072
+tracado_via;"Viaduto;Reta;Declive";42;0.0072
+tracado_via;"Reta;Rotatória;Interseção de Vias";42;0.0072
+tracado_via;"Declive;Em Obras;Reta";41;0.007
+tracado_via;"Reta;Ponte;Aclive";40;0.0068
+tracado_via;"Interseção de Vias;Aclive";40;0.0068
+tracado_via;"Reta;Ponte;Em Obras;Desvio Temporário";40;0.0068
+tracado_via;"Aclive;Viaduto;Interseção de Vias";38;0.0065
+tracado_via;"Curva;Viaduto;Interseção de Vias";38;0.0065
+tracado_via;"Viaduto;Interseção de Vias;Rotatória";37;0.0063
+tracado_via;"Aclive;Desvio Temporário;Ponte;Curva";36;0.0062
+tracado_via;"Declive;Interseção de Vias;Retorno Regulamentado;Viaduto";36;0.0062
+tracado_via;"Curva;Desvio Temporário;Em Obras";36;0.0062
+tracado_via;"Aclive;Curva;Interseção de Vias;Em Obras";36;0.0062
+tracado_via;"Desvio Temporário;Aclive;Curva";36;0.0062
+tracado_via;"Interseção de Vias;Reta;Viaduto;Aclive";36;0.0062
+tracado_via;"Em Obras;Curva;Aclive";36;0.0062
+tracado_via;"Retorno Regulamentado;Curva;Declive";35;0.006
+tracado_via;"Curva;Em Obras;Desvio Temporário";35;0.006
+tracado_via;"Aclive;Curva;Retorno Regulamentado";35;0.006
+tracado_via;"Rotatória;Em Obras";34;0.0058
+tracado_via;"Retorno Regulamentado;Reta;Em Obras";34;0.0058
+tracado_via;"Aclive;Curva;Em Obras";34;0.0058
+tracado_via;"Retorno Regulamentado;Em Obras";34;0.0058
+tracado_via;"Interseção de Vias;Em Obras;Reta";33;0.0057
+tracado_via;"Declive;Viaduto;Curva";32;0.0055
+tracado_via;"Em Obras;Reta;Rotatória";32;0.0055
+tracado_via;"Interseção de Vias;Em Obras;Viaduto;Reta";32;0.0055
+tracado_via;"Retorno Regulamentado;Rotatória;Interseção de Vias";32;0.0055
+tracado_via;"Ponte;Reta;Aclive";32;0.0055
+tracado_via;"Ponte;Aclive;Curva";32;0.0055
+tracado_via;"Túnel;Curva";31;0.0053
+tracado_via;"Retorno Regulamentado;Rotatória;Reta";31;0.0053
+tracado_via;"Rotatória;Interseção de Vias;Curva";31;0.0053
+tracado_via;"Declive;Curva;Retorno Regulamentado";31;0.0053
+tracado_via;"Declive;Viaduto;Reta";30;0.0051
+tracado_via;"Interseção de Vias;Declive;Em Obras";30;0.0051
+tracado_via;"Curva;Rotatória;Aclive";30;0.0051
+tracado_via;"Interseção de Vias;Rotatória;Curva";29;0.005
+tracado_via;"Interseção de Vias;Reta;Rotatória;Aclive";28;0.0048
+tracado_via;"Retorno Regulamentado;Reta;Interseção de Vias;Declive";28;0.0048
+tracado_via;"Rotatória;Viaduto;Curva";28;0.0048
+tracado_via;"Retorno Regulamentado;Reta;Rotatória;Interseção de Vias";28;0.0048
+tracado_via;"Em Obras;Rotatória";27;0.0046
+tracado_via;"Viaduto;Declive";27;0.0046
+tracado_via;"Em Obras;Reta;Ponte";27;0.0046
+tracado_via;"Ponte;Declive";27;0.0046
+tracado_via;"Curva;Declive;Interseção de Vias;Viaduto";27;0.0046
+tracado_via;"Aclive;Interseção de Vias;Curva";27;0.0046
+tracado_via;"Em Obras;Desvio Temporário;Viaduto;Reta";27;0.0046
+tracado_via;"Reta;Rotatória;Declive";27;0.0046
+tracado_via;"Reta;Rotatória;Retorno Regulamentado";26;0.0045
+tracado_via;"Interseção de Vias;Rotatória;Declive";26;0.0045
+tracado_via;"Reta;Retorno Regulamentado;Declive";26;0.0045
+tracado_via;"Aclive;Retorno Regulamentado;Reta";26;0.0045
+tracado_via;"Reta;Em Obras;Rotatória";26;0.0045
+tracado_via;"Curva;Declive;Rotatória";26;0.0045
+tracado_via;"Reta;Túnel";26;0.0045
+tracado_via;"Interseção de Vias;Retorno Regulamentado;Reta;Aclive";26;0.0045
+tracado_via;"Viaduto;Curva;Declive";25;0.0043
+tracado_via;"Interseção de Vias;Viaduto;Declive";25;0.0043
+tracado_via;"Interseção de Vias;Retorno Regulamentado;Rotatória";25;0.0043
+tracado_via;"Aclive;Interseção de Vias;Em Obras;Curva";24;0.0041
+tracado_via;"Retorno Regulamentado;Viaduto";24;0.0041
+tracado_via;"Desvio Temporário;Retorno Regulamentado;Reta;Em Obras;Interseção de Vias";24;0.0041
+tracado_via;"Interseção de Vias;Retorno Regulamentado;Reta;Viaduto";24;0.0041
+tracado_via;"Retorno Regulamentado;Aclive;Interseção de Vias";24;0.0041
+tracado_via;"Retorno Regulamentado;Interseção de Vias;Reta;Túnel;Declive";24;0.0041
+tracado_via;"Retorno Regulamentado;Interseção de Vias;Curva;Rotatória;Viaduto;Declive";24;0.0041
+tracado_via;"Curva;Viaduto;Em Obras";24;0.0041
+tracado_via;"Curva;Rotatória;Declive;Interseção de Vias";24;0.0041
+tracado_via;"Reta;Viaduto;Em Obras;Declive";24;0.0041
+tracado_via;"Reta;Desvio Temporário;Aclive;Em Obras";24;0.0041
+tracado_via;"Aclive;Retorno Regulamentado;Curva";23;0.0039
+tracado_via;"Declive;Interseção de Vias;Rotatória";22;0.0038
+tracado_via;"Desvio Temporário;Curva";22;0.0038
+tracado_via;"Em Obras;Retorno Regulamentado;Reta";22;0.0038
+tracado_via;"Interseção de Vias;Ponte;Curva";22;0.0038
+tracado_via;"Rotatória;Viaduto;Interseção de Vias";22;0.0038
+tracado_via;"Rotatória;Retorno Regulamentado;Interseção de Vias";22;0.0038
+tracado_via;"Retorno Regulamentado;Aclive;Curva";21;0.0036
+tracado_via;"Curva;Interseção de Vias;Viaduto";21;0.0036
+tracado_via;"Declive;Rotatória;Curva";21;0.0036
+tracado_via;"Interseção de Vias;Rotatória;Viaduto";21;0.0036
+tracado_via;"Desvio Temporário;Em Obras;Curva";20;0.0034
+tracado_via;"Túnel;Reta;Declive";20;0.0034
+tracado_via;"Em Obras;Desvio Temporário;Reta;Declive";20;0.0034
+tracado_via;"Ponte;Aclive";20;0.0034
+tracado_via;"Declive;Curva;Viaduto";20;0.0034
+tracado_via;"Túnel;Reta";19;0.0033
+tracado_via;"Em Obras;Reta;Interseção de Vias";19;0.0033
+tracado_via;"Curva;Interseção de Vias;Retorno Regulamentado";19;0.0033
+tracado_via;"Em Obras;Reta;Viaduto";19;0.0033
+tracado_via;"Interseção de Vias;Rotatória;Desvio Temporário;Em Obras";18;0.0031
+tracado_via;"Viaduto;Curva;Aclive";18;0.0031
+tracado_via;"Rotatória;Reta;Aclive;Interseção de Vias;Retorno Regulamentado";18;0.0031
+tracado_via;"Retorno Regulamentado;Curva;Interseção de Vias;Declive";18;0.0031
+tracado_via;"Viaduto;Retorno Regulamentado;Interseção de Vias;Rotatória";18;0.0031
+tracado_via;"Ponte;Curva;Aclive";18;0.0031
+tracado_via;"Reta;Em Obras;Desvio Temporário;Declive";18;0.0031
+tracado_via;"Reta;Desvio Temporário;Em Obras;Aclive";18;0.0031
+tracado_via;"Declive;Curva;Interseção de Vias;Retorno Regulamentado";18;0.0031
+tracado_via;"Reta;Viaduto;Interseção de Vias;Retorno Regulamentado;Rotatória;Em Obras";18;0.0031
+tracado_via;"Interseção de Vias;Viaduto;Curva";17;0.0029
+tracado_via;"Declive;Curva;Rotatória";17;0.0029
+tracado_via;"Aclive;Rotatória;Interseção de Vias";17;0.0029
+tracado_via;"Interseção de Vias;Curva;Rotatória";17;0.0029
+tracado_via;"Aclive;Desvio Temporário;Em Obras;Reta";16;0.0027
+tracado_via;"Reta;Declive;Retorno Regulamentado;Em Obras";16;0.0027
+tracado_via;"Aclive;Interseção de Vias;Rotatória";16;0.0027
+tracado_via;"Rotatória;Reta;Declive";16;0.0027
+tracado_via;"Rotatória;Interseção de Vias;Viaduto";16;0.0027
+tracado_via;"Interseção de Vias;Em Obras;Reta;Declive";16;0.0027
+tracado_via;"Interseção de Vias;Retorno Regulamentado;Curva";16;0.0027
+tracado_via;"Interseção de Vias;Ponte;Curva;Aclive;Viaduto";16;0.0027
+tracado_via;"Viaduto;Reta;Rotatória";16;0.0027
+tracado_via;"Em Obras;Declive;Desvio Temporário";16;0.0027
+tracado_via;"Interseção de Vias;Rotatória;Reta;Declive";16;0.0027
+tracado_via;"Aclive;Reta;Retorno Regulamentado;Interseção de Vias";16;0.0027
+tracado_via;"Desvio Temporário;Aclive";16;0.0027
+tracado_via;"Em Obras;Interseção de Vias;Retorno Regulamentado;Reta";16;0.0027
+tracado_via;"Em Obras;Reta;Desvio Temporário;Interseção de Vias";16;0.0027
+tracado_via;"Desvio Temporário;Aclive;Em Obras";15;0.0026
+tracado_via;"Reta;Em Obras;Declive;Desvio Temporário";15;0.0026
+tracado_via;"Viaduto;Curva;Declive;Em Obras";15;0.0026
+tracado_via;"Reta;Rotatória;Aclive";15;0.0026
+tracado_via;"Viaduto;Reta;Interseção de Vias";15;0.0026
+tracado_via;"Desvio Temporário;Declive;Reta";15;0.0026
+tracado_via;"Desvio Temporário;Em Obras;Reta;Aclive";15;0.0026
+tracado_via;"Interseção de Vias;Curva;Aclive";14;0.0024
+tracado_via;"Interseção de Vias;Em Obras;Curva";14;0.0024
+tracado_via;"Curva;Retorno Regulamentado;Aclive";14;0.0024
+tracado_via;"Reta;Rotatória;Viaduto";14;0.0024
+tracado_via;"Rotatória;Desvio Temporário";14;0.0024
+tracado_via;"Curva;Interseção de Vias;Aclive";14;0.0024
+tracado_via;"Reta;Aclive;Interseção de Vias;Retorno Regulamentado";14;0.0024
+tracado_via;"Interseção de Vias;Desvio Temporário";14;0.0024
+tracado_via;"Interseção de Vias;Rotatória;Retorno Regulamentado";14;0.0024
+tracado_via;"Em Obras;Viaduto";13;0.0022
+tracado_via;"Reta;Interseção de Vias;Viaduto;Declive";13;0.0022
+tracado_via;"Rotatória;Curva;Interseção de Vias";13;0.0022
+tracado_via;"Reta;Interseção de Vias;Ponte";13;0.0022
+tracado_via;"Desvio Temporário;Em Obras;Declive;Curva";13;0.0022
+tracado_via;"Interseção de Vias;Declive;Viaduto";13;0.0022
+tracado_via;"Desvio Temporário;Em Obras;Declive;Reta";13;0.0022
+tracado_via;"Interseção de Vias;Declive;Reta;Viaduto";13;0.0022
+tracado_via;"Aclive;Ponte;Reta";12;0.0021
+tracado_via;"Em Obras;Reta;Desvio Temporário;Viaduto";12;0.0021
+tracado_via;"Curva;Em Obras;Declive";12;0.0021
+tracado_via;"Reta;Interseção de Vias;Viaduto;Rotatória";12;0.0021
+tracado_via;"Desvio Temporário;Reta;Interseção de Vias";12;0.0021
+tracado_via;"Interseção de Vias;Curva;Aclive;Rotatória";12;0.0021
+tracado_via;"Em Obras;Desvio Temporário;Declive";12;0.0021
+tracado_via;"Desvio Temporário;Declive;Viaduto;Reta";12;0.0021
+tracado_via;"Desvio Temporário;Curva;Aclive";12;0.0021
+tracado_via;"Reta;Interseção de Vias;Desvio Temporário";12;0.0021
+tracado_via;"Retorno Regulamentado;Interseção de Vias;Aclive;Reta";12;0.0021
+tracado_via;"Reta;Desvio Temporário;Túnel;Em Obras";12;0.0021
+tracado_via;"Rotatória;Ponte";12;0.0021
+tracado_via;"Viaduto;Interseção de Vias;Reta";12;0.0021
+tracado_via;"Reta;Rotatória;Em Obras";12;0.0021
+tracado_via;"Em Obras;Aclive;Curva;Retorno Regulamentado";12;0.0021
+tracado_via;"Interseção de Vias;Reta;Declive;Em Obras";12;0.0021
+tracado_via;"Em Obras;Interseção de Vias;Viaduto";12;0.0021
+tracado_via;"Retorno Regulamentado;Rotatória;Reta;Interseção de Vias";12;0.0021
+tracado_via;"Em Obras;Retorno Regulamentado;Aclive;Interseção de Vias";12;0.0021
+tracado_via;"Desvio Temporário;Interseção de Vias;Curva";12;0.0021
+tracado_via;"Curva;Túnel";11;0.0019
+tracado_via;"Em Obras;Curva;Desvio Temporário";11;0.0019
+tracado_via;"Aclive;Em Obras;Desvio Temporário";11;0.0019
+tracado_via;"Reta;Em Obras;Retorno Regulamentado";11;0.0019
+tracado_via;"Desvio Temporário;Declive;Em Obras";11;0.0019
+tracado_via;"Aclive;Curva;Interseção de Vias;Rotatória";10;0.0017
+tracado_via;"Viaduto;Declive;Curva";10;0.0017
+tracado_via;"Declive;Interseção de Vias;Viaduto";10;0.0017
+tracado_via;"Viaduto;Retorno Regulamentado;Curva";10;0.0017
+tracado_via;"Curva;Aclive;Rotatória";10;0.0017
+tracado_via;"Declive;Rotatória;Reta";10;0.0017
+tracado_via;"Interseção de Vias;Retorno Regulamentado;Rotatória;Declive";10;0.0017
+tracado_via;"Rotatória;Reta;Interseção de Vias;Aclive";10;0.0017
+tracado_via;"Rotatória;Interseção de Vias;Declive;Curva";10;0.0017
+tracado_via;"Em Obras;Ponte;Curva";10;0.0017
+tracado_via;"Declive;Retorno Regulamentado;Curva";9;0.0015
+tracado_via;"Retorno Regulamentado;Reta;Viaduto;Interseção de Vias";9;0.0015
+tracado_via;"Rotatória;Declive;Interseção de Vias";9;0.0015
+tracado_via;"Interseção de Vias;Retorno Regulamentado;Aclive;Reta";9;0.0015
+tracado_via;"Aclive;Curva;Ponte";9;0.0015
+tracado_via;"Curva;Interseção de Vias;Em Obras";9;0.0015
+tracado_via;"Desvio Temporário;Curva;Em Obras";9;0.0015
+tracado_via;"Declive;Reta;Viaduto;Interseção de Vias";9;0.0015
+tracado_via;"Viaduto;Em Obras;Reta";9;0.0015
+tracado_via;"Reta;Aclive;Rotatória";9;0.0015
+tracado_via;"Interseção de Vias;Viaduto;Retorno Regulamentado;Curva";9;0.0015
+tracado_via;"Em Obras;Interseção de Vias;Ponte";9;0.0015
+tracado_via;"Retorno Regulamentado;Curva;Aclive";9;0.0015
+tracado_via;"Interseção de Vias;Rotatória;Em Obras";9;0.0015
+tracado_via;"Rotatória;Aclive;Reta";9;0.0015
+tracado_via;"Declive;Reta;Desvio Temporário";9;0.0015
+tracado_via;"Reta;Declive;Retorno Regulamentado;Interseção de Vias";8;0.0014
+tracado_via;"Desvio Temporário;Reta;Retorno Regulamentado";8;0.0014
+tracado_via;"Interseção de Vias;Rotatória;Retorno Regulamentado;Curva";8;0.0014
+tracado_via;"Curva;Aclive;Retorno Regulamentado";8;0.0014
+tracado_via;"Desvio Temporário;Aclive;Curva;Em Obras";8;0.0014
+tracado_via;"Interseção de Vias;Desvio Temporário;Em Obras;Reta";8;0.0014
+tracado_via;"Rotatória;Desvio Temporário;Em Obras";8;0.0014
+tracado_via;"Reta;Retorno Regulamentado;Rotatória;Interseção de Vias";8;0.0014
+tracado_via;"Em Obras;Retorno Regulamentado;Curva";8;0.0014
+tracado_via;"Reta;Declive;Em Obras;Desvio Temporário";8;0.0014
+tracado_via;"Reta;Aclive;Interseção de Vias;Rotatória";8;0.0014
+tracado_via;"Reta;Desvio Temporário;Declive";8;0.0014
+tracado_via;"Aclive;Curva;Rotatória";8;0.0014
+tracado_via;"Curva;Rotatória;Interseção de Vias;Declive";8;0.0014
+tracado_via;"Curva;Viaduto;Declive;Interseção de Vias";8;0.0014
+tracado_via;"Interseção de Vias;Reta;Ponte";8;0.0014
+tracado_via;"Curva;Ponte;Declive";8;0.0014
+tracado_via;"Curva;Viaduto;Retorno Regulamentado";8;0.0014
+tracado_via;"Reta;Aclive;Desvio Temporário;Em Obras";8;0.0014
+tracado_via;"Reta;Interseção de Vias;Rotatória;Viaduto";8;0.0014
+tracado_via;"Rotatória;Retorno Regulamentado;Curva";8;0.0014
+tracado_via;"Viaduto;Declive;Rotatória";8;0.0014
+tracado_via;"Interseção de Vias;Retorno Regulamentado;Declive;Curva";8;0.0014
+tracado_via;"Interseção de Vias;Viaduto;Rotatória;Ponte";8;0.0014
+tracado_via;"Curva;Viaduto;Aclive";7;0.0012
+tracado_via;"Desvio Temporário;Em Obras;Declive";7;0.0012
+tracado_via;"Retorno Regulamentado;Interseção de Vias;Em Obras;Reta";7;0.0012
+tracado_via;"Viaduto;Rotatória;Interseção de Vias";6;0.001
+tracado_via;"Viaduto;Curva;Retorno Regulamentado";6;0.001
+tracado_via;"Viaduto;Retorno Regulamentado;Reta";6;0.001
+tracado_via;"Em Obras;Curva;Interseção de Vias";6;0.001
+tracado_via;"Rotatória;Reta;Retorno Regulamentado;Declive";6;0.001
+tracado_via;"Declive;Viaduto;Interseção de Vias;Reta";6;0.001
+tracado_via;"Interseção de Vias;Curva;Desvio Temporário;Em Obras";6;0.001
+tracado_via;"Em Obras;Desvio Temporário;Aclive";6;0.001
+tracado_via;"Curva;Aclive;Em Obras";6;0.001
+tracado_via;"Interseção de Vias;Aclive;Reta;Rotatória";6;0.001
+tracado_via;"Reta;Em Obras;Desvio Temporário;Interseção de Vias";6;0.001
+tracado_via;"Reta;Viaduto;Em Obras";6;0.001
+tracado_via;"Interseção de Vias;Aclive;Em Obras;Reta";6;0.001
+tracado_via;"Retorno Regulamentado;Interseção de Vias;Viaduto";6;0.001
+tracado_via;"Retorno Regulamentado;Interseção de Vias;Viaduto;Reta";6;0.001
+tracado_via;"Em Obras;Declive;Reta;Rotatória";6;0.001
+tracado_via;"Declive;Viaduto;Retorno Regulamentado";6;0.001
+tracado_via;"Declive;Viaduto;Rotatória";6;0.001
+tracado_via;"Retorno Regulamentado;Interseção de Vias;Aclive;Viaduto";6;0.001
+tracado_via;"Reta;Interseção de Vias;Túnel";6;0.001
+tracado_via;"Viaduto;Curva;Interseção de Vias";6;0.001
+tracado_via;"Reta;Aclive;Interseção de Vias;Viaduto";6;0.001
+tracado_via;"Curva;Rotatória;Viaduto";6;0.001
+tracado_via;"Declive;Desvio Temporário";6;0.001
+tracado_via;"Em Obras;Aclive;Viaduto;Reta";6;0.001
+tracado_via;"Reta;Declive;Rotatória";6;0.001
+tracado_via;"Reta;Viaduto;Interseção de Vias;Declive";6;0.001
+tracado_via;"Ponte;Interseção de Vias;Reta";6;0.001
+tracado_via;"Interseção de Vias;Curva;Retorno Regulamentado;Declive";6;0.001
+tracado_via;"Interseção de Vias;Viaduto;Retorno Regulamentado";6;0.001
+tracado_via;"Em Obras;Rotatória;Reta";6;0.001
+tracado_via;"Interseção de Vias;Declive;Rotatória;Curva";6;0.001
+tracado_via;"Declive;Reta;Interseção de Vias;Retorno Regulamentado";6;0.001
+tracado_via;"Declive;Viaduto;Interseção de Vias";5;0.0009
+tracado_via;"Retorno Regulamentado;Curva;Interseção de Vias";5;0.0009
+tracado_via;"Retorno Regulamentado;Rotatória;Viaduto";5;0.0009
+tracado_via;"Retorno Regulamentado;Interseção de Vias;Viaduto;Rotatória;Declive";5;0.0009
+tracado_via;"Reta;Viaduto;Retorno Regulamentado";5;0.0009
+tracado_via;"Interseção de Vias;Retorno Regulamentado;Reta;Rotatória";5;0.0009
+tracado_via;"Em Obras;Aclive;Curva";5;0.0009
+tracado_via;"Em Obras;Desvio Temporário;Curva";5;0.0009
+tracado_via;"Curva;Interseção de Vias;Aclive;Rotatória";5;0.0009
+tracado_via;"Curva;Retorno Regulamentado;Viaduto";5;0.0009
+tracado_via;"Desvio Temporário;Declive;Em Obras;Viaduto";5;0.0009
+tracado_via;"Retorno Regulamentado;Reta;Interseção de Vias;Aclive";5;0.0009
+tracado_via;"Curva;Retorno Regulamentado;Interseção de Vias";5;0.0009
+tracado_via;"Aclive;Interseção de Vias;Retorno Regulamentado;Reta";5;0.0009
+tracado_via;"Rotatória;Interseção de Vias;Declive";5;0.0009
+tracado_via;"Túnel;Aclive;Reta";5;0.0009
+tracado_via;"Retorno Regulamentado;Interseção de Vias;Reta;Rotatória";4;0.0007
+tracado_via;"Declive;Interseção de Vias;Reta;Rotatória";4;0.0007
+tracado_via;"Túnel;Declive;Curva";4;0.0007
+tracado_via;"Aclive;Interseção de Vias;Viaduto";4;0.0007
+tracado_via;"Ponte;Desvio Temporário;Em Obras";4;0.0007
+tracado_via;"Viaduto;Aclive;Curva";4;0.0007
+tracado_via;"Interseção de Vias;Túnel;Reta;Declive";4;0.0007
+tracado_via;"Rotatória;Retorno Regulamentado;Viaduto";4;0.0007
+tracado_via;"Retorno Regulamentado;Aclive;Em Obras";4;0.0007
+tracado_via;"Em Obras;Desvio Temporário;Declive;Reta";4;0.0007
+tracado_via;"Reta;Declive;Rotatória;Retorno Regulamentado";4;0.0007
+tracado_via;"Retorno Regulamentado;Aclive";4;0.0007
+tracado_via;"Reta;Retorno Regulamentado;Aclive;Rotatória";4;0.0007
+tracado_via;"Retorno Regulamentado;Interseção de Vias;Aclive;Reta;Rotatória";4;0.0007
+tracado_via;"Em Obras;Rotatória;Interseção de Vias;Viaduto";4;0.0007
+tracado_via;"Desvio Temporário;Em Obras;Reta;Declive";4;0.0007
+tracado_via;"Em Obras;Túnel;Reta";4;0.0007
+tracado_via;"Declive;Rotatória;Viaduto";4;0.0007
+tracado_via;"Em Obras;Viaduto;Reta";4;0.0007
+tracado_via;"Reta;Declive;Interseção de Vias;Em Obras";4;0.0007
+tracado_via;"Curva;Interseção de Vias;Em Obras;Desvio Temporário";4;0.0007
+tracado_via;"Retorno Regulamentado;Reta;Interseção de Vias;Rotatória;Em Obras";4;0.0007
+tracado_via;"Retorno Regulamentado;Interseção de Vias;Desvio Temporário;Em Obras;Reta";4;0.0007
+tracado_via;"Interseção de Vias;Aclive;Viaduto;Reta";4;0.0007
+tracado_via;"Retorno Regulamentado;Curva;Túnel;Viaduto";4;0.0007
+tracado_via;"Desvio Temporário;Reta;Declive";4;0.0007
+tracado_via;"Interseção de Vias;Em Obras;Reta;Ponte";4;0.0007
+tracado_via;"Declive;Interseção de Vias;Curva";4;0.0007
+tracado_via;"Viaduto;Curva;Ponte";4;0.0007
+tracado_via;"Rotatória;Interseção de Vias;Viaduto;Retorno Regulamentado";4;0.0007
+tracado_via;"Declive;Rotatória;Interseção de Vias";4;0.0007
+tracado_via;"Ponte;Viaduto";4;0.0007
+tracado_via;"Retorno Regulamentado;Rotatória;Aclive;Reta";4;0.0007
+tracado_via;"Viaduto;Rotatória;Retorno Regulamentado";3;0.0005
+tracado_via;"Declive;Retorno Regulamentado;Interseção de Vias;Rotatória;Desvio Temporário";3;0.0005
+tracado_via;"Desvio Temporário;Em Obras;Reta;Interseção de Vias;Retorno Regulamentado;Rotatória";3;0.0005
+tracado_via;"Reta;Retorno Regulamentado;Viaduto";3;0.0005
+tracado_via;"Interseção de Vias;Viaduto;Em Obras";3;0.0005
+tracado_via;"Em Obras;Viaduto;Rotatória";3;0.0005
+tracado_via;"Rotatória;Aclive;Curva";3;0.0005
+tracado_via;"Rotatória;Reta;Retorno Regulamentado";3;0.0005
+tracado_via;"Desvio Temporário;Em Obras;Rotatória";3;0.0005
+tracado_via;"Declive;Reta;Túnel";3;0.0005
+tracado_via;"Interseção de Vias;Retorno Regulamentado;Em Obras;Curva";3;0.0005
+tracado_via;"Curva;Aclive;Desvio Temporário;Em Obras";3;0.0005
+tracado_via;"Curva;Viaduto;Rotatória";3;0.0005
+tracado_via;"Em Obras;Curva;Rotatória";3;0.0005
+tracado_via;"Em Obras;Retorno Regulamentado";3;0.0005
+tracado_via;"Reta;Aclive;Em Obras;Desvio Temporário";3;0.0005
+tracado_via;"Desvio Temporário;Declive;Curva";3;0.0005
+tracado_via;"Reta;Em Obras;Viaduto";3;0.0005
+tracado_via;"Interseção de Vias;Rotatória;Aclive";3;0.0005
+tracado_via;"Retorno Regulamentado;Interseção de Vias;Viaduto;Curva";3;0.0005
+tracado_via;"Ponte;Em Obras";3;0.0005
+tracado_via;"Reta;Rotatória;Interseção de Vias;Em Obras";3;0.0005
+tracado_via;"Retorno Regulamentado;Curva;Rotatória;Interseção de Vias";3;0.0005
+tracado_via;"Desvio Temporário;Retorno Regulamentado;Em Obras";3;0.0005
+tracado_via;"Interseção de Vias;Túnel;Curva";2;0.0003
+tracado_via;"Em Obras;Interseção de Vias;Reta;Rotatória";2;0.0003
+tracado_via;"Declive;Ponte;Curva";2;0.0003
+tracado_via;"Declive;Curva;Interseção de Vias;Viaduto";2;0.0003
+tracado_via;"Interseção de Vias;Rotatória;Viaduto;Retorno Regulamentado";2;0.0003
+tracado_via;"Curva;Rotatória;Interseção de Vias;Viaduto";2;0.0003
+tracado_via;"Desvio Temporário;Em Obras;Viaduto";2;0.0003
+tracado_via;"Em Obras;Aclive;Desvio Temporário;Reta";2;0.0003
+tracado_via;"Retorno Regulamentado;Viaduto;Rotatória";2;0.0003
+tracado_via;"Curva;Desvio Temporário;Em Obras;Aclive";2;0.0003
+tracado_via;"Declive;Curva;Desvio Temporário";2;0.0003
+tracado_via;"Rotatória;Desvio Temporário;Reta;Em Obras";2;0.0003
+tracado_via;"Desvio Temporário;Interseção de Vias";2;0.0003
+tracado_via;"Reta;Ponte;Interseção de Vias";2;0.0003
+tracado_via;"Curva;Interseção de Vias;Viaduto;Declive";2;0.0003
+tracado_via;"Curva;Em Obras;Viaduto;Declive";2;0.0003
+tracado_via;"Interseção de Vias;Retorno Regulamentado;Viaduto";2;0.0003
+tracado_via;"Curva;Aclive;Retorno Regulamentado;Viaduto";2;0.0003
+tracado_via;"Em Obras;Interseção de Vias;Desvio Temporário";2;0.0003
+tracado_via;"Retorno Regulamentado;Curva;Rotatória";2;0.0003
+tracado_via;"Interseção de Vias;Rotatória;Desvio Temporário";2;0.0003
+tracado_via;"Reta;Interseção de Vias;Rotatória;Retorno Regulamentado";2;0.0003
+tracado_via;"Curva;Rotatória;Interseção de Vias";2;0.0003
+tracado_via;"Interseção de Vias;Reta;Viaduto;Retorno Regulamentado";2;0.0003
+tracado_via;"Ponte;Em Obras;Reta;Declive";2;0.0003
+tracado_via;"Reta;Aclive;Em Obras;Viaduto";2;0.0003
+tracado_via;"Desvio Temporário;Em Obras;Aclive;Curva";2;0.0003
+tracado_via;"Viaduto;Curva;Retorno Regulamentado;Declive";2;0.0003
+tracado_via;"Declive;Interseção de Vias;Viaduto;Reta";2;0.0003
+tracado_via;"Curva;Rotatória;Em Obras";2;0.0003
+tracado_via;"Reta;Declive;Em Obras;Viaduto";2;0.0003
+tracado_via;"Declive;Interseção de Vias;Retorno Regulamentado;Reta";2;0.0003
+tracado_via;"Retorno Regulamentado;Desvio Temporário;Em Obras";2;0.0003
+tracado_via;"Viaduto;Interseção de Vias;Curva";2;0.0003
+tracado_via;"Viaduto;Retorno Regulamentado;Interseção de Vias";2;0.0003
+tracado_via;"Reta;Interseção de Vias;Desvio Temporário;Em Obras";2;0.0003
+tracado_via;"Rotatória;Interseção de Vias;Em Obras";2;0.0003
+tracado_via;"Interseção de Vias;Curva;Viaduto";2;0.0003
+tracado_via;"Desvio Temporário;Interseção de Vias;Curva;Em Obras";2;0.0003
+tracado_via;"Declive;Interseção de Vias;Retorno Regulamentado";2;0.0003
+tracado_via;"Aclive;Curva;Túnel";2;0.0003
+tracado_via;"Interseção de Vias;Reta;Viaduto;Rotatória";2;0.0003
+tracado_via;"Interseção de Vias;Reta;Aclive;Em Obras";2;0.0003
+tracado_via;"Aclive;Em Obras;Curva";2;0.0003
+tracado_via;"Viaduto;Reta;Interseção de Vias;Rotatória";2;0.0003
+tracado_via;"Interseção de Vias;Declive;Reta;Rotatória";2;0.0003
+tracado_via;"Retorno Regulamentado;Rotatória;Curva";2;0.0003
+tracado_via;"Interseção de Vias;Viaduto;Rotatória;Curva";1;0.0002
+tracado_via;"Em Obras;Viaduto;Desvio Temporário";1;0.0002
+tracado_via;"Rotatória;Retorno Regulamentado;Declive;Viaduto;Curva";1;0.0002
+tracado_via;"Retorno Regulamentado;Viaduto;Reta";1;0.0002
+tracado_via;"Reta;Em Obras;Declive;Desvio Temporário;Ponte";1;0.0002
+tracado_via;"Viaduto;Interseção de Vias;Ponte;Reta;Em Obras";1;0.0002
+tracado_via;"Túnel;Interseção de Vias;Viaduto";1;0.0002
+tracado_via;"Interseção de Vias;Curva;Rotatória;Viaduto";1;0.0002
+tracado_via;"Desvio Temporário;Reta;Em Obras;Aclive";1;0.0002
+tracado_via;"Desvio Temporário;Em Obras;Viaduto;Declive";1;0.0002
+tracado_via;"Declive;Interseção de Vias;Viaduto;Curva";1;0.0002
+tracado_via;"Em Obras;Desvio Temporário;Rotatória;Interseção de Vias;Viaduto";1;0.0002
+tracado_via;"Interseção de Vias;Em Obras;Viaduto";1;0.0002
+tracado_via;"Em Obras;Desvio Temporário;Retorno Regulamentado";1;0.0002
+tracado_via;"Interseção de Vias;Rotatória;Declive;Curva";1;0.0002
+tracado_via;"Retorno Regulamentado;Aclive;Viaduto;Curva";1;0.0002
+tracado_via;"Em Obras;Aclive;Rotatória";1;0.0002
+uso_solo;Não;358931;61.4597
+uso_solo;Sim;225079;38.5403
+tipo_veiculo;Automóvel;190205;32.5688
+tipo_veiculo;Motocicleta;117267;20.0796
+tipo_veiculo;Semireboque;49862;8.5379
+tipo_veiculo;Caminhonete;49712;8.5122
+tipo_veiculo;Caminhão-trator;42868;7.3403
+tipo_veiculo;Caminhão;34135;5.8449
+tipo_veiculo;Ônibus;26789;4.5871
+tipo_veiculo;<AUSENTE>;18617;3.1878
+tipo_veiculo;Camioneta;13737;2.3522
+tipo_veiculo;Motoneta;11568;1.9808
+tipo_veiculo;Utilitário;10269;1.7584
+tipo_veiculo;Reboque;5801;0.9933
+tipo_veiculo;Micro-ônibus;5365;0.9186
+tipo_veiculo;Bicicleta;4960;0.8493
+tipo_veiculo;Ciclomotor;1276;0.2185
+tipo_veiculo;Outros;984;0.1685
+tipo_veiculo;Trator de rodas;170;0.0291
+tipo_veiculo;Carroça-charrete;149;0.0255
+tipo_veiculo;Motor-casa;144;0.0247
+tipo_veiculo;Triciclo;48;0.0082
+tipo_veiculo;Trator de esteira;31;0.0053
+tipo_veiculo;Carro de mão;28;0.0048
+tipo_veiculo;Trator misto;9;0.0015
+tipo_veiculo;Quadriciclo;9;0.0015
+tipo_veiculo;Trem-bonde;5;0.0009
+tipo_veiculo;Chassi-plataforma;2;0.0003
+tipo_envolvido;Condutor;354002;60.6157
+tipo_envolvido;Passageiro;154590;26.4704
+tipo_envolvido;<AUSENTE>;56801;9.726
+tipo_envolvido;Testemunha;11166;1.912
+tipo_envolvido;Pedestre;7351;1.2587
+tipo_envolvido;Cavaleiro;100;0.0171
+estado_fisico;Ileso;218091;37.3437
+estado_fisico;Lesões Leves;179140;30.6741
+estado_fisico;Lesões Graves;66983;11.4695
+estado_fisico;<AUSENTE>;56801;9.726
+estado_fisico;Não Informado;35083;6.0073
+estado_fisico;Óbito;27912;4.7794
+sexo;Masculino;366839;62.8138
+sexo;Feminino;124116;21.2524
+sexo;<AUSENTE>;56801;9.726
+sexo;Não Informado;35083;6.0073
+sexo;Ignorado;1171;0.2005
+ilesos;0;309118;52.9303
+ilesos;1;218091;37.3437
+ilesos;<AUSENTE>;56801;9.726
+feridos_leves;0;348069;59.5998
+feridos_leves;1;179140;30.6741
+feridos_leves;<AUSENTE>;56801;9.726
+feridos_graves;0;460226;78.8045
+feridos_graves;1;66983;11.4695
+feridos_graves;<AUSENTE>;56801;9.726
+mortos;0;499297;85.4946
+mortos;<AUSENTE>;56801;9.726
+mortos;1;27912;4.7794
+ordem_tipo_acidente;1;305947;52.3873
+ordem_tipo_acidente;2;164011;28.0836
+ordem_tipo_acidente;3;83292;14.2621
+ordem_tipo_acidente;4;19862;3.401
+ordem_tipo_acidente;5;6261;1.0721
+ordem_tipo_acidente;6;2645;0.4529
+ordem_tipo_acidente;7;1084;0.1856
+ordem_tipo_acidente;8;504;0.0863
+ordem_tipo_acidente;9;282;0.0483
+ordem_tipo_acidente;10;86;0.0147
+ordem_tipo_acidente;14;9;0.0015
+ordem_tipo_acidente;13;9;0.0015
+ordem_tipo_acidente;12;9;0.0015
+ordem_tipo_acidente;11;9;0.0015
+tipo_acidente;Colisão traseira;86904;14.8806
+tipo_acidente;Tombamento;82415;14.1119
+tipo_acidente;Queda de ocupante de veículo;74532;12.7621
+tipo_acidente;Saída de leito carroçável;72590;12.4296
+tipo_acidente;Colisão com objeto;46252;7.9197
+tipo_acidente;Colisão transversal;44627;7.6415
+tipo_acidente;Colisão lateral mesmo sentido;42226;7.2304
+tipo_acidente;Colisão frontal;39227;6.7168
+tipo_acidente;Capotamento;27569;4.7206
+tipo_acidente;Colisão lateral sentido oposto;20924;3.5828
+tipo_acidente;Atropelamento de Pedestre;15556;2.6637
+tipo_acidente;Engavetamento;13152;2.252
+tipo_acidente;Incêndio;6777;1.1604
+tipo_acidente;Derramamento de carga;6188;1.0596
+tipo_acidente;Atropelamento de Animal;3245;0.5556
+tipo_acidente;Eventos atípicos;1808;0.3096
+tipo_acidente;Sinistro pessoal de trânsito;18;0.0031
+causa_acidente;Reação tardia ou ineficiente do condutor;83405;14.2814
+causa_acidente;Ausência de reação do condutor;72798;12.4652
+causa_acidente;Velocidade Incompatível;53646;9.1858
+causa_acidente;Acessar a via sem observar a presença dos outros veículos;41956;7.1841
+causa_acidente;Condutor deixou de manter distância do veículo da frente;40418;6.9208
+causa_acidente;Manobra de mudança de faixa;31360;5.3698
+causa_acidente;Ingestão de álcool pelo condutor;27041;4.6302
+causa_acidente;Transitar na contramão;23072;3.9506
+causa_acidente;Ultrapassagem Indevida;19304;3.3054
+causa_acidente;Condutor Dormindo;17673;3.0261
+causa_acidente;Demais falhas mecânicas ou elétricas;14125;2.4186
+causa_acidente;Chuva;13796;2.3623
+causa_acidente;Trafegar com motocicleta (ou similar) entre as faixas;12662;2.1681
+causa_acidente;Desrespeitar a preferência no cruzamento;7591;1.2998
+causa_acidente;Avarias e/ou desgaste excessivo no pneu;7223;1.2368
+causa_acidente;Conversão proibida;6687;1.145
+causa_acidente;Pista Escorregadia;6193;1.0604
+causa_acidente;Iluminação deficiente;6069;1.0392
+causa_acidente;Animais na Pista;5190;0.8887
+causa_acidente;Frear bruscamente;5163;0.8841
+causa_acidente;Acesso irregular;5066;0.8675
+causa_acidente;Curva acentuada;4828;0.8267
+causa_acidente;Acumulo de água sobre o pavimento;4573;0.783
+causa_acidente;Mal súbito do condutor;4295;0.7354
+causa_acidente;Ausência de sinalização;4180;0.7157
+causa_acidente;Condutor usando celular;4040;0.6918
+causa_acidente;Transitar no Acostamento;3883;0.6649
+causa_acidente;Problema com o freio;3561;0.6097
+causa_acidente;Carga excessiva e/ou mal acondicionada;3427;0.5868
+causa_acidente;Falta de elemento de contenção que evite a saída do leito carroçável;3329;0.57
+causa_acidente;Objeto estático sobre o leito carroçável;3125;0.5351
+causa_acidente;Deficiência do Sistema de Iluminação/Sinalização;3064;0.5246
+causa_acidente;Entrada inopinada do pedestre;2926;0.501
+causa_acidente;Demais falhas na via;2795;0.4786
+causa_acidente;Falta de acostamento;2792;0.4781
+causa_acidente;Pedestre andava na pista;2431;0.4163
+causa_acidente;Pedestre cruzava a pista fora da faixa;2284;0.3911
+causa_acidente;Retorno proibido;2090;0.3579
+causa_acidente;Pista esburacada;1932;0.3308
+causa_acidente;Estacionar ou parar em local proibido;1874;0.3209
+causa_acidente;Declive acentuado;1838;0.3147
+causa_acidente;Acumulo de areia ou detritos sobre o pavimento;1683;0.2882
+causa_acidente;Acostamento em desnível;1632;0.2794
+causa_acidente;Condutor desrespeitou a iluminação vermelha do semáforo;1615;0.2765
+causa_acidente;Suicídio (presumido);1532;0.2623
+causa_acidente;Sinalização mal posicionada;1312;0.2247
+causa_acidente;Neblina;1187;0.2032
+causa_acidente;Afundamento ou ondulação no pavimento;1174;0.201
+causa_acidente;Acumulo de óleo sobre o pavimento;1084;0.1856
+causa_acidente;Ingestão de substâncias psicoativas pelo condutor;1017;0.1741
+causa_acidente;Pedestre - Ingestão de álcool/ substâncias psicoativas;1015;0.1738
+causa_acidente;Área urbana sem a presença de local apropriado para a travessia de pedestres;858;0.1469
+causa_acidente;Restrição de visibilidade em curvas verticais;802;0.1373
+causa_acidente;Demais Fenômenos da natureza;670;0.1147
+causa_acidente;Desvio temporário;614;0.1051
+causa_acidente;Restrição de visibilidade em curvas horizontais;613;0.105
+causa_acidente;Problema na suspensão;546;0.0935
+causa_acidente;Faixas de trânsito com largura insuficiente;448;0.0767
+causa_acidente;Deixar de acionar o farol da motocicleta (ou similar);443;0.0759
+causa_acidente;Participar de racha;398;0.0681
+causa_acidente;Transtornos Mentais (exceto suicidio);380;0.0651
+causa_acidente;Fumaça;261;0.0447
+causa_acidente;Sistema de drenagem ineficiente;251;0.043
+causa_acidente;Faróis desregulados;229;0.0392
+causa_acidente;Redutor de velocidade em desacordo;223;0.0382
+causa_acidente;Modificação proibida;78;0.0134
+causa_acidente;Sinalização encoberta;73;0.0125
+causa_acidente;Semáforo com defeito;71;0.0122
+causa_acidente;Transitar na calçada;50;0.0086
+causa_acidente;Condutor não acionou o farol baixo durante o dia em rodovias de pista simples;46;0.0079
+regional;SPRF-MG;82277;14.0883
+regional;SPRF-PR;70320;12.0409
+regional;SPRF-SC;51786;8.8673
+regional;SPRF-RS;36005;6.1651
+regional;SPRF-BA;32552;5.5739
+regional;SPRF-SP;32042;5.4865
+regional;SPRF-RJ;31474;5.3893
+regional;SPRF-MT;27306;4.6756
+regional;SPRF-PE;25842;4.4249
+regional;SPRF-GO;22368;3.8301
+regional;SPRF-MS;19012;3.2554
+regional;SPRF-RO;18762;3.2126
+regional;SPRF-PI;18281;3.1303
+regional;SPRF-PB;16214;2.7763
+regional;SPRF-ES;16134;2.7626
+regional;SPRF-DF;15518;2.6571
+regional;SPRF-PA;14685;2.5145
+regional;SPRF-MA;11745;2.0111
+regional;SPRF-CE;10528;1.8027
+regional;SPRF-RN;9123;1.5621
+regional;SPRF-TO;7455;1.2765
+regional;SPRF-SE;3787;0.6484
+regional;SPRF-AL;3312;0.5671
+regional;SPRF-AC;3134;0.5366
+regional;SPRF-AP;1700;0.2911
+regional;SPRF-AM;1393;0.2385
+regional;SPRF-RR;1236;0.2116
+regional;<AUSENTE>;16;0.0027
+regional;UniPRF;3;0.0005

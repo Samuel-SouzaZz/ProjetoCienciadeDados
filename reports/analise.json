@@ -1,0 +1,56 @@
+{
+  "ambiente": {
+    "executado_em": "2026-09-12T14:38:46-03:00",
+    "python": "3.12.6",
+    "sistema": "Windows 10",
+    "pandas": "2.2.3",
+    "scikit_learn": "1.6.1",
+    "matplotlib": "3.10.1"
+  },
+  "arquivo_analisado": "C:\\Users\\Administrator\\Desktop\\Ciencia de dados\\data\\processed\\prf_limpo.csv",
+  "sha256": "0a028fe02ec748e115ab5e4d0d4d3cda3b6ae034a5b26deaebc69d267fa3d4ed",
+  "status_da_validacao_antes_da_analise": "APROVADA_COM_RESSALVAS",
+  "versao_contrato": "1.0.0",
+  "fonte": {
+    "base": "acidentes2025_todas_causas_tipos.csv (dados agregados por pessoa, com todas as causas e tipos)",
+    "dicionario": "data/raw/dicionario_acidentes_prf.pdf",
+    "periodo_declarado": "2025-01-01 a 2025-12-31",
+    "observacao_agregacao": "O arquivo bruto tem uma linha por combinacao de pessoa x causa x tipo de acidente. A base limpa e o resultado da agregacao por 'id'. Portanto 'id' repetido no arquivo bruto NAO e duplicata."
+  },
+  "filtros_aplicados": [
+    "Nenhuma linha foi excluida da base limpa.",
+    "As tabelas de composicao por grupo usam apenas ocorrencias com classificacao_acidente preenchida, porque nao existe percentual de gravidade para alvo ausente."
+  ],
+  "minimo_grupo": 200,
+  "ocorrencias_na_base": 72529,
+  "ocorrencias_com_alvo": 72528,
+  "distribuicao_classes": [
+    {
+      "classificacao_acidente": "Sem Vítimas",
+      "acidentes": 11138,
+      "pct": 15.357
+    },
+    {
+      "classificacao_acidente": "Com Vítimas Feridas",
+      "acidentes": 56181,
+      "pct": 77.46
+    },
+    {
+      "classificacao_acidente": "Com Vítimas Fatais",
+      "acidentes": 5209,
+      "pct": 7.182
+    },
+    {
+      "classificacao_acidente": "(ausente)",
+      "acidentes": 1,
+      "pct": 0.001
+    }
+  ],
+  "aviso_interpretativo": "Contagem de acidentes registrados. NAO e risco por viagem: nao ha dados de exposicao ao transito nesta base.",
+  "limitacoes": [
+    "A validacao confere conformidade com estas regras explicitas; nao confere se o registro policial descreve corretamente o mundo real.",
+    "Ausencia de nulos nao significa base correta.",
+    "Frequencias de acidentes nao medem risco por viagem, pois nao ha dados de exposicao ao transito.",
+    "A base limpa cobre apenas o periodo do arquivo fornecido."
+  ]
+}

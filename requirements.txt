@@ -1,0 +1,13 @@
+# Dependencias do projeto KDD - acidentes da PRF.
+# As versoes com ">=" foram as efetivamente usadas na execucao registrada em
+# reports/*.json (campo "ambiente"). Python 3.12.6 no Windows 10.
+
+pandas>=2.2.3
+numpy>=1.26
+scikit-learn>=1.6.1
+matplotlib>=3.10.1
+seaborn>=0.13.2
+
+# Opcional: apenas para rodar os testes com "python -m pytest tests -v".
+# Os testes tambem rodam sem ele, com "python tests\test_validacao.py".
+pytest>=8.0

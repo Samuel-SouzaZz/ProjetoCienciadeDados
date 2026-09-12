@@ -1,0 +1,6 @@
+﻿ref;id;data_inversa;dia_semana;horario;uf;mes;mes_nome;hora;faixa_horaria;fim_de_semana;fase_dia;sentido_via;condicao_metereologica;tipo_pista;tracado_via;uso_solo;classificacao_acidente;alvo_ausente;elegivel_modelo
+F01;F000001;2025-01-04;Sábado;23:40:00;MG;1;Janeiro;23;Noite;Sim;Pleno Dia;Crescente;Céu Claro;Simples;Reta;Urbano;Com Vítimas Feridas;Não;Sim
+F02;F000002;2025-03-19;Quarta-feira;07:15:00;PR;3;Março;7;Manhã;Não;Amanhecer;Decrescente;Chuva;Múltipla;"Declive;Reta";Rural;Sem Vítimas;Não;Sim
+F03;F000003;2025-06-08;Domingo;03:05:00;BA;6;Junho;3;Madrugada;Sim;Plena Noite;Crescente;;Simples;"Aclive;Curva";Rural;Com Vítimas Fatais;Não;Sim
+F04;F000004;2025-09-22;Segunda-feira;14:50:00;SP;9;Setembro;14;Tarde;Não;Pleno Dia;;Nublado;Dupla;"Interseção de Vias;Reta";Urbano;Com Vítimas Feridas;Não;Sim
+F05;F000005;2025-12-13;Sábado;18:30:00;RS;12;Dezembro;18;Noite;Sim;Anoitecer;Decrescente;Nevoeiro/Neblina;Simples;"Ponte;Reta";Rural;;Sim;Não
