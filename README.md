@@ -242,7 +242,9 @@ Revalida a base antes de qualquer gráfico. **Se uma regra crítica falhar, a an
 bloqueada.** Gera tabelas e gráficos com o denominador sempre visível e marcação de
 grupos pequenos.
 
-Gera: `reports/analise.md`, `analise.json`, `tabela_*.csv`, `reports/figuras/*.png`.
+Gera: `reports/analise.md`, `analise.json`, `tabela_*.csv`, `reports/figuras/*.png`
+(incluindo as variantes de visual `09` a `19`: pizza, rosca, barras horizontais,
+barras agrupadas, heatmap e pizzas comparativas).
 
 Opções:
 

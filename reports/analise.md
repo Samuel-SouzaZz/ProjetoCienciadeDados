@@ -2,11 +2,11 @@
 
 - Arquivo: `C:\Users\Administrator\Desktop\Ciencia de dados\data\processed\prf_limpo.csv`
 - SHA-256: `0a028fe02ec748e115ab5e4d0d4d3cda3b6ae034a5b26deaebc69d267fa3d4ed`
-- Status da validacao antes da analise: **APROVADA_COM_RESSALVAS**
+- Status da validacao antes da analise: **NAO EXECUTADA (pulada por --pular-validacao)**
 - Periodo declarado: 2025-01-01 a 2025-12-31
 - Ocorrencias na base: 72529 | com alvo preenchido: 72528
 - Grupo considerado pequeno abaixo de n = 200
-- Execucao: 2026-09-12T14:38:46-03:00
+- Execucao: 2026-09-12T14:52:58-03:00
 
 > Contagem de acidentes registrados. NAO e risco por viagem: nao ha dados de exposicao ao transito nesta base.
 
@@ -105,6 +105,43 @@
 | Sim | 4190 | 16864 | 1970 | 23024 | 18.2 | 73.25 | 8.56 | Não | 31.74 |
 
 ![Gravidade em fim de semana](figuras/08_gravidade_por_fim_de_semana.png)
+
+## Variantes de visual para os slides
+
+Os graficos acima sao a referencia principal (barras e barras 100% empilhadas). As figuras abaixo sao **variacoes de estilo** com os mesmos numeros, pensadas para o projetor:
+
+| arquivo | quando usar |
+|---|---|
+| `09_pizza_gravidade.png` | mostrar o desbalanceamento das classes |
+| `10_rosca_gravidade.png` | mesma pizza, com o total no centro |
+| `11_barras_horizontais_dia_semana.png` | volume por dia da semana |
+| `12_barras_horizontais_faixa_horaria.png` | volume por faixa horaria |
+| `13_barras_horizontais_clima.png` | volume por clima (grupos pequenos omitidos) |
+| `14_barras_agrupadas_tipo_pista.png` | volume absoluto (nao percentual) por tipo de pista |
+| `15_heatmap_faixa_horaria.png` / `16_heatmap_dia_semana.png` | comparar % de cada gravidade em uma tabela visual |
+| `17_pizzas_uso_solo.png` / `18_pizzas_fim_de_semana.png` / `19_pizzas_tipo_pista.png` | comparar composicao entre poucas categorias |
+
+![Pizza da gravidade](figuras/09_pizza_gravidade.png)
+
+![Rosca da gravidade](figuras/10_rosca_gravidade.png)
+
+![Barras horizontais — dia da semana](figuras/11_barras_horizontais_dia_semana.png)
+
+![Barras horizontais — faixa horaria](figuras/12_barras_horizontais_faixa_horaria.png)
+
+![Barras horizontais — clima](figuras/13_barras_horizontais_clima.png)
+
+![Barras agrupadas — tipo de pista](figuras/14_barras_agrupadas_tipo_pista.png)
+
+![Heatmap — faixa horaria](figuras/15_heatmap_faixa_horaria.png)
+
+![Heatmap — dia da semana](figuras/16_heatmap_dia_semana.png)
+
+![Pizzas — uso do solo](figuras/17_pizzas_uso_solo.png)
+
+![Pizzas — fim de semana](figuras/18_pizzas_fim_de_semana.png)
+
+![Pizzas — tipo de pista](figuras/19_pizzas_tipo_pista.png)
 
 ## Como ler estes numeros
 

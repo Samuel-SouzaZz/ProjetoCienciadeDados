@@ -375,9 +375,17 @@ teste.
 vítimas feridas. Guardem esse número, porque ele vai reaparecer no próximo slide de
 um jeito incômodo."
 
-**Visual:** `reports/figuras/01_distribuicao_classes.png`.
+**Visual:** `reports/figuras/01_distribuicao_classes.png` (barras) **ou**, se preferir
+proporção no projetor, `09_pizza_gravidade.png` / `10_rosca_gravidade.png`.
 
 **Fonte:** `reports/tabela_distribuicao_classes.csv`.
+
+> **Banco de figuras extras (mesmo número, outro estilo):** pizza e rosca da
+> gravidade; barras horizontais de volume por dia, faixa horária e clima; barras
+> agrupadas por tipo de pista; heatmaps de faixa horária e dia da semana; pizzas
+> lado a lado para uso do solo, fim de semana e tipo de pista. Estão em
+> `reports/figuras/` com prefixos `09` a `19`. A tabela de “quando usar cada uma”
+> está em `reports/analise.md`.
 
 ---
 

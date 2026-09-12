@@ -1,6 +1,6 @@
 {
   "ambiente": {
-    "executado_em": "2026-09-12T14:38:46-03:00",
+    "executado_em": "2026-09-12T14:52:58-03:00",
     "python": "3.12.6",
     "sistema": "Windows 10",
     "pandas": "2.2.3",
@@ -9,7 +9,7 @@
   },
   "arquivo_analisado": "C:\\Users\\Administrator\\Desktop\\Ciencia de dados\\data\\processed\\prf_limpo.csv",
   "sha256": "0a028fe02ec748e115ab5e4d0d4d3cda3b6ae034a5b26deaebc69d267fa3d4ed",
-  "status_da_validacao_antes_da_analise": "APROVADA_COM_RESSALVAS",
+  "status_da_validacao_antes_da_analise": "NAO EXECUTADA (pulada por --pular-validacao)",
   "versao_contrato": "1.0.0",
   "fonte": {
     "base": "acidentes2025_todas_causas_tipos.csv (dados agregados por pessoa, com todas as causas e tipos)",

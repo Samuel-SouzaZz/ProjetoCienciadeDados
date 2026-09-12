@@ -10,7 +10,9 @@ O que e gerado, sempre com denominador visivel:
   - composicao percentual da gravidade por faixa horaria, condicao meteorologica,
     tipo de pista, uso do solo, fase do dia e dia da semana;
   - marcacao de grupos pequenos (abaixo do minimo configuravel), porque percentual
-    calculado sobre poucos casos e instavel.
+    calculado sobre poucos casos e instavel;
+  - variantes de visual para os slides: pizza, rosca, barras horizontais,
+    barras agrupadas, heatmap e pizzas comparativas.
 
 Cuidado interpretativo que aparece em todo relatorio: contagem de acidentes NAO e
 risco por viagem. Sem dados de exposicao ao transito (quantos veiculos passaram,
@@ -156,6 +158,204 @@ def grafico_distribuicao_classes(df: pd.DataFrame, caminho: Path) -> pd.DataFram
     return tab
 
 
+# ---------------------------------------------------------------------------
+# Variantes para os slides. Os graficos acima continuam sendo a referencia
+# principal; estes existem para dar opcao de visual (pizza, rosca, barras
+# horizontais, agrupadas e heatmap) sem mudar o significado dos numeros.
+# ---------------------------------------------------------------------------
+
+def _classes_sem_ausente(tab: pd.DataFrame) -> pd.DataFrame:
+    """Tira a linha '(ausente)' da pizza: 1 caso em 72 mil nao cabe no slide."""
+    return tab.loc[[i for i in tab.index if i != "(ausente)"]]
+
+
+def grafico_pizza_gravidade(tab: pd.DataFrame, caminho: Path) -> None:
+    """Pizza da gravidade: melhor leitura da proporcao do desbalanceamento."""
+    dados = _classes_sem_ausente(tab)
+    cores = [CORES.get(i, "#888888") for i in dados.index]
+    total = int(dados["acidentes"].sum())
+
+    fig, ax = plt.subplots(figsize=(8.2, 5.6))
+    fatias, _, autotextos = ax.pie(
+        dados["acidentes"],
+        labels=None,
+        colors=cores,
+        startangle=90,
+        explode=[0.02] * len(dados),
+        wedgeprops={"linewidth": 1.2, "edgecolor": "white"},
+        autopct=lambda p: f"{p:.1f}%",
+        pctdistance=0.72,
+    )
+    for t in autotextos:
+        t.set_fontsize(10)
+        t.set_color("white")
+        t.set_weight("bold")
+    ax.legend(
+        fatias,
+        [f"{nome}\n{int(n):,} ocorrências".replace(",", ".") for nome, n in
+         zip(dados.index, dados["acidentes"])],
+        title="Gravidade",
+        loc="center left",
+        bbox_to_anchor=(1.02, 0.5),
+        fontsize=9,
+    )
+    ax.set_title(f"Participação de cada gravidade — {total:,} ocorrências".replace(",", "."),
+                 fontsize=12, weight="bold")
+    fig.text(0.01, 0.01, AVISO_RISCO, fontsize=7, style="italic")
+    fig.tight_layout()
+    fig.savefig(caminho, dpi=160, bbox_inches="tight")
+    plt.close(fig)
+
+
+def grafico_rosca_gravidade(tab: pd.DataFrame, caminho: Path) -> None:
+    """Rosca: mesma pizza, com o total no centro — fica limpa no slide."""
+    dados = _classes_sem_ausente(tab)
+    cores = [CORES.get(i, "#888888") for i in dados.index]
+    total = int(dados["acidentes"].sum())
+
+    fig, ax = plt.subplots(figsize=(8.2, 5.6))
+    fatias, _, autotextos = ax.pie(
+        dados["acidentes"],
+        labels=None,
+        colors=cores,
+        startangle=90,
+        wedgeprops={"width": 0.42, "linewidth": 1.2, "edgecolor": "white"},
+        autopct=lambda p: f"{p:.1f}%",
+        pctdistance=0.78,
+    )
+    for t in autotextos:
+        t.set_fontsize(10)
+        t.set_weight("bold")
+    ax.text(0, 0, f"{total:,}\nocorrências".replace(",", "."),
+            ha="center", va="center", fontsize=13, weight="bold")
+    ax.legend(
+        fatias, list(dados.index), title="Gravidade",
+        loc="center left", bbox_to_anchor=(1.02, 0.5), fontsize=9,
+    )
+    ax.set_title("Rosca da distribuição de gravidade", fontsize=12, weight="bold")
+    fig.text(0.01, 0.01, AVISO_RISCO, fontsize=7, style="italic")
+    fig.tight_layout()
+    fig.savefig(caminho, dpi=160, bbox_inches="tight")
+    plt.close(fig)
+
+
+def grafico_barras_horizontais(serie: pd.Series, titulo: str, caminho: Path,
+                               cor: str = "#4c78a8") -> None:
+    """Volume absoluto de ocorrencias: barras horizontais, com n e % no rotulo."""
+    serie = serie.sort_values(ascending=True)
+    total = int(serie.sum())
+    fig, ax = plt.subplots(figsize=(8.5, max(3.8, 0.45 * len(serie) + 1.2)))
+    barras = ax.barh(serie.index.astype(str), serie.values, color=cor, edgecolor="white")
+    for barra, n in zip(barras, serie.values):
+        pct = 100 * n / total
+        ax.text(barra.get_width() + total * 0.008, barra.get_y() + barra.get_height() / 2,
+                f"{int(n):,}  ({pct:.1f}%)".replace(",", "."),
+                va="center", fontsize=8)
+    ax.set_xlabel("Ocorrências registradas")
+    ax.set_xlim(0, serie.max() * 1.28)
+    ax.set_title(f"{titulo} — total {total:,}".replace(",", "."),
+                 fontsize=12, weight="bold")
+    fig.text(0.01, -0.02, AVISO_RISCO, fontsize=7, style="italic")
+    fig.tight_layout()
+    fig.savefig(caminho, dpi=160, bbox_inches="tight")
+    plt.close(fig)
+
+
+def grafico_barras_agrupadas(tab: pd.DataFrame, titulo: str, caminho: Path,
+                             minimo_grupo: int) -> None:
+    """Contagens absolutas lado a lado: complementa as barras 100% empilhadas.
+
+    As empilhadas mostram COMPOSICAO; estas mostram VOLUME. As duas juntas
+    evitam a confusao de achar que um grupo 'tem mais fatais' so porque a fatia
+    vermelha parece maior em um n pequeno.
+    """
+    classes = [c for c in ORDEM_CLASSES if c in tab.columns]
+    x = range(len(tab))
+    largura = 0.8 / max(len(classes), 1)
+    fig, ax = plt.subplots(figsize=(max(8, 1.3 * len(tab)), 5.4))
+    for i, classe in enumerate(classes):
+        desloc = -0.4 + largura / 2 + i * largura
+        ax.bar([p + desloc for p in x], tab[classe].values, width=largura,
+               label=classe, color=CORES[classe], edgecolor="white")
+    rotulos = [
+        f"{idx}\nn={int(tot)}" + ("\n(pequeno)" if tot < minimo_grupo else "")
+        for idx, tot in zip(tab.index.astype(str), tab["total_no_grupo"])
+    ]
+    ax.set_xticks(list(x))
+    ax.set_xticklabels(rotulos, fontsize=8)
+    ax.set_ylabel("Ocorrências registradas")
+    ax.set_title(titulo, fontsize=12, weight="bold")
+    ax.legend(title="Gravidade", fontsize=8)
+    fig.text(0.01, -0.02, AVISO_RISCO, fontsize=7, style="italic")
+    fig.tight_layout()
+    fig.savefig(caminho, dpi=160, bbox_inches="tight")
+    plt.close(fig)
+
+
+def grafico_heatmap(tab: pd.DataFrame, titulo: str, caminho: Path) -> None:
+    """Mapa de calor do percentual de cada gravidade dentro do grupo."""
+    cols = [f"pct_{c}" for c in ORDEM_CLASSES if f"pct_{c}" in tab.columns]
+    if not cols:
+        return
+    matriz = tab[cols].copy()
+    matriz.columns = [c.replace("pct_", "") for c in cols]
+
+    fig, ax = plt.subplots(figsize=(max(7.5, 0.9 * len(matriz.columns) + 4),
+                                    max(4.2, 0.45 * len(matriz) + 1.5)))
+    sns.heatmap(
+        matriz.astype(float), annot=True, fmt=".1f", cmap="YlOrRd",
+        linewidths=0.6, linecolor="white", cbar_kws={"label": "% dentro do grupo"},
+        ax=ax,
+    )
+    ax.set_xlabel("Gravidade")
+    ax.set_ylabel(tab.index.name or "")
+    ax.set_title(titulo, fontsize=12, weight="bold")
+    fig.text(0.01, -0.02, AVISO_RISCO + " Valores em % dentro de cada linha.",
+             fontsize=7, style="italic")
+    fig.tight_layout()
+    fig.savefig(caminho, dpi=160, bbox_inches="tight")
+    plt.close(fig)
+
+
+def grafico_pizza_comparativa(df: pd.DataFrame, coluna: str, titulo: str,
+                              caminho: Path, ordem: list[str] | None = None,
+                              rotulos: dict[str, str] | None = None) -> None:
+    """Duas ou tres pizzas lado a lado: composicao da gravidade em cada categoria.
+
+    So faz sentido com poucas categorias (uso do solo, fim de semana, tipo de
+    pista). Com muitas fatias vira ilegivel — por isso nao uso em dia_semana.
+    """
+    dados = df[[coluna, "classificacao_acidente"]].dropna().copy()
+    cats = ordenar_categorias(list(dados[coluna].unique()), ordem or [])
+    if not cats:
+        return
+    mapa_rotulo = rotulos or {}
+    fig, eixos = plt.subplots(1, len(cats), figsize=(4.2 * len(cats), 4.8))
+    if len(cats) == 1:
+        eixos = [eixos]
+    for ax, cat in zip(eixos, cats):
+        cont = dados.loc[dados[coluna] == cat, "classificacao_acidente"].value_counts()
+        cont = cont.reindex([c for c in ORDEM_CLASSES if c in cont.index])
+        cores = [CORES[c] for c in cont.index]
+        n = int(cont.sum())
+        ax.pie(
+            cont.values, colors=cores, startangle=90,
+            wedgeprops={"linewidth": 1, "edgecolor": "white", "width": 0.55},
+            autopct=lambda p: f"{p:.0f}%" if p >= 4 else "",
+            pctdistance=0.75,
+        )
+        nome = mapa_rotulo.get(cat, cat)
+        ax.set_title(f"{nome}\nn = {n:,}".replace(",", "."), fontsize=10, weight="bold")
+    handles = [plt.Rectangle((0, 0), 1, 1, color=CORES[c]) for c in ORDEM_CLASSES]
+    fig.legend(handles, ORDEM_CLASSES, loc="lower center", ncol=3, fontsize=8,
+               bbox_to_anchor=(0.5, -0.02))
+    fig.suptitle(titulo, fontsize=12, weight="bold", y=1.02)
+    fig.text(0.01, -0.06, AVISO_RISCO, fontsize=7, style="italic")
+    fig.tight_layout()
+    fig.savefig(caminho, dpi=160, bbox_inches="tight")
+    plt.close(fig)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Analise descritiva da base limpa.")
     ap.add_argument("--arquivo", default=str(DIR_PROC / "prf_limpo.csv"))
@@ -226,6 +426,76 @@ def main() -> int:
                            args.minimo_grupo)
         print(f"      tabela e grafico: {coluna}")
 
+    print("      gerando variantes de visual para os slides...")
+    grafico_pizza_gravidade(tab_classes, DIR_FIG / "09_pizza_gravidade.png")
+    grafico_rosca_gravidade(tab_classes, DIR_FIG / "10_rosca_gravidade.png")
+
+    # Volumes absolutos: barras horizontais (leitura mais facil no projetor)
+    ordem_dia = ordenar_categorias(list(com_alvo["dia_semana"].dropna().unique()), ORDEM_DIA)
+    vol_dia = com_alvo["dia_semana"].value_counts().reindex(ordem_dia)
+    grafico_barras_horizontais(
+        vol_dia, "Volume de ocorrências por dia da semana",
+        DIR_FIG / "11_barras_horizontais_dia_semana.png", cor="#4c78a8",
+    )
+    ordem_faixa = ordenar_categorias(
+        list(com_alvo["faixa_horaria"].dropna().unique()), ORDEM_FAIXA
+    )
+    vol_faixa = com_alvo["faixa_horaria"].value_counts().reindex(ordem_faixa)
+    grafico_barras_horizontais(
+        vol_faixa, "Volume de ocorrências por faixa horária",
+        DIR_FIG / "12_barras_horizontais_faixa_horaria.png", cor="#f58518",
+    )
+    # Condicao meteorologica: so as categorias com volume razoavel no slide
+    vol_clima = com_alvo["condicao_metereologica"].fillna("(ausente)").value_counts()
+    vol_clima = vol_clima[vol_clima >= args.minimo_grupo].sort_values(ascending=True)
+    grafico_barras_horizontais(
+        vol_clima, "Volume de ocorrências por condição meteorológica",
+        DIR_FIG / "13_barras_horizontais_clima.png", cor="#54a24b",
+    )
+
+    # Barras agrupadas e heatmap: composicao + volume lado a lado
+    if "tipo_pista" in tabelas:
+        grafico_barras_agrupadas(
+            tabelas["tipo_pista"],
+            "Contagem absoluta da gravidade por tipo de pista",
+            DIR_FIG / "14_barras_agrupadas_tipo_pista.png",
+            args.minimo_grupo,
+        )
+    if "faixa_horaria" in tabelas:
+        grafico_heatmap(
+            tabelas["faixa_horaria"],
+            "Mapa de calor: % de cada gravidade por faixa horária",
+            DIR_FIG / "15_heatmap_faixa_horaria.png",
+        )
+    if "dia_semana" in tabelas:
+        grafico_heatmap(
+            tabelas["dia_semana"],
+            "Mapa de calor: % de cada gravidade por dia da semana",
+            DIR_FIG / "16_heatmap_dia_semana.png",
+        )
+
+    # Pizzas comparativas: so onde ha poucas categorias
+    grafico_pizza_comparativa(
+        com_alvo, "uso_solo",
+        "Composição da gravidade por uso do solo",
+        DIR_FIG / "17_pizzas_uso_solo.png",
+        ordem=["Urbano", "Rural"],
+    )
+    grafico_pizza_comparativa(
+        com_alvo, "fim_de_semana",
+        "Composição da gravidade: dia útil × fim de semana",
+        DIR_FIG / "18_pizzas_fim_de_semana.png",
+        ordem=["Não", "Sim"],
+        rotulos={"Não": "Dia útil", "Sim": "Fim de semana"},
+    )
+    grafico_pizza_comparativa(
+        com_alvo, "tipo_pista",
+        "Composição da gravidade por tipo de pista",
+        DIR_FIG / "19_pizzas_tipo_pista.png",
+        ordem=["Simples", "Dupla", "Múltipla"],
+    )
+    print("      variantes salvas em reports/figuras/ (09 a 19)")
+
     print("[3/3] Escrevendo relatorio da analise...")
     resumo = {
         "ambiente": ambiente(),
@@ -271,6 +541,33 @@ def main() -> int:
         L.append(f"## {titulo}\n")
         L.append(tabela_markdown(tabelas[coluna].reset_index()))
         L.append(f"\n![{titulo}](figuras/{i:02d}_gravidade_por_{coluna}.png)\n")
+
+    L.append("## Variantes de visual para os slides\n")
+    L.append("Os graficos acima sao a referencia principal (barras e barras 100% "
+             "empilhadas). As figuras abaixo sao **variacoes de estilo** com os "
+             "mesmos numeros, pensadas para o projetor:\n")
+    L.append("| arquivo | quando usar |")
+    L.append("|---|---|")
+    L.append("| `09_pizza_gravidade.png` | mostrar o desbalanceamento das classes |")
+    L.append("| `10_rosca_gravidade.png` | mesma pizza, com o total no centro |")
+    L.append("| `11_barras_horizontais_dia_semana.png` | volume por dia da semana |")
+    L.append("| `12_barras_horizontais_faixa_horaria.png` | volume por faixa horaria |")
+    L.append("| `13_barras_horizontais_clima.png` | volume por clima (grupos pequenos omitidos) |")
+    L.append("| `14_barras_agrupadas_tipo_pista.png` | volume absoluto (nao percentual) por tipo de pista |")
+    L.append("| `15_heatmap_faixa_horaria.png` / `16_heatmap_dia_semana.png` | comparar % de cada gravidade em uma tabela visual |")
+    L.append("| `17_pizzas_uso_solo.png` / `18_pizzas_fim_de_semana.png` / `19_pizzas_tipo_pista.png` | comparar composicao entre poucas categorias |\n")
+    L.append("![Pizza da gravidade](figuras/09_pizza_gravidade.png)\n")
+    L.append("![Rosca da gravidade](figuras/10_rosca_gravidade.png)\n")
+    L.append("![Barras horizontais — dia da semana](figuras/11_barras_horizontais_dia_semana.png)\n")
+    L.append("![Barras horizontais — faixa horaria](figuras/12_barras_horizontais_faixa_horaria.png)\n")
+    L.append("![Barras horizontais — clima](figuras/13_barras_horizontais_clima.png)\n")
+    L.append("![Barras agrupadas — tipo de pista](figuras/14_barras_agrupadas_tipo_pista.png)\n")
+    L.append("![Heatmap — faixa horaria](figuras/15_heatmap_faixa_horaria.png)\n")
+    L.append("![Heatmap — dia da semana](figuras/16_heatmap_dia_semana.png)\n")
+    L.append("![Pizzas — uso do solo](figuras/17_pizzas_uso_solo.png)\n")
+    L.append("![Pizzas — fim de semana](figuras/18_pizzas_fim_de_semana.png)\n")
+    L.append("![Pizzas — tipo de pista](figuras/19_pizzas_tipo_pista.png)\n")
+
     L.append("## Como ler estes numeros\n")
     L.append("- `total_no_grupo` e o denominador: o percentual de cada classe e "
              "calculado DENTRO do grupo.")
