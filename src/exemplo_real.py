@@ -400,9 +400,9 @@ def main(argv: list[str] | None = None) -> int:
 
     # ---- relatorio ----
     L = [
-        "# Recortes ANTES x DEPOIS com dados REAIS\n",
-        "> Ao contrario de `reports/exemplo_ficticio.md`, **todas as linhas desta pagina "
-        "sao reais** e rastreaveis pelo `id` da ocorrencia no arquivo bruto da PRF.\n",
+        "# Recortes ANTES x DEPOIS com dados reais\n",
+        "> Diferente do exemplo F01–F05, as linhas daqui são reais e dá para "
+        "conferir pelo `id` no arquivo bruto.\n",
         "## 1. Agregacao: de varias linhas para uma ocorrencia\n",
         f"A ocorrencia **id={resumo['id']}** ocupa **{resumo['linhas_brutas']} linhas** no "
         f"arquivo bruto, porque o arquivo repete a ocorrencia uma vez para cada combinacao "

@@ -1,17 +1,17 @@
 # Ficha técnica
 
-> Modelo para preencher. Os campos marcados como **[a preencher]** não foram
-> informados e **não** devem ser inventados.
+Campos com **[a preencher]** ainda precisam do grupo. Os números técnicos abaixo
+vieram das execuções em `reports/` — não inventamos nada.
 
 ## Identificação do trabalho
 
 | campo | valor |
 |---|---|
-| Tema | Aplicação do processo KDD à base de acidentes da Polícia Rodoviária Federal |
+| Tema | KDD na base de acidentes da Polícia Rodoviária Federal |
 | Pergunta de pesquisa | Quais características temporais, ambientais e estruturais estão associadas à gravidade dos acidentes registrados em rodovias federais? |
 | Disciplina | **[a preencher]** |
 | Professor(a) | **[a preencher]** |
-| Curso | **[a preencher]** (ex.: Análise e Desenvolvimento de Sistemas) |
+| Curso | **[a preencher]** |
 | Semestre | **[a preencher]** |
 | Instituição | **[a preencher]** |
 | Data de entrega | **[a preencher]** |
@@ -19,18 +19,17 @@
 
 ## Grupo
 
-| # | nome completo | função no trabalho | slides sob responsabilidade |
+| # | nome | função | slides (sugestão) |
 |---|---|---|---|
-| 1 | **[a preencher]** | Abertura e definição do problema | 1, 2, 3, 4 |
-| 2 | **[a preencher]** | Processo KDD e apresentação da base | 5, 6, 7 |
-| 3 | **[a preencher]** | Seleção e descarte de atributos | 8, 9 |
-| 4 | **[a preencher]** | Pré-processamento e validação | 10, 11, 12 |
-| 5 | **[a preencher]** | Transformação e mineração | 13, 14, 15, 16 |
-| todos | — | Resultados, aplicação social e encerramento | 17, 18, 19, 20 |
+| 1 | Samuel Souza | código, documentação e roteiro | 1–4 |
+| 2 | Junior Oliveira | roteiro e organização dos slides | 5–7 |
+| 3 | Liandra Rodrigues | apresentação e edição | 8–9 |
+| 4 | Karolline Oliveira | apresentação | 10–12 |
+| 5 | Matheus Oliveira | apresentação | 13–16 |
+| todos | — | resultados e encerramento | 17–20 |
 
-> Ajuste a quantidade de linhas ao tamanho real do grupo. A divisão acima distribui
-> as falas de forma equilibrada e mantém todos participando do encerramento, mas não
-> pressupõe número de integrantes nem duração exigida.
+A divisão de slides é só uma sugestão para equilibrar as falas. Quem for apresentar
+pode trocar.
 
 ## Produção do vídeo
 
@@ -38,25 +37,25 @@
 |---|---|
 | Ferramenta de gravação | **[a preencher]** |
 | Ferramenta de edição | **[a preencher]** |
-| Duração | **[a preencher — não há duração assumida por este documento]** |
+| Duração | **[a preencher]** |
 | Formato/resolução | **[a preencher]** |
 | Link do vídeo | **[a preencher]** |
-| Link do repositório/pasta do projeto | **[a preencher]** |
+| Link do repositório | https://github.com/Samuel-SouzaZz/ProjetoCienciadeDados |
 
 ## Fontes de dados utilizadas
 
 | item | valor |
 |---|---|
-| Base | `acidentes2025_todas_causas_tipos.csv` (dados agregados por pessoa, com todas as causas e tipos) |
-| Origem da base | arquivo fornecido pela atividade (Google Drive), correspondente aos dados abertos da PRF |
+| Base | `acidentes2025_todas_causas_tipos.csv` (agregado por pessoa, com todas as causas e tipos) |
+| Origem | arquivo da atividade (Google Drive), dados abertos da PRF |
 | Tamanho | 223.019.483 bytes |
 | Linhas × colunas | 584.010 × 37 |
-| Período coberto | 2025-01-01 a 2025-12-31 |
-| Dicionário | `dicionario_acidentes_prf.pdf` — Dicionário de variáveis, dados do BAT a partir de 2017 |
-| Portal oficial | https://www.gov.br/prf/pt-br/acesso-a-informacao/dados-abertos/dados-abertos-da-prf |
+| Período | 2025-01-01 a 2025-12-31 |
+| Dicionário | `dicionario_acidentes_prf.pdf` — variáveis do BAT a partir de 2017 |
+| Portal | https://www.gov.br/prf/pt-br/acesso-a-informacao/dados-abertos/dados-abertos-da-prf |
 | Dicionários oficiais | https://www.gov.br/prf/pt-br/acesso-a-informacao/dados-abertos/dicionario-acidentes |
 
-## Ambiente técnico da execução
+## Ambiente técnico
 
 | item | versão |
 |---|---|
@@ -66,29 +65,27 @@
 | scikit-learn | 1.6.1 |
 | matplotlib | 3.10.1 |
 | seaborn | 0.13.2 |
-| Contrato de qualidade | versão 1.0.0 |
+| Contrato de qualidade | 1.0.0 |
 
-> As versões exatas de cada execução ficam registradas no campo `ambiente` dos
-> arquivos `reports/*.json`.
+As versões de cada execução ficam no campo `ambiente` dos `reports/*.json`.
 
-## Resultados verificáveis da execução
+## Resultados da execução
 
 | item | valor |
 |---|---|
 | Ocorrências na base limpa | 72.529 |
 | Pessoas distintas | 177.479 |
-| Regras de qualidade avaliadas | 177 |
+| Regras de qualidade | 177 |
 | Status da validação | APROVADA_COM_RESSALVAS |
-| Testes do validador | 19 de 19 aprovados |
+| Testes do validador | 19 de 19 |
 | Registros em quarentena | 0 |
-| Campos enviados para revisão | 432 |
+| Campos para revisão | 432 |
 
-## Declaração de integridade
+## Integridade
 
-- Nenhum resultado foi inventado. Todos os números citados nos documentos vêm dos
-  arquivos em `reports/`, gerados por execução real.
-- Os registros F01–F05 da tabela Antes × Depois são fictícios e estão identificados
-  como tal; não entram em gráficos, treinamento ou métricas.
-- Os dados originais em `data/raw/` foram preservados sem alteração.
-- O resultado do modelo é reportado como está, inclusive quando não supera a
-  referência.
+- Números citados nos documentos vêm de `reports/`, de execução real.
+- Os registros F01–F05 da tabela Antes × Depois são fictícios e estão marcados assim;
+  não entram em gráfico, treino nem métrica.
+- `data/raw/` não foi alterado.
+- O resultado do modelo aparece como está, inclusive quando empatou com o chute
+  na classe majoritária.

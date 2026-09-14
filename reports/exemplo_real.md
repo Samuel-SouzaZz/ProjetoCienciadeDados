@@ -1,6 +1,6 @@
-# Recortes ANTES x DEPOIS com dados REAIS
+# Recortes ANTES x DEPOIS com dados reais
 
-> Ao contrario de `reports/exemplo_ficticio.md`, **todas as linhas desta pagina sao reais** e rastreaveis pelo `id` da ocorrencia no arquivo bruto da PRF.
+> Diferente do exemplo F01–F05, as linhas daqui são reais e dá para conferir pelo `id` no arquivo bruto.
 
 ## 1. Agregacao: de varias linhas para uma ocorrencia
 

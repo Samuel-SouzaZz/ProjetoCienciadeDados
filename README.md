@@ -1,39 +1,35 @@
-## Análise Preditiva de Severidade de Acidentes Viários (PRF)
+# Acidentes da PRF — processo KDD
 
-![Status](https://img.shields.io/badge/Status-Conclu%C3%ADdo-brightgreen)
-![Metodologia](https://img.shields.io/badge/Metodologia-KDD-blue)
-![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-orange)
+Trabalho de faculdade aplicando o processo **KDD** (*Knowledge Discovery in
+Databases*) sobre a base aberta de acidentes da **Polícia Rodoviária Federal**.
 
-## Sobre o Projeto
-Este projeto tem como objetivo planejar conceitualmente a arquitetura de dados necessária para aplicar a metodologia **KDD (*Knowledge Discovery in Databases*)** sobre a base de dados abertos da **Polícia Rodoviária Federal (PRF)**. 
+**Pergunta:** quais características temporais, ambientais e estruturais estão
+associadas à gravidade dos acidentes registrados em rodovias federais?
 
-O foco central é a transformação de registros históricos de acidentes em inteligência preditiva, visando classificar o nível de severidade dos sinistros (*Sem Vítimas*, *Com Vítimas Feridas*, *Com Vítimas Fatais*) para subsidiar ações preventivas e alocação eficiente de recursos da PRF.
+A entrega principal é o **planejamento** do KDD (definição do problema, seleção,
+pré-processamento, transformação e mineração). O código em `src/` executa essas
+etapas de ponta a ponta: diagnóstico, limpeza, validação, análise e — se quiser —
+treino de um modelo em comando separado. Não afirmamos causa nem risco por viagem;
+trabalhamos com associação observada nos registros.
 
----
+### Documentação
 
-## Metodologia e Documentação
-A documentação do projeto está dividida nos seguintes módulos:
+| arquivo | o que tem |
+|---|---|
+| [`docs/planejamento_kdd.md`](docs/planejamento_kdd.md) | planejamento completo das etapas |
+| [`docs/roteiro_slides.md`](docs/roteiro_slides.md) | o que colocar em cada slide e o que falar |
+| [`docs/ficha_tecnica.md`](docs/ficha_tecnica.md) | ficha do trabalho (grupo, ambiente, números) |
+| [`reports/`](reports/) | saídas reais das execuções (diagnóstico, limpeza, validação, figuras) |
 
-* 📄 [`pipeline_kdd.md`](./pipeline_kdd.md): Detalhamento do fluxo metodológico (Seleção, Pré-processamento, Transformação e Mineração).
-* 📖 [`dicionario_dados.md`](./dicionario_dados.md): Mapeamento e categorização dos atributos da base oficial da PRF.
-* 📋 [`ficha_tecnica.md`](./ficha_tecnica.md): Especificação dos requisitos operacionais, acadêmicos e escopo do projeto.
+### Grupo
 
----
-
-## Impacto Esperado
-* **Prevenção Viária:** Otimização do patrulhamento ostensivo da PRF com base em trechos e faixas horárias de alto risco.
-* **Engenharia de Tráfego:** Mapeamento de fatores contextuais que influenciam na gravidade de acidentes para orientar sinalização e intervenções viárias.
-* **Redução de Impactos Socioeconômicos:** Embasamento para políticas públicas com o intuito de diminuir internações (DATASUS/OMS) e os custos associados a acidentes em rodovias federais (IPEA).
-
----
-
-## 👥 Autores & Colaboradores
-* Samuel Souza (*Roteirista, Designer & Arquiteto de Documentação*)
-* Junior Oliveira(*Roteirista, Montagem e Organização de Slides*)
-* Liandra Rodrigues(*Apresentação e Edição dos slides*)
-* Karolline Oliveira(*Aprensentação do slide*)
-* Matheus Oliveira(*Apresentação de slide*)
-
+| nome | função |
+|---|---|
+| Samuel Souza | código, documentação e roteiro |
+| Junior Oliveira | roteiro e organização dos slides |
+| Liandra Rodrigues | apresentação e edição dos slides |
+| Karolline Oliveira | apresentação |
+| Matheus Oliveira | apresentação |
 
 ---
 
@@ -60,20 +56,20 @@ Ciencia de dados/
 │  ├─ comum.py                   Configuração de leitura, hash, auditoria, utilitários
 │  ├─ diagnostico.py             ETAPA 1 — entender antes de mexer
 │  ├─ limpeza.py                 ETAPAS 2 e 3 — limpar, agregar, derivar, exportar
-│  ├─ validar_dados.py           ETAPA 4 — auditoria independente (essencial)
+│  ├─ validar_dados.py           ETAPA 4 — auditoria independente
 │  ├─ exemplo_ficticio.py        ETAPA 5 — tabela Antes × Depois F01–F05
 │  ├─ exemplo_real.py            ETAPA 5b — Antes × Depois com ocorrências reais
 │  ├─ analise.py                 ETAPA 6 — tabelas e gráficos
-│  └─ treinar_modelo.py          ETAPA 7 — treino OPCIONAL, comando separado
+│  └─ treinar_modelo.py          ETAPA 7 — treino opcional, comando separado
 ├─ tests/
-│  └─ test_validacao.py          19 testes do próprio validador
+│  └─ test_validacao.py          19 testes do validador
 ├─ tools/
-│  └─ corrigir_encoding.py       Manutenção: garante fontes em UTF-8
+│  └─ corrigir_encoding.py       reconverte fontes para UTF-8
 ├─ docs/
-│  ├─ planejamento_kdd.md        Planejamento conceitual completo do KDD
-│  ├─ roteiro_slides.md          Conteúdo, fala, visual e fonte de cada slide
-│  └─ ficha_tecnica.md           Ficha técnica para preencher
-├─ reports/                      Tudo que foi realmente produzido
+│  ├─ planejamento_kdd.md        planejamento das etapas
+│  ├─ roteiro_slides.md          conteúdo e fala de cada slide
+│  └─ ficha_tecnica.md           ficha do trabalho
+├─ reports/                      saídas das execuções
 ├─ requirements.txt
 └─ README.md
 ```
@@ -301,9 +297,9 @@ python src\analise.py --minimo-grupo 100
 python src\analise.py --pular-validacao     # não recomendado
 ```
 
-### Etapa 7 — Treino do modelo (OPCIONAL, comando separado)
+### Etapa 7 — Treino do modelo (opcional)
 
-O treino é **opcional e propositalmente separado**: nada nos slides depende dele.
+O treino fica em comando separado de propósito: os slides não dependem dele.
 
 ```powershell
 python src\treinar_modelo.py

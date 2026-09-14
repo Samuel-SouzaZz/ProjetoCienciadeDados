@@ -1,11 +1,10 @@
 # Planejamento KDD — Gravidade dos acidentes em rodovias federais (PRF)
 
-> Documento conceitual do trabalho. As etapas do KDD adotadas são **definição do
-> problema, seleção, pré-processamento, transformação e mineração**. A etapa de
-> interpretação não faz parte da entrega exigida.
->
-> Todos os números citados aqui vêm de execuções reais registradas em `reports/`.
-> Nada foi estimado de cabeça.
+Documento do planejamento. Etapas usadas: **definição do problema, seleção,
+pré-processamento, transformação e mineração**. Interpretação fica fora do
+escopo da entrega.
+
+Números abaixo saíram das execuções em `reports/`.
 
 ---
 
@@ -16,25 +15,21 @@ associadas à gravidade dos acidentes registrados em rodovias federais?
 
 **Unidade de análise:** uma ocorrência de acidente (um valor de `id`).
 
-**Tarefa de mineração:** classificação da gravidade, usando `classificacao_acidente`
-como variável-alvo, com as categorias confirmadas no dicionário da PRF.
+**Tarefa de mineração:** classificação da gravidade, com `classificacao_acidente`
+como alvo (categorias do dicionário da PRF).
 
-### O que esta análise NÃO permite
+### O que esta análise não permite
 
-Estes limites não são detalhe: são parte da resposta correta.
+Vale deixar claro antes de qualquer gráfico:
 
-1. **Não estima a probabilidade de uma viagem sofrer acidente.** A base contém
-   apenas acidentes que aconteceram e foram registrados. Não existe informação de
-   quantas viagens ocorreram sem acidente.
-2. **Não mede risco.** Frequência bruta não é risco sem dados de exposição ao
-   trânsito (volume de veículos, quilômetros rodados, tempo de exposição). Se a
-   maioria dos acidentes acontece com "Céu Claro", isso pode significar apenas que
-   a maioria das viagens acontece com céu claro.
-3. **Não prova causa.** Associação observada em registros não é relação causal.
-4. **Não prevê o futuro.** A avaliação treino/teste é retrospectiva: mede se o
-   modelo consegue separar registros que já existem.
-5. **Depende do registro policial.** A base descreve o que o policial anotou no
-   Boletim de Acidente de Trânsito, não a realidade completa do evento.
+1. **Não estima a chance de uma viagem sofrer acidente.** Só entram acidentes
+   registrados. Não há viagens sem acidente na base.
+2. **Frequência não é risco.** Sem volume de veículos ou km rodados, "mais
+   acidentes com céu claro" pode só significar "mais gente rodando com céu claro".
+3. **Associação não é causa.**
+4. **Treino/teste aqui é retrospectivo.** Serve para ver se o modelo separa
+   registros que já existem, não para prever o futuro.
+5. **Depende do que o policial anotou** no Boletim de Acidente de Trânsito.
 
 ---
 
@@ -82,12 +77,12 @@ diretamente multiplica as vítimas. A prova numérica:
 Por isso o projeto **agrega por `id`** para chegar à unidade desejada, e faz todas
 as contagens de vítimas sobre pares (`id`, `pesid`) distintos.
 
-### A agregação é segura? Sim, e isso foi verificado
+### A agregação é segura?
 
-Antes de agregar, o script conferiu se as 19 colunas que descrevem a ocorrência
-(data, hora, UF, gravidade, pista, traçado, clima etc.) são constantes dentro de
-cada `id`. Resultado: **0 dos 72.529 `id` apresentaram conflito**. Se houvesse
-conflito, a ocorrência iria para quarentena em vez de para a base.
+Antes de agregar, o script conferiu se as 19 colunas da ocorrência (data, hora, UF,
+gravidade, pista, traçado, clima etc.) são constantes dentro de cada `id`. Resultado:
+**0 dos 72.529 `id` tiveram conflito**. Se houvesse, a ocorrência iria para
+quarentena em vez de para a base.
 
 ### Divergências entre dicionário e arquivo
 
@@ -327,8 +322,8 @@ gráfico, treino nem métrica.
 **Técnica:** árvore de decisão de classificação (`DecisionTreeClassifier`).
 
 **Justificativa:** a tarefa é categórica (três classes de gravidade) e a árvore
-permite **ler** as regras aprendidas, o que é essencial em trabalho didático. A
-profundidade é limitada para o modelo não decorar a base.
+permite **ler** as regras aprendidas — útil em trabalho de faculdade. A
+profundidade fica limitada para o modelo não decorar a base.
 
 **Protocolo, para não haver vazamento:**
 
@@ -356,23 +351,22 @@ Duas execuções foram feitas. Os dois resultados são reportados, inclusive o r
 | **Referência** `DummyClassifier(most_frequent)` | 0,7746 | 0,3333 | 0,2910 |
 | Árvore com `class_weight="balanced"` (`max_depth=4`) | 0,5199 | 0,4442 | 0,3608 |
 
-**Leitura honesta:** sem `class_weight`, a árvore **não superou o chute na classe
-maioritária** — ela aprendeu a prever "Com Vítimas Feridas" para todo mundo, com
-recall 0 nas outras duas classes. Com `class_weight="balanced"` ela passa a prever
-as três classes e supera a referência em macro-F1 (0,3608 vs 0,2910) e em acurácia
-balanceada (0,4442 vs 0,3333), mas a acurácia global cai e a precisão em "Com
-Vítimas Fatais" fica em 0,1221.
+**Leitura:** sem `class_weight`, a árvore **não passou do chute na classe
+maioritária** — previu "Com Vítimas Feridas" para todo mundo, com recall 0 nas
+outras duas. Com `class_weight="balanced"` ela passa a prever as três classes e
+ganha da referência em macro-F1 (0,3608 vs 0,2910) e em acurácia balanceada
+(0,4442 vs 0,3333), mas a acurácia global cai e a precisão em "Com Vítimas Fatais"
+fica em 0,1221.
 
 `class_weight="balanced"` é justificado pelo desbalanceamento do treino (77% / 15% /
 7%). Mas as probabilidades desse modelo **não** são risco calibrado, justamente
 porque os pesos foram alterados.
 
-**Conclusão metodológica (não causal):** as 9 condições temporais, ambientais e
-estruturais disponíveis têm **pouco poder de separação** da gravidade nesta base. O
-que decide a gravidade está principalmente em informações que ficaram fora de X de
-propósito — quem estava envolvido, tipo de veículo, dinâmica da colisão — e em
-fatores que a base simplesmente não registra. Isso é um resultado, não uma falha do
-procedimento.
+**Conclusão:** as 9 condições temporais, ambientais e estruturais disponíveis
+separam pouco a gravidade nesta base. O que pesa mais parece estar em informações
+que ficaram de fora de X de propósito — quem estava envolvido, tipo de veículo,
+dinâmica da colisão — e em fatores que a base simplesmente não registra. Isso também
+é resultado, não falha do procedimento.
 
 ---
 

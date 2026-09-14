@@ -1,12 +1,10 @@
 # Roteiro dos slides — Gravidade dos acidentes em rodovias federais
 
-**Como usar este roteiro:** cada slide traz *conteúdo* (o que aparece na tela),
-*fala sugerida* (o que dizer, em linguagem natural), *visual* (qual arquivo usar) e
-*fonte*. Hipóteses estão no condicional. Resultados computacionais aparecem
-identificados como complemento de estudo.
+Cada slide tem: o que vai na tela, um rascunho de fala, qual figura usar e de onde
+saiu o número. As falas são sugestão — adaptem ao jeito de cada um.
 
-> **Regra do grupo:** não afirmar que algo "causa" acidentes, não apresentar
-> frequência como risco e não dizer que o modelo "prevê" acidentes futuros.
+Cuidado na apresentação: não dizer que algo "causa" acidente, não tratar frequência
+como risco e não vender o modelo como previsão do futuro.
 
 ---
 
@@ -14,28 +12,28 @@ identificados como complemento de estudo.
 
 **Conteúdo:** tema, integrantes, curso, semestre, instituição, data.
 
-**Fala sugerida:** "Boa noite. Nosso trabalho aplica o processo KDD sobre a base de
-acidentes da Polícia Rodoviária Federal para investigar quais características
-temporais, ambientais e estruturais estão associadas à gravidade dos acidentes."
+**Fala:** "Boa noite. A gente aplicou o processo KDD na base de acidentes da PRF
+para ver quais características temporais, ambientais e estruturais aparecem
+associadas à gravidade."
 
 **Visual:** capa institucional.
 
-**Fonte:** ficha técnica em `docs/ficha_tecnica.md`.
+**Fonte:** `docs/ficha_tecnica.md`.
 
 ---
 
 ## Slide 2 — Contextualização
 
-**Conteúdo:** importância social da segurança nas rodovias federais; a PRF atende
-cerca de 70.000 km de rodovias federais em todo o território nacional.
+**Conteúdo:** a PRF atende cerca de 70.000 km de rodovias federais; cada
+atendimento gera um Boletim de Acidente de Trânsito; esses boletins viram dados
+abertos.
 
-**Fala sugerida:** "A PRF atende cerca de setenta mil quilômetros de rodovias
-federais. Cada acidente atendido gera um Boletim de Acidente de Trânsito, e esses
-boletins são publicados como dados abertos. Nosso ponto de partida é que esse
-volume de registro só se transforma em conhecimento se passar por um processo
-organizado — e é isso que o KDD oferece."
+**Fala:** "A PRF cobre cerca de setenta mil quilômetros de rodovias. Cada acidente
+gera um boletim, e esses boletins são publicados. Sem um processo organizado, esse
+volume vira só planilha. O KDD é o caminho que a gente usou para transformar
+registro em resposta."
 
-**Visual:** mapa do Brasil ou foto de rodovia; evitar número inventado.
+**Visual:** mapa do Brasil ou foto de rodovia; sem inventar número.
 
 **Fonte:** introdução do dicionário oficial da PRF.
 
@@ -49,31 +47,27 @@ organizado — e é isso que o KDD oferece."
 - Unidade de análise: uma ocorrência de acidente.
 - Tarefa: classificação da gravidade.
 
-**Fala sugerida:** "Nossa pergunta é: quais características temporais, ambientais e
-estruturais estão associadas à gravidade dos acidentes registrados em rodovias
-federais? Reparem em duas palavras. 'Associadas', não 'causam'. E 'registrados',
-porque só temos os acidentes que aconteceram e foram anotados."
+**Fala:** "A pergunta é essa. Duas palavras importam: 'associadas', não 'causam';
+e 'registrados', porque só temos o que aconteceu e foi anotado."
 
-**Visual:** a pergunta em destaque, com as palavras "associadas" e "registrados"
-realçadas.
+**Visual:** pergunta em destaque, com "associadas" e "registrados" marcados.
 
 ---
 
 ## Slide 4 — O que a análise não permite
 
-**Conteúdo:** quatro limites:
+**Conteúdo:**
 1. não estima a chance de uma viagem sofrer acidente;
-2. frequência não é risco sem dados de exposição ao trânsito;
+2. frequência não é risco sem dados de exposição;
 3. associação não é causa;
 4. avaliação retrospectiva não é previsão do futuro.
 
-**Fala sugerida:** "Antes de mostrar qualquer número, precisamos dizer o que ele não
-significa. Se a maioria dos acidentes acontece com céu claro, isso provavelmente
-diz que a maioria das viagens acontece com céu claro — não que o céu claro seja
-perigoso. Para falar de risco, precisaríamos saber quantos veículos passaram em
-cada condição, e essa informação não está na base."
+**Fala:** "Antes dos números: se a maioria dos acidentes é com céu claro, isso
+provavelmente só diz que a maioria das viagens é com céu claro. Para falar de risco
+precisaríamos saber quantos veículos passaram em cada condição, e isso não está na
+base."
 
-**Visual:** quatro ícones com frases curtas.
+**Visual:** quatro frases curtas.
 
 **Fonte:** `docs/planejamento_kdd.md`, seção 1.
 
@@ -81,14 +75,13 @@ cada condição, e essa informação não está na base."
 
 ## Slide 5 — O processo KDD
 
-**Conteúdo:** diagrama: **definição do problema → seleção → pré-processamento →
-transformação → mineração**.
+**Conteúdo:** definição do problema → seleção → pré-processamento → transformação →
+mineração.
 
-**Fala sugerida:** "Seguimos as cinco etapas do KDD conforme Fayyad e colegas. A
-interpretação não faz parte do escopo desta entrega, então paramos na mineração
-proposta."
+**Fala:** "Seguimos as cinco etapas do KDD do Fayyad e colegas. Interpretação não
+entra nesta entrega, então paramos na mineração proposta."
 
-**Visual:** diagrama horizontal com cinco caixas.
+**Visual:** cinco caixas em sequência.
 
 **Fonte:** Fayyad, Piatetsky-Shapiro e Smyth (1996).
 
@@ -108,7 +101,7 @@ proposta."
 | Ocorrências distintas | 72.529 |
 | Pessoas distintas | 188.346 |
 
-**Fala sugerida:** "A base tem 584 mil linhas e 37 colunas, cobrindo o ano de 2025.
+**Fala:** "A base tem 584 mil linhas e 37 colunas, cobrindo o ano de 2025.
 Mas a informação mais importante deste slide é a próxima linha: essas 584 mil linhas
 não são 584 mil acidentes."
 
@@ -130,7 +123,7 @@ não são 584 mil acidentes."
 | mortos | 27.912 | **6.043** |
 | feridos leves | 179.140 | 63.532 |
 
-**Fala sugerida:** "Cada pessoa envolvida aparece repetida uma vez para cada causa e
+**Fala:** "Cada pessoa envolvida aparece repetida uma vez para cada causa e
 cada tipo de acidente registrados. Se a gente somasse a coluna 'mortos'
 diretamente, encontraria 27.912 mortos. O número correto é 6.043 — quatro vezes e
 meia menor. Um erro de uma linha de código produziria uma estatística
@@ -155,7 +148,7 @@ completamente falsa, e é por isso que o pré-processamento não é detalhe téc
 Alvo: `classificacao_acidente` — Sem Vítimas, Com Vítimas Feridas, Com Vítimas
 Fatais.
 
-**Fala sugerida:** "Escolhemos nove atributos, e eles cobrem exatamente os três
+**Fala:** "Escolhemos nove atributos, e eles cobrem exatamente os três
 grupos da nossa pergunta: temporal, ambiental e estrutural. A lista é explícita: nada
 entra no modelo por exclusão."
 
@@ -176,7 +169,7 @@ entra no modelo por exclusão."
 | Apuração posterior | `causa_acidente`, `tipo_acidente`, `tipo_veiculo`, `marca` | descrevem o acidente já apurado |
 | Recorte não modelado | `uf` | usada para contexto, não como entrada |
 
-**Fala sugerida:** "O descarte mais importante é o primeiro. Se colocássemos a coluna
+**Fala:** "O descarte mais importante é o primeiro. Se colocássemos a coluna
 'mortos' entre as entradas, o modelo acertaria quase tudo — e não teria aprendido
 nada, porque 'ter morto' é a própria definição de 'com vítimas fatais'. Isso se chama
 vazamento de dados. Deixamos também causa e tipo de acidente de fora, porque são
@@ -205,7 +198,7 @@ antes. Descartar aqui significa tirar do modelo: nenhum dado original foi apagad
 E o que **não** era problema: 0 duplicatas exatas, 0 erros de formato, 0 conflitos
 de chave.
 
-**Fala sugerida:** "Fizemos um diagnóstico antes de limpar. Um exemplo simples: o
+**Fala:** "Fizemos um diagnóstico antes de limpar. Um exemplo simples: o
 campo de traçado da via aceita vários valores separados por ponto e vírgula, e a
 ordem varia. 'Reta;Declive' e 'Declive;Reta' são o mesmo traçado, mas o computador
 enxerga dois rótulos diferentes. Isso gerava 605 rótulos distintos para apenas 12
@@ -234,7 +227,7 @@ componentes reais."
 O que **não** fizemos: `fillna(0)` global, imputar a gravidade, remover linha por
 ter alguma ausência.
 
-**Fala sugerida:** "Cada correção é uma regra escrita, repetível e auditada. O
+**Fala:** "Cada correção é uma regra escrita, repetível e auditada. O
 registro de auditoria guarda arquivo de origem, identificador, regra aplicada, valor
 antes e valor depois. E a reconciliação prova que nenhuma linha desapareceu no
 caminho: entrada igual a duplicatas mais quarentena mais mantidas."
@@ -256,14 +249,12 @@ caminho: entrada igual a duplicatas mais quarentena mais mantidas."
   sem veículo identificado;
 - o próprio validador é testado com 19 casos sintéticos.
 
-**Fala sugerida:** "Este é o ponto que consideramos mais importante do trabalho. Não
-basta limpar: alguém tem que conferir. Criamos um verificador separado que reabre o
-arquivo salvo e testa 177 regras. Ele é desconfiado de propósito: não corrige nada,
-só aponta. E testamos o próprio verificador com arquivos falsos contendo defeitos
-conhecidos — data 30 de fevereiro, categoria inexistente, contagem negativa — para
-confirmar que ele realmente reprova. Aprovado com ressalvas não é 'cem por cento
-limpo': significa conformidade com regras explícitas, e as duas ressalvas estão
-documentadas."
+**Fala:** "Limpar sozinho não basta — alguém tem que conferir. Fizemos um
+verificador separado que reabre o arquivo e testa 177 regras. Ele não corrige nada,
+só aponta. Também testamos o próprio verificador com arquivos falsos (data 30 de
+fevereiro, categoria inventada, contagem negativa) para ver se ele realmente
+reprova. Aprovado com ressalvas não quer dizer 'perfeito': as duas ressalvas estão
+escritas no relatório."
 
 **Visual:** selo de status + as duas ressalvas.
 
@@ -279,7 +270,7 @@ documentadas."
   Noite 18:00–23:59:59;
 - aviso: `faixa_horaria` (relógio) ≠ `fase_dia` (registro da PRF).
 
-**Fala sugerida:** "Criamos a faixa horária dividindo o relógio em quatro blocos.
+**Fala:** "Criamos a faixa horária dividindo o relógio em quatro blocos.
 Atenção a uma confusão fácil: faixa horária não é a mesma coisa que fase do dia. A
 fase do dia é o que o policial anotou — amanhecer, pleno dia, anoitecer, plena
 noite. Um acidente às dezoito e trinta pode ser 'Noite' no relógio e 'Anoitecer' no
@@ -306,7 +297,7 @@ O que cada registro demonstra:
 | F04 | espaços sobrando, sentido "Não Informado" | limpeza de texto + token |
 | F05 | gravidade vazia | alvo não imputado; registro fica inelegível |
 
-**Fala sugerida:** "Estes cinco registros são inventados, e o aviso está na tela para
+**Fala:** "Estes cinco registros são inventados, e o aviso está na tela para
 ninguém confundir. Eles servem para mostrar cada regra em ação. O caso F05 é o mais
 importante: quando a gravidade está em branco, nós não inventamos um valor. O
 registro fica na base marcado como inelegível e sai do treino, com o motivo
@@ -330,7 +321,7 @@ hora e conferir.
 linhas** no arquivo bruto, porque é 1 pessoa × 4 causas × 2 tipos de acidente. Todas
 as 8 linhas trazem `mortos = 1`.
 
-**Fala sugerida:** "Olhem a coluna destacada. São oito linhas, todas com `mortos`
+**Fala:** "Olhem a coluna destacada. São oito linhas, todas com `mortos`
 igual a 1. Se eu somar a coluna, eu concluo que morreram oito pessoas neste
 acidente. Morreu uma. É o mesmo condutor repetido oito vezes, uma vez para cada
 combinação de causa e tipo. Por isso a contagem de vítimas é feita sobre pares
@@ -343,7 +334,7 @@ mortos deste trabalho estaria errado."
 **Parte 2 — o que muda dentro da célula:** cinco ocorrências reais, uma por tipo de
 problema, e a lista das células alteradas com a regra responsável por cada uma.
 
-**Fala sugerida:** "Aqui não tem exemplo inventado. `quinta-feira` virou
+**Fala:** "Aqui não tem exemplo inventado. `quinta-feira` virou
 `Quinta-feira`, `Reta;Declive` virou `Declive;Reta` para a mesma via não aparecer
 como duas categorias, `uso_solo` deixou de ser `Sim`/`Não` e passou a dizer
 `Urbano`/`Rural` como manda o dicionário da PRF, e `Ignorado` virou célula vazia,
@@ -367,7 +358,7 @@ as ocorrências inteiras; `reports/exemplo_real_derivados.png` para os atributos
 
 Recorte da codificação one-hot.
 
-**Fala sugerida:** "O algoritmo não lê 'Céu Claro'. Ele precisa de números. A
+**Fala:** "O algoritmo não lê 'Céu Claro'. Ele precisa de números. A
 codificação transforma cada categoria em uma coluna de zeros e uns. Mas essa matriz
 não é o nosso arquivo de entrega: a base legível continua em português, para
 qualquer pessoa conferir."
@@ -387,11 +378,10 @@ qualquer pessoa conferir."
 - referência obrigatória: `DummyClassifier(most_frequent)`;
 - métricas: matriz de confusão, F1 por classe, macro-F1, acurácia balanceada.
 
-**Fala sugerida:** "Escolhemos árvore de decisão por dois motivos: a tarefa é
-categórica e a árvore permite ler as regras. E adotamos uma proteção fundamental: a
-separação entre treino e teste acontece antes de qualquer transformação que aprenda
-com os dados. Se o codificador visse o conjunto de teste, teríamos vazamento, e o
-resultado ficaria otimista sem ser verdadeiro."
+**Fala:** "Escolhemos árvore de decisão por dois motivos: a tarefa é categórica e
+dá para ler as regras. Outro cuidado: a divisão treino/teste acontece antes de
+qualquer transformação que aprenda com os dados. Se o codificador visse o teste,
+o resultado ficaria otimista sem ser verdadeiro."
 
 **Visual:** fluxo: dados elegíveis → divisão → Pipeline no treino → avaliação no
 teste.
@@ -400,7 +390,7 @@ teste.
 
 ---
 
-## Slide 17 — Distribuição das classes (complemento de estudo)
+## Slide 17 — Distribuição das classes (resultado opcional do código)
 
 **Conteúdo:** 72.529 ocorrências:
 
@@ -411,7 +401,7 @@ teste.
 | Com Vítimas Fatais | 5.209 | 7,18 |
 | (ausente) | 1 | 0,001 |
 
-**Fala sugerida:** "As classes são bem desbalanceadas: quase 78% são acidentes com
+**Fala:** "As classes são bem desbalanceadas: quase 78% são acidentes com
 vítimas feridas. Guardem esse número, porque ele vai reaparecer no próximo slide de
 um jeito incômodo."
 
@@ -429,7 +419,7 @@ proporção no projetor, `09_pizza_gravidade.png` / `10_rosca_gravidade.png`.
 
 ---
 
-## Slide 18 — Resultado real da execução (complemento de estudo)
+## Slide 18 — Resultado real da execução (resultado opcional do código)
 
 **Conteúdo:**
 
@@ -439,7 +429,7 @@ proporção no projetor, `09_pizza_gravidade.png` / `10_rosca_gravidade.png`.
 | Chute na classe maioritária | 0,7746 | 0,3333 | 0,2910 |
 | Árvore com `class_weight="balanced"` | 0,5199 | 0,4442 | 0,3608 |
 
-**Fala sugerida:** "Aqui está o resultado real, inclusive a parte ruim. A árvore sem
+**Fala:** "Aqui está o resultado real, inclusive a parte ruim. A árvore sem
 ajuste de pesos alcançou 77% de acurácia — exatamente o mesmo que chutar sempre a
 classe mais comum. Ou seja, ela não aprendeu nada útil. Quando equilibramos os pesos
 das classes, ela passou a acertar as três, e superou a referência no macro-F1, mas a
@@ -458,7 +448,7 @@ não um erro nosso. Se tivéssemos escondido esse número, o trabalho seria pior
 **Conteúdo:** como o planejamento **poderia** apoiar prevenção, fiscalização e
 políticas públicas.
 
-**Fala sugerida:** "Se este planejamento fosse combinado com dados de exposição ao
+**Fala:** "Se este planejamento fosse combinado com dados de exposição ao
 trânsito, ele poderia apoiar decisões de fiscalização e sinalização. No condicional,
 de propósito: com os dados que temos, conseguimos descrever como os acidentes
 registrados se distribuem, e isso já ajuda a formular hipóteses e a decidir que
@@ -477,10 +467,10 @@ dados faltam coletar."
 - pergunta ao público: **"como os dados poderiam ajudar a prevenir acidentes
   graves?"**
 
-**Fala sugerida:** "Nossa maior lição não foi o modelo, foi o cuidado com os dados. O
-mesmo arquivo produzia 27.912 mortos ou 6.043, dependendo de a gente entender ou não
-o que cada linha representava. Ficamos com a pergunta: como os dados poderiam ajudar
-a prevenir acidentes graves?"
+**Fala:** "O que mais pesou no trabalho não foi o modelo, foi cuidado com os dados.
+O mesmo arquivo dava 27.912 mortos ou 6.043, dependendo de a gente entender o que
+cada linha representava. Fica a pergunta: como esses dados poderiam ajudar a
+prevenir acidentes graves?"
 
 **Visual:** a pergunta em tela cheia.
 
@@ -506,21 +496,15 @@ preencher.
 
 ---
 
-## Sugestão de divisão equilibrada das falas
-
-Cinco pessoas, seguindo a ideia de simular uma reunião de equipe de segurança viária.
-Ajuste conforme o tamanho real do grupo.
+## Sugestão de divisão das falas
 
 | pessoa | papel | slides |
 |---|---|---|
-| 1 | Abertura e problema | 1, 2, 3, 4 |
-| 2 | Processo e base | 5, 6, 7 |
-| 3 | Seleção e descarte | 8, 9 |
-| 4 | Pré-processamento e validação | 10, 11, 12 |
-| 5 | Transformação e mineração | 13, 14, 14b, 15, 16 |
-| todos | Resultados, aplicação e encerramento | 17, 18, 19, 20 |
+| Samuel | abertura e problema | 1–4 |
+| Junior | processo e base | 5–7 |
+| Liandra | seleção e descarte | 8–9 |
+| Karolline | pré-processamento e validação | 10–12 |
+| Matheus | transformação e mineração | 13–16 |
+| todos | resultados e encerramento | 17–20 |
 
-O slide 20 termina com todos respondendo à pergunta final.
-
-> Nenhum integrante foi inventado e nenhuma duração foi assumida: preencha na ficha
-> técnica.
+No slide 20 todo mundo responde a pergunta final. Troquem se precisar.
