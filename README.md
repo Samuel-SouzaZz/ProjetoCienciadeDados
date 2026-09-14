@@ -1,17 +1,39 @@
-# Acidentes da PRF — projeto KDD em Python
+## Análise Preditiva de Severidade de Acidentes Viários (PRF)
 
-Análise reproduzível dos acidentes registrados pela Polícia Rodoviária Federal, com
-diagnóstico, limpeza, exportação de base legível, **validação independente do CSV
-salvo** e mineração opcional.
+![Status](https://img.shields.io/badge/Status-Conclu%C3%ADdo-brightgreen)
+![Metodologia](https://img.shields.io/badge/Metodologia-KDD-blue)
+![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-orange)
 
-**Pergunta:** quais características temporais, ambientais e estruturais estão
-associadas à gravidade dos acidentes registrados em rodovias federais?
+## Sobre o Projeto
+Este projeto tem como objetivo planejar conceitualmente a arquitetura de dados necessária para aplicar a metodologia **KDD (*Knowledge Discovery in Databases*)** sobre a base de dados abertos da **Polícia Rodoviária Federal (PRF)**. 
 
-**Unidade de análise:** uma ocorrência de acidente.
+O foco central é a transformação de registros históricos de acidentes em inteligência preditiva, visando classificar o nível de severidade dos sinistros (*Sem Vítimas*, *Com Vítimas Feridas*, *Com Vítimas Fatais*) para subsidiar ações preventivas e alocação eficiente de recursos da PRF.
 
-> **Aviso metodológico.** Esta análise usa acidentes já registrados. Ela não estima a
-> probabilidade de uma viagem sofrer acidente, não mede risco (não há dados de
-> exposição ao trânsito) e não prova causa.
+---
+
+## Metodologia e Documentação
+A documentação do projeto está dividida nos seguintes módulos:
+
+* 📄 [`pipeline_kdd.md`](./pipeline_kdd.md): Detalhamento do fluxo metodológico (Seleção, Pré-processamento, Transformação e Mineração).
+* 📖 [`dicionario_dados.md`](./dicionario_dados.md): Mapeamento e categorização dos atributos da base oficial da PRF.
+* 📋 [`ficha_tecnica.md`](./ficha_tecnica.md): Especificação dos requisitos operacionais, acadêmicos e escopo do projeto.
+
+---
+
+## Impacto Esperado
+* **Prevenção Viária:** Otimização do patrulhamento ostensivo da PRF com base em trechos e faixas horárias de alto risco.
+* **Engenharia de Tráfego:** Mapeamento de fatores contextuais que influenciam na gravidade de acidentes para orientar sinalização e intervenções viárias.
+* **Redução de Impactos Socioeconômicos:** Embasamento para políticas públicas com o intuito de diminuir internações (DATASUS/OMS) e os custos associados a acidentes em rodovias federais (IPEA).
+
+---
+
+## 👥 Autores & Colaboradores
+* Samuel Souza (*Roteirista, Designer & Arquiteto de Documentação*)
+* Junior Oliveira(*Roteirista, Montagem e Organização de Slides*)
+* Liandra Rodrigues(*Apresentação e Edição dos slides*)
+* Karolline Oliveira(*Aprensentação do slide*)
+* Matheus Oliveira(*Apresentação de slide*)
+
 
 ---
 
