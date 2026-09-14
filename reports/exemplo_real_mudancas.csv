@@ -1,0 +1,17 @@
+﻿id;coluna;antes (arquivo bruto);depois (base limpa);regra aplicada
+668490;dia_semana;quinta-feira;Quinta-feira;mapa_dia_semana
+668490;tracado_via;"Reta;Declive";"Declive;Reta";ordenacao_componentes
+668490;uso_solo;Não;Rural;mapa_uso_solo_dicionario
+692901;dia_semana;quinta-feira;Quinta-feira;mapa_dia_semana
+692901;fase_dia;Pleno dia;Pleno Dia;mapa_fase_dia
+692901;condicao_metereologica;Ignorado;(vazio);token_ausencia
+692901;tracado_via;"Curva;Aclive";"Aclive;Curva";ordenacao_componentes
+692901;uso_solo;Não;Rural;mapa_uso_solo_dicionario
+703270;dia_semana;segunda-feira;Segunda-feira;mapa_dia_semana
+703270;sentido_via;Não Informado;(vazio);token_ausencia
+703270;uso_solo;Não;Rural;mapa_uso_solo_dicionario
+716698;dia_semana;sábado;Sábado;mapa_dia_semana
+716698;uso_solo;Sim;Urbano;mapa_uso_solo_dicionario
+730331;dia_semana;sábado;Sábado;mapa_dia_semana
+730331;tracado_via;"Declive;Curva";"Curva;Declive";ordenacao_componentes
+730331;uso_solo;Não;Rural;mapa_uso_solo_dicionario

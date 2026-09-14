@@ -166,6 +166,79 @@ def tabela_markdown(df: pd.DataFrame) -> str:
     return "\n".join(linhas)
 
 
+def encurtar(valor, limite: int = 30) -> str:
+    """Corta texto longo para a tabela caber na imagem do slide."""
+    if valor is None or (isinstance(valor, float) and pd.isna(valor)) or valor is pd.NA:
+        return "(vazio)"
+    texto = str(valor)
+    return texto if len(texto) <= limite else texto[: limite - 1] + "…"
+
+
+def salvar_tabela_imagem(
+    df: pd.DataFrame,
+    titulo: str,
+    caminho,
+    nota: str = "",
+    largura_col: float = 1.6,
+    cor_cabecalho: str = "#1f3b57",
+    destacar: set | None = None,
+) -> None:
+    """Desenha um DataFrame como imagem de tabela, legivel para projetor.
+
+    A figura e dimensionada em polegadas a partir do numero de linhas e colunas,
+    e a tabela recebe um 'bbox' explicito para ocupar a area inteira. Sem isso o
+    matplotlib centraliza a tabela e sobra faixa branca no meio do slide.
+
+    'destacar' recebe pares (linha, coluna) com indices baseados em zero sobre os
+    DADOS (sem contar o cabecalho) e pinta a celula de amarelo, para apontar na
+    apresentacao exatamente o valor que interessa.
+    """
+    import textwrap
+
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    n_lin, n_col = df.shape
+    largura = max(8.0, largura_col * n_col)
+
+    linhas_nota = textwrap.wrap(nota, width=int(largura * 17)) if nota else []
+    alt_titulo = 0.30 * len(textwrap.wrap(titulo, width=int(largura * 11)) or [""]) + 0.28
+    alt_nota = 0.20 * len(linhas_nota) + (0.12 if linhas_nota else 0)
+    alt_tabela = 0.32 * (n_lin + 1)
+    altura = alt_titulo + alt_tabela + alt_nota + 0.1
+
+    fig = plt.figure(figsize=(largura, altura))
+    ax = fig.add_axes([0.005, (alt_nota + 0.1) / altura, 0.99, alt_tabela / altura])
+    ax.axis("off")
+    tabela = ax.table(
+        cellText=df.fillna("(vazio)").astype(str).values,
+        colLabels=df.columns,
+        cellLoc="center",
+        loc="center",
+        bbox=[0, 0, 1, 1],
+    )
+    tabela.auto_set_font_size(False)
+    tabela.set_fontsize(8)
+    for j in range(n_col):
+        tabela[(0, j)].set_facecolor(cor_cabecalho)
+        tabela[(0, j)].set_text_props(color="white", weight="bold")
+    for i in range(1, n_lin + 1):
+        cor = "#f2f6fa" if i % 2 else "#ffffff"
+        for j in range(n_col):
+            tabela[(i, j)].set_facecolor(cor)
+    for i, j in destacar or set():
+        celula = tabela[(i + 1, j)]
+        celula.set_facecolor("#ffe9a8")
+        celula.set_text_props(weight="bold")
+    ax.set_title(titulo, fontsize=11, weight="bold", pad=10, wrap=True)
+    for k, linha in enumerate(reversed(linhas_nota)):
+        fig.text(0.005, (0.08 + 0.20 * k) / altura, linha, fontsize=7.5, style="italic")
+    fig.savefig(caminho, dpi=200)
+    plt.close(fig)
+
+
 class Auditoria:
     """Acumula 'o que foi mudado, onde e por qual regra'.
 

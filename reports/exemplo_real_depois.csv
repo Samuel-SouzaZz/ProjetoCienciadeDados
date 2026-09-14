@@ -1,0 +1,6 @@
+﻿id;data_inversa;dia_semana;faixa_horaria;fim_de_semana;mes_nome;uf;fase_dia;condicao_metereologica;tipo_pista;tracado_via;uso_solo;sentido_via;classificacao_acidente;elegivel_modelo
+668490;2025-03-20;Quinta-feira;Noite;Não;Março;GO;Anoitecer;Chuva;Simples;"Declive;Reta";Rural;Crescente;Sem Vítimas;Sim
+692901;2025-05-22;Quinta-feira;Manhã;Não;Maio;MG;Pleno Dia;(vazio);Dupla;"Aclive;Curva";Rural;Decrescente;Com Vítimas Feridas;Sim
+703270;2025-07-07;Segunda-feira;Noite;Não;Julho;PE;Plena Noite;Céu Claro;Simples;Reta;Rural;(vazio);Sem Vítimas;Sim
+716698;2025-09-06;Sábado;Noite;Sim;Setembro;PB;Plena Noite;Chuva;Dupla;Reta;Urbano;Decrescente;Sem Vítimas;Sim
+730331;2025-11-08;Sábado;Madrugada;Sim;Novembro;MG;Amanhecer;Nublado;Simples;"Curva;Declive";Rural;Crescente;Com Vítimas Fatais;Sim

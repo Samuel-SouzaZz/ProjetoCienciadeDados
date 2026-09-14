@@ -1,0 +1,6 @@
+﻿id;data_inversa;dia_semana;horario;uf;fase_dia;condicao_metereologica;tipo_pista;tracado_via;uso_solo;sentido_via;classificacao_acidente
+668490;2025-03-20;quinta-feira;18:20:00;GO;Anoitecer;Chuva;Simples;"Reta;Declive";Não;Crescente;Sem Vítimas
+692901;2025-05-22;quinta-feira;08:30:00;MG;Pleno dia;Ignorado;Dupla;"Curva;Aclive";Não;Decrescente;Com Vítimas Feridas
+703270;2025-07-07;segunda-feira;18:20:00;PE;Plena Noite;Céu Claro;Simples;Reta;Não;Não Informado;Sem Vítimas
+716698;2025-09-06;sábado;23:45:00;PB;Plena Noite;Chuva;Dupla;Reta;Sim;Decrescente;Sem Vítimas
+730331;2025-11-08;sábado;04:30:00;MG;Amanhecer;Nublado;Simples;"Declive;Curva";Não;Crescente;Com Vítimas Fatais
