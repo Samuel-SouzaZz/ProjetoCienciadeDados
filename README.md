@@ -17,7 +17,6 @@ trabalhamos com associação observada nos registros.
 | arquivo | o que tem |
 |---|---|
 | [`docs/planejamento_kdd.md`](docs/planejamento_kdd.md) | planejamento completo das etapas |
-| [`docs/roteiro_slides.md`](docs/roteiro_slides.md) | o que colocar em cada slide e o que falar |
 | [`docs/ficha_tecnica.md`](docs/ficha_tecnica.md) | ficha do trabalho (grupo, ambiente, números) |
 | [`reports/`](reports/) | saídas reais das execuções (diagnóstico, limpeza, validação, figuras) |
 
@@ -67,7 +66,6 @@ Ciencia de dados/
 │  └─ corrigir_encoding.py       reconverte fontes para UTF-8
 ├─ docs/
 │  ├─ planejamento_kdd.md        planejamento das etapas
-│  ├─ roteiro_slides.md          conteúdo e fala de cada slide
 │  └─ ficha_tecnica.md           ficha do trabalho
 ├─ reports/                      saídas das execuções
 ├─ requirements.txt
@@ -436,7 +434,6 @@ df["qtd_mortos"] = pd.to_numeric(df["qtd_mortos"])
 | Distribuição e composição da gravidade | `reports/analise.md`, `reports/figuras/` |
 | Resultado do modelo | `reports/modelo/modelo.md`, `reports/modelo_balanceado/modelo.md` |
 | Planejamento conceitual do KDD | `docs/planejamento_kdd.md` |
-| Roteiro dos slides | `docs/roteiro_slides.md` |
 | Ficha técnica | `docs/ficha_tecnica.md` |
 
 ---
