@@ -19,17 +19,16 @@ vieram das execuções em `reports/` — não inventamos nada.
 
 ## Grupo
 
-| # | nome | função | slides (sugestão) |
+| # | nome | o que fez | slides (sugestão) |
 |---|---|---|---|
-| 1 | Samuel Souza | código, documentação e roteiro | 1–4 |
-| 2 | Junior Oliveira | roteiro e organização dos slides | 5–7 |
-| 3 | Liandra Rodrigues | apresentação e edição | 8–9 |
-| 4 | Karolline Oliveira | apresentação | 10–12 |
-| 5 | Matheus Oliveira | apresentação | 13–16 |
+| 1 | Samuel Souza | roteiro, design e documentação | 1–4 |
+| 2 | Junior Oliveira | roteiro, montagem e organização dos slides | 5–7 |
+| 3 | Liandra Rodrigues | apresentação e edição dos slides | 8–9 |
+| 4 | Karolline Oliveira | apresentação dos slides | 10–12 |
+| 5 | Matheus Oliveira | apresentação dos slides | 13–16 |
 | todos | — | resultados e encerramento | 17–20 |
 
-A divisão de slides é só uma sugestão para equilibrar as falas. Quem for apresentar
-pode trocar.
+A divisão de slides é só sugestão para equilibrar as falas. O grupo pode trocar.
 
 ## Produção do vídeo
 

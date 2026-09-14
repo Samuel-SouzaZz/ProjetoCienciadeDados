@@ -21,15 +21,15 @@ trabalhamos com associação observada nos registros.
 | [`docs/ficha_tecnica.md`](docs/ficha_tecnica.md) | ficha do trabalho (grupo, ambiente, números) |
 | [`reports/`](reports/) | saídas reais das execuções (diagnóstico, limpeza, validação, figuras) |
 
-### Grupo
+### Autores e colaboradores
 
-| nome | função |
+| nome | o que fez |
 |---|---|
-| Samuel Souza | código, documentação e roteiro |
-| Junior Oliveira | roteiro e organização dos slides |
+| Samuel Souza | roteiro, design e documentação |
+| Junior Oliveira | roteiro, montagem e organização dos slides |
 | Liandra Rodrigues | apresentação e edição dos slides |
-| Karolline Oliveira | apresentação |
-| Matheus Oliveira | apresentação |
+| Karolline Oliveira | apresentação dos slides |
+| Matheus Oliveira | apresentação dos slides |
 
 ---
 

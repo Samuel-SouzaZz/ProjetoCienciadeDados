@@ -1,4 +1,4 @@
-# Roteiro dos slides — Gravidade dos acidentes em rodovias federais
+﻿# Roteiro dos slides — Gravidade dos acidentes em rodovias federais
 
 Cada slide tem: o que vai na tela, um rascunho de fala, qual figura usar e de onde
 saiu o número. As falas são sugestão — adaptem ao jeito de cada um.
@@ -498,13 +498,13 @@ preencher.
 
 ## Sugestão de divisão das falas
 
-| pessoa | papel | slides |
+| pessoa | o que fez no trabalho | slides |
 |---|---|---|
-| Samuel | abertura e problema | 1–4 |
-| Junior | processo e base | 5–7 |
-| Liandra | seleção e descarte | 8–9 |
-| Karolline | pré-processamento e validação | 10–12 |
-| Matheus | transformação e mineração | 13–16 |
+| Samuel Souza | roteiro, design e documentação | 1–4 |
+| Junior Oliveira | roteiro, montagem e organização dos slides | 5–7 |
+| Liandra Rodrigues | apresentação e edição dos slides | 8–9 |
+| Karolline Oliveira | apresentação dos slides | 10–12 |
+| Matheus Oliveira | apresentação dos slides | 13–16 |
 | todos | resultados e encerramento | 17–20 |
 
-No slide 20 todo mundo responde a pergunta final. Troquem se precisar.
+No slide 20 todo mundo responde a pergunta final. Podem trocar se quiserem.
