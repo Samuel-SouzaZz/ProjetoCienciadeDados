@@ -318,6 +318,46 @@ contado."
 
 ---
 
+## Slide 14b — Antes × Depois com dados reais (opcional, mas recomendado)
+
+Este slide é a resposta para quem perguntar "mas isso funciona nos dados de
+verdade?". Os `id` são os do arquivo original, então dá para abrir a base bruta na
+hora e conferir.
+
+**Conteúdo:** duas partes, cada uma rendendo um slide se houver tempo.
+
+**Parte 1 — por que agregar (a mais forte):** a ocorrência `id=654535` ocupa **8
+linhas** no arquivo bruto, porque é 1 pessoa × 4 causas × 2 tipos de acidente. Todas
+as 8 linhas trazem `mortos = 1`.
+
+**Fala sugerida:** "Olhem a coluna destacada. São oito linhas, todas com `mortos`
+igual a 1. Se eu somar a coluna, eu concluo que morreram oito pessoas neste
+acidente. Morreu uma. É o mesmo condutor repetido oito vezes, uma vez para cada
+combinação de causa e tipo. Por isso a contagem de vítimas é feita sobre pares
+`(id, pesid)` distintos, e não somando linhas. Sem esse cuidado, todo número de
+mortos deste trabalho estaria errado."
+
+**Visual:** `reports/exemplo_real_agregacao_antes.png` e
+`reports/exemplo_real_agregacao_depois.png`.
+
+**Parte 2 — o que muda dentro da célula:** cinco ocorrências reais, uma por tipo de
+problema, e a lista das células alteradas com a regra responsável por cada uma.
+
+**Fala sugerida:** "Aqui não tem exemplo inventado. `quinta-feira` virou
+`Quinta-feira`, `Reta;Declive` virou `Declive;Reta` para a mesma via não aparecer
+como duas categorias, `uso_solo` deixou de ser `Sim`/`Não` e passou a dizer
+`Urbano`/`Rural` como manda o dicionário da PRF, e `Ignorado` virou célula vazia,
+porque não saber o clima não é um tipo de clima. Cada linha dessa tabela tem uma
+regra com nome, e esse nome está no arquivo de auditoria."
+
+**Visual:** `reports/exemplo_real_mudancas.png` (a mais didática);
+`reports/exemplo_real_antes.png` e `reports/exemplo_real_depois.png` se quiser mostrar
+as ocorrências inteiras; `reports/exemplo_real_derivados.png` para os atributos novos.
+
+**Fonte:** `reports/exemplo_real.md`.
+
+---
+
 ## Slide 15 — Base legível, X e y são coisas diferentes
 
 **Conteúdo:**
@@ -477,7 +517,7 @@ Ajuste conforme o tamanho real do grupo.
 | 2 | Processo e base | 5, 6, 7 |
 | 3 | Seleção e descarte | 8, 9 |
 | 4 | Pré-processamento e validação | 10, 11, 12 |
-| 5 | Transformação e mineração | 13, 14, 15, 16 |
+| 5 | Transformação e mineração | 13, 14, 14b, 15, 16 |
 | todos | Resultados, aplicação e encerramento | 17, 18, 19, 20 |
 
 O slide 20 termina com todos respondendo à pergunta final.

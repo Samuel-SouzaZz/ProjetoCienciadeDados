@@ -28,14 +28,15 @@ Uso:
 
 from __future__ import annotations
 
-import matplotlib
+import pandas as pd
 
-matplotlib.use("Agg")  # sem janela grafica: salva direto em arquivo
-import matplotlib.pyplot as plt  # noqa: E402
-import pandas as pd  # noqa: E402
-
-from comum import DIR_REPORTS, garantir_pastas, tabela_markdown  # noqa: E402
-from limpeza import (  # noqa: E402
+from comum import (
+    DIR_REPORTS,
+    garantir_pastas,
+    salvar_tabela_imagem,
+    tabela_markdown,
+)
+from limpeza import (
     DIA_SEMANA_POR_INDICE,
     MAPA_CONDICAO,
     MAPA_DIA_SEMANA,
@@ -47,7 +48,7 @@ from limpeza import (  # noqa: E402
     canonizar_tracado,
     faixa_da_hora,
 )
-from comum import chave_comparacao, limpar_texto  # noqa: E402
+from comum import chave_comparacao, limpar_texto
 
 AVISO = "Exemplo fictício — não representa resultados da PRF"
 
@@ -162,28 +163,8 @@ def aplicar_transformacoes(df_antes: pd.DataFrame) -> pd.DataFrame:
 
 
 def salvar_imagem_tabela(df: pd.DataFrame, titulo: str, caminho, largura_col=1.6):
-    """Desenha a tabela como imagem, para colar no slide sem virar print borrado."""
-    n_lin, n_col = df.shape
-    fig, ax = plt.subplots(figsize=(max(8, largura_col * n_col), 1.4 + 0.5 * n_lin))
-    ax.axis("off")
-    tabela = ax.table(
-        cellText=df.fillna("(vazio)").astype(str).values,
-        colLabels=df.columns, cellLoc="center", loc="center",
-    )
-    tabela.auto_set_font_size(False)
-    tabela.set_fontsize(8)
-    tabela.scale(1, 1.5)
-    for j in range(n_col):
-        tabela[(0, j)].set_facecolor("#1f3b57")
-        tabela[(0, j)].set_text_props(color="white", weight="bold")
-    for i in range(1, n_lin + 1):
-        cor = "#f2f6fa" if i % 2 else "#ffffff"
-        for j in range(n_col):
-            tabela[(i, j)].set_facecolor(cor)
-    ax.set_title(f"{titulo}\n{AVISO}", fontsize=11, weight="bold", pad=16)
-    fig.tight_layout()
-    fig.savefig(caminho, dpi=200, bbox_inches="tight")
-    plt.close(fig)
+    """Desenha a tabela como imagem, sempre carimbando o aviso de dado ficticio."""
+    salvar_tabela_imagem(df, f"{titulo}\n{AVISO}", caminho, largura_col=largura_col)
 
 
 def main() -> int:

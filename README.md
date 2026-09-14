@@ -40,6 +40,7 @@ Ciencia de dados/
 │  ├─ limpeza.py                 ETAPAS 2 e 3 — limpar, agregar, derivar, exportar
 │  ├─ validar_dados.py           ETAPA 4 — auditoria independente (essencial)
 │  ├─ exemplo_ficticio.py        ETAPA 5 — tabela Antes × Depois F01–F05
+│  ├─ exemplo_real.py            ETAPA 5b — Antes × Depois com ocorrências reais
 │  ├─ analise.py                 ETAPA 6 — tabelas e gráficos
 │  └─ treinar_modelo.py          ETAPA 7 — treino OPCIONAL, comando separado
 ├─ tests/
@@ -232,6 +233,31 @@ Os cinco registros são **fictícios** (F01–F05), levam o aviso
 "Exemplo fictício — não representa resultados da PRF" e não entram em nenhum gráfico
 real, treinamento ou métrica.
 
+### Etapa 5b — Recortes Antes × Depois com dados reais
+
+```powershell
+python src\exemplo_real.py
+```
+
+Gera: `reports/exemplo_real_agregacao_antes.png` e `_depois.png`,
+`exemplo_real_antes.png`, `exemplo_real_depois.png`, `exemplo_real_mudancas.png`,
+`exemplo_real_derivados.png`, os CSVs equivalentes e `exemplo_real.md`.
+
+Complementa a etapa anterior com linhas **reais**, rastreáveis pelo `id` da
+ocorrência: dá para abrir o arquivo bruto e a base limpa durante a apresentação e
+conferir célula por célula. São dois recortes:
+
+- **Agregação:** uma ocorrência que ocupa 8 linhas no arquivo bruto. Somar a coluna
+  `mortos` linha a linha dá 8 mortos; a ocorrência teve 1 vítima fatal. É a evidência
+  concreta de por que a base foi agregada para a unidade ocorrência.
+- **Padronização:** cinco ocorrências, cada uma com um problema diferente (token
+  `Ignorado`, `tracado_via` fora de ordem, `uso_solo` como `Sim`/`Não`, `dia_semana`
+  em minúsculas, `sentido_via` não informado), mais a tabela que lista só as células
+  alteradas e a regra responsável por cada uma.
+
+A escolha das ocorrências é **determinística**: os mesmos arquivos de entrada geram
+sempre os mesmos exemplos. Nada é sorteado.
+
 ### Etapa 6 — Análise descritiva
 
 ```powershell
@@ -287,6 +313,7 @@ python src\limpeza.py; `
 python src\validar_dados.py; `
 python tests\test_validacao.py; `
 python src\exemplo_ficticio.py; `
+python src\exemplo_real.py; `
 python src\analise.py; `
 python src\treinar_modelo.py; `
 python src\treinar_modelo.py --balanceado
@@ -386,7 +413,8 @@ df["qtd_mortos"] = pd.to_numeric(df["qtd_mortos"])
 | O que foi corrigido e quantas linhas foram para onde? | `reports/limpeza.md`, `reports/reconciliacao.csv` |
 | A base limpa passou nas regras? | `reports/validacao.md` |
 | Quais regras existem e de onde vêm? | `config/regras_qualidade.json` |
-| Antes × Depois para o slide | `reports/exemplo_ficticio.md`, `reports/exemplo_antes_depois.png` |
+| Antes × Depois para o slide (exemplo didático) | `reports/exemplo_ficticio.md`, `reports/exemplo_antes_depois.png` |
+| Antes × Depois com dados reais e `id` rastreável | `reports/exemplo_real.md`, `reports/exemplo_real_mudancas.png` |
 | Distribuição e composição da gravidade | `reports/analise.md`, `reports/figuras/` |
 | Resultado do modelo | `reports/modelo/modelo.md`, `reports/modelo_balanceado/modelo.md` |
 | Planejamento conceitual do KDD | `docs/planejamento_kdd.md` |
