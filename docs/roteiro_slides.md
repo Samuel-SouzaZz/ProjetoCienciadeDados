@@ -493,18 +493,3 @@ prevenir acidentes graves?"
 
 **Conteúdo:** ver `docs/ficha_tecnica.md`. Campos não informados ficam para o grupo
 preencher.
-
----
-
-## Sugestão de divisão das falas
-
-| pessoa | o que fez no trabalho | slides |
-|---|---|---|
-| Samuel Souza | roteiro, design e documentação | 1–4 |
-| Junior Oliveira | roteiro, montagem e organização dos slides | 5–7 |
-| Liandra Rodrigues | apresentação e edição dos slides | 8–9 |
-| Karolline Oliveira | apresentação dos slides | 10–12 |
-| Matheus Oliveira | apresentação dos slides | 13–16 |
-| todos | resultados e encerramento | 17–20 |
-
-No slide 20 todo mundo responde a pergunta final. Podem trocar se quiserem.
